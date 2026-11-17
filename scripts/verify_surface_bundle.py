@@ -12,7 +12,7 @@ def visit(path):
     seen[path]=text
     for name in re.findall(r'\\input\{([^}]+)\}',text):
         visit(name if name.endswith('.tex') else name+'.tex')
-visit('papers/cubic_surface_ambient_moduli.tex')
+visit('papers/nc-cubic-ambient-moduli.tex')
 text='\n'.join(seen.values())
 labels=re.findall(r'\\label\{([^}]+)\}',text)
 refs=re.findall(r'\\(?:eqref|ref|autoref|pageref)\{([^}]+)\}',text)

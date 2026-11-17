@@ -6,4 +6,4 @@
 
 研究区切りで承諾なくLibrary保存する一般許可はあるが、このリポジトリはGitHub mainが正本であり、push成功時はLibrary保存せず、GitHub失敗時の緊急避難に限る。既存Libraryファイルは明示指示なしに削除しない。
 
-一つのCodexが逐次研究し、約15分を目安に区切りで原稿とノートを整理してGitHub mainへ通常のfast-forwardで直接pushする。PR・Actions・force pushは使わない。更新が競合したらfetchして差分を読んで両立させる。証明の不足と検証した計算を分離し、報告で生成・検証・pushを区別する。論文は`latexmk -lualatex papers/cubic_surface_ambient_moduli.tex`、検証は`python3 scripts/verify_surface_bundle.py`。重要な方針変更後も研究を継続し、未設定のバックグラウンド作業を約束しない。
+一つのCodexが逐次研究し、約15分を目安に区切りで原稿とノートを整理してGitHub mainへ通常のfast-forwardで直接pushする。PR・Actions・force pushは使わない。更新が競合したらfetchして差分を読んで両立させる。証明の不足と検証した計算を分離し、報告で生成・検証・pushを区別する。論文は`latexmk -lualatex papers/nc-cubic-ambient-moduli.tex`、検証は`python3 scripts/verify_surface_bundle.py`。重要な方針変更後も研究を継続し、未設定のバックグラウンド作業を約束しない。

@@ -1,6 +1,6 @@
 # 現行研究ノート：R13・内在的三次曲面・Weyl商
 
-2026-11-15 / surface-v2。最初に `00_research_plan.md` を読む。証明本文は `papers/cubic_surface_ambient_moduli.tex` とその唯一のinput。以下は作業日誌ではない。
+2026-11-15 / surface-v2。最初に `00_research_plan.md` を読む。証明本文は `papers/nc-cubic-ambient-moduli.tex` とその唯一のinput。以下は作業日誌ではない。
 
 ## 表示と同値関係
 

@@ -17,22 +17,25 @@
 \newcommand{\Spec}{\operatorname{Spec}}\newcommand{\PGL}{\operatorname{PGL}}
 \newcommand{\OO}{\mathcal O}\newcommand{\rank}{\operatorname{rank}}
 \title{非可換三次曲面と非可換射影三空間のモジュライ\\\large 四周期表示・明示的成分・反標準復元とWeyl商}
-\author{研究草稿（新規性の網羅的確認は未了）}
-\date{2026年11月15日 / surface-v2}
+\author{植田一石}
+\date{2026年11月17日 / surface-v3}
 \begin{document}\maketitle
 \begin{abstract}
-非可換三次曲面の内在的モジュライと、四頂点表示による非可換射影三空間のモジュライを比較する。
-任意の四周期構造を指定した関係式模型は、非捩れpotential模型と無条件には一致しないことを反例で示す。
-一方、Pymの$R(1,3)$族について全四頂点potentialのrank条件の接空間を厳密計算し、
-67次元の成分、7次元商とその有限型エタールatlasを得る。
-$S^{-1}[2]$と構造対象からの反標準環を用いてweakly markedな曲面のstackと超曲面認識部分を定式化する。
-滑らかな一般可換三次曲面のArtin形式近傍では、標準markingの忘却が$W(E_6)$-torsorをなし、
-AOUのmarked形式モジュライの商と同値になる。
-さらにAOUの有限代数から相対inverse Serreを低次数で計算することでambientの候補射を作り、
-既知のgeneric blow-up表示を入力としてその$R(1,3)$成分への支配性を示す。
-固定ambientの中心三次fiberは$\PP^1$、一般の全正規形式fiberも一次元である。
-Poisson側の一意延長とペンシル、全接空間の証明書を保持する。
-全大域weak moduliのWeyl商同定と全対象の超曲面認識は未証明であり、必要な条件を分離する。
+非可換三次曲面の反標準偏極による内在的記述を、
+四周期の二次関係を持つ非可換射影三空間および四次superpotentialのモジュライと比較する。
+任意に指定した四周期構造と非捩れpotential構造が一般には一致しないことを例示する。
+中心一次拡大から得られる$R(1,3)$族では、四頂点potentialの全テンソル方向の
+接空間を有理数上で計算し、67次元既約成分の滑らかな一般開部分と
+7次元Deligne--Mumford商stackのエタール表示を得る。
+滑らかな三次曲面のPoisson構造のambientへの一意延長と、
+固定ambientの中心三次超曲面のペンシルを記述する。
+反標準orbit環による超曲面認識部分の比較射を定義し、
+可換点の形式近傍では通常の幾何学的markingの忘却を$W(E_6)$商として記述する。
+AOUの一般位置における反標準模型の比較を仮定すると、
+marked曲面から$R(1,3)$成分への有理ambient射は支配的であり、
+一般ファイバーは一次元である。
+全weakly markedモジュライの代数性、全対象の超曲面認識、大域Weyl商は
+ここでは証明しない。
 \end{abstract}
 {\small\tableofcontents}
 \clearpage
@@ -56,8 +59,19 @@ $(\mathbb G_m)^8$である（\S5.4）。同論文Theorem 1.1は楕円decupleに�
 Pym\cite[\S3.4]{Pym}の$R(1,3)$成分は、三変数Sklyanin代数の中心一次拡大に対応する。
 中心拡大の代数構造はLe Bruyn--Smith--Van den Bergh\cite{LBS}、
 非斉次potentialの中心元と量子del Pezzo構成はEtingof--Ginzburg\cite{EG}に属する。
-以下の貢献候補は、これらの比較に必要な射・ファイバー・同値関係を分離し、
-具体的証明と有限証明書を与える点にある。個々の結果の初出は未確定である。
+本稿の寄与は、四窓全体の接空間を計算するとともに、
+周期の選択およびmarking忘却の効果を明示して、特定の一般開部分における
+対応射・ファイバー・形式変形を比較することである。
+この結果の既知の記述との優先権の照合はなお必要である。
+
+\subsection*{主結果と適用範囲}
+命題\ref{prop:period-counterexample}は四周期の関係式stackと非捩れpotential表示の相違を示す。
+定理\ref{thm:r13-open}は標準AS条件を満たす$R(1,3)$族の一般開部分を構成する。
+定理\ref{thm:extension}と命題\ref{prop:center}はPoisson延長と中心三次ペンシルを記述する。
+定理\ref{thm:formal-weyl}は可換点の形式変形に限定される。
+定理\ref{thm:aou-dominance}は一般位置の比較仮定の下での結論であり、
+全非可換対象や全境界での支配性を主張しない。
+以下では選択周期、構造対象、頂点スカラーのrigidificationを区別する。
 
 \input{papers/sections/surface_stack_comparison.tex}
 
@@ -142,7 +156,7 @@ $\Pi$自体をスカラー射影化するとambientの次元は21になる。
 本稿の22と7はPoissonスカラーを残す規約である。
 \end{remark}
 
-\section{Poisson側の一般正則性と有限同一視の証明書}\label{sec:surface-witness}
+\section{Poisson成分の一般正則性と有限行列検証}\label{sec:surface-witness}
 次の有理係数の点を取る。
 \begin{align*}
  F_*={}&3(x^3+y^3+z^3)+5xyz+t(x^2+2y^2+3z^2)\\
@@ -236,7 +250,10 @@ AOUの全コンパクト化との双有理同定を前提としない。
 \begin{proposition}[固定ambientの全正規形式ファイバー]\label{prop:normal}
 命題\ref{prop:center}の$B$について、二因子stabilizer
 $H_R\subset\PGL(B_1)^2$が有限であるとする。
-中心三次元$G$における、固定した$\check B$上のindexed正規三次イデアルの形式変形は、
+さらに任意の局所Artin底$T$について
+$Z(B)_3\otimes_\kk T\longrightarrow Z(B\otimes_\kk T)_3$
+が同型であると仮定する。このとき中心三次元$G$における、
+固定した$\check B$上のindexed正規三次イデアルの形式変形は、
 中心三次直線の形式変形に一致する。従って厳密形式ファイバーは
 $\operatorname{Spf}\kk[[s]]$である。
 \end{proposition}
@@ -251,7 +268,7 @@ Artin底で恒等を持ち上げる射影対は恒等だけである。
 $G_i x=xG_{i+1}$にできる。$x=t$と置けば$t$は中心正則なので$G_i=G_{i+1}$。
 よって一つの中心元を全添字で反復した族となる。
 逆に中心三次直線はそのような族を与える。
-固定ambientでは中心の形成は体からの平坦底変更と可換であり、中心空間はrank2。
+仮定した中心の底変更同型と命題\ref{prop:center}により、中心空間はArtin底でもrank2である。
 従って$\PP^1$の一点での完備化である。
 \end{proof}
 
@@ -326,8 +343,8 @@ heartとmarkingの同値関係を証明する必要がある。
 四flatteningのrank、全接空間、群作用、7係数横断性を有理数上で検証する。
 \texttt{verify\_surface\_incidence.py}はPoisson側の独立な接空間と二因子stabilizerを再現する。
 有限行列計算と、本文の全次数のAS性・圏の降下の証明は区別する。
-証明を今回検討し、指定した計算と組版を実行したが、外部査読、形式検証、
-新規性・優先権の網羅的確認は実施していない。
+旧版に対する計算と組版の記録は\texttt{research/surface\_validation.json}にある。
+本改訂版に対する再実行・外部査読・形式検証・新規性の網羅的確認は未完了である。
 
 \begin{thebibliography}{99}
 \bibitem{AOU} T. Abdelgadir, S. Okawa, K. Ueda,
@@ -339,12 +356,11 @@ heartとmarkingの同値関係を証明する必要がある。
 Memoirs Amer. Math. Soc. 154 (2001), no. 734;
 \href{https://arxiv.org/abs/math/9809116}{arXiv:math/9809116}, Chapter 12.
 \bibitem{Pym} B. Pym, \emph{Quantum deformations of projective three-space},
-Adv. Math. 281 (2015), 1216--1241;
+Adv. Math. 281 (2015), 1216--1241; \href{https://doi.org/10.1016/j.aim.2015.06.005}{doi:10.1016/j.aim.2015.06.005};
 \href{https://arxiv.org/abs/1403.6444}{arXiv:1403.6444}, \S2, \S3.4.
 \bibitem{LBS} L. Le Bruyn, S. P. Smith, M. Van den Bergh,
 \emph{Central extensions of three-dimensional Artin--Schelter regular algebras},
-Math. Z. 222 (1996), 171--212.
-\href{https://sites.math.washington.edu/~smith/Research/Central-extns.pdf}{著者公開PDF}.
+Math. Z. 222 (1996), 171--212; \href{https://doi.org/10.1007/PL00004532}{doi:10.1007/PL00004532}.
 \bibitem{EG} P. Etingof, V. Ginzburg,
 \emph{Noncommutative del Pezzo surfaces and Calabi--Yau algebras},
 J. Eur. Math. Soc. 12 (2010), 1371--1416;

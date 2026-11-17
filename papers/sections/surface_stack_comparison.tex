@@ -224,6 +224,14 @@ Abel同値と$\OO$の同定を射、適合する自然同型を2射としてfpqc
 AOU\cite[Introduction, (2)]{AOU}はSerreと反標準次数によるこの立場を既に提案している。
 本稿のHilbert級数の指定はその数値条件を全次数に精密化したものに当たる。
 
+次数一生成の次数付き環$A$に対し、その\emph{二次包絡}を
+\[
+ Q(A):=T_\kk(A_1)\Big/
+ \big\langle\ker(A_1\otimes_\kk A_1\longrightarrow A_2)\big\rangle
+\]
+と定める。これは二次関係のデータを抽出する構成であり、
+AS正則性は定義だけからは従わない。
+
 \begin{proposition}[反標準環とambient候補]\label{prop:intrinsic-ring}
 定義\ref{def:weak-cubic}に対し
 \[
@@ -290,6 +298,8 @@ AOUの関係式商の$m$における完備化が左辺を表す。
  \simeq\widehat{\mathfrak C}_{(\operatorname{coh}X,\OO_X)}.
 \end{equation}
 このfunctorのminiversalな底は$\operatorname{Spf}\kk[[q_1,\ldots,q_8]]$である。
+この同定は相対helixのflat性・生成性とDe Deken--Lowenの比較条件を
+Artin変形の範囲で保つことに依拠する。
 \end{theorem}
 \begin{proof}
 $X$の標準九対象は線束の完全強例外列であり、そのhelixは高次Extの消える幾何的な
@@ -364,7 +374,7 @@ $P_0$を頂点$(0,0)$の右射影対象とし、
 と置く。これは係数環上の有限perfect複体である。
 
 \begin{proposition}[低次数からの代数的候補射]\label{prop:aou-candidate}
-一般の可換marked三次曲面を含むAOUのある開部分上で、
+滑らかな可換marked三次曲面を含み、相対inverse Serre複体の底変更が成立するAOUのある開部分上で、
 $K_m$は次数0に集中し、そのrankは順に$1,4,10,19,31$となる。
 $V=H^0K_1$、$R=\ker(V^{\otimes2}\to H^0K_2)$により、
 有限Grassmannianの商への代数的射
@@ -390,8 +400,8 @@ AOU (9.44)--(9.57)の同値は頂点$(0,0)$を$\OO$へ送る。
 式\eqref{eq:finite-serre}の全次数のorbit環はVan den Berghの反標準環$F$に一致する。
 同論文 (9.6)--(9.10) とVan den Bergh\cite[Chapter 12]{VdB}によれば
 $F=P/(G)$で、$P$は中心一次拡大AS4、$G$は正則正規三次元。
-これは\emph{generic point}で用いる入力であり、無限位数や十分一般の条件を
-コンパクト化全体に適用しない。
+これは\emph{特定の一般位置}で用いる比較入力であり、上の定理ではその内容を
+(i)--(iii)として明示した。全marked成分やコンパクト化全体には拡張しない。
 
 一般のSklyanin頂部では三次中心が一次元である。
 正規化自己同型を$Gx=\sigma(x)G$と書くと、中心正則一次元$t$から$\sigma(t)=t$。
@@ -404,7 +414,14 @@ $\sum_i c_i\partial_i\partial_j f_3=0$であり、滑らかな$f_3$から$c_i=0$
 一般の中心拡大の型がPymの$R(1,3)$であることは\cite[\S3.4]{Pym},\cite{LBS}の入力である。
 
 \begin{theorem}[一般AOU点からのambientの像]\label{thm:aou-dominance}
-上記のgeneric blow-up/中心拡大入力の適用範囲で、命題\ref{prop:aou-candidate}は
+AOUの一般位置の点について次を仮定する。
+(i) 頂点$P_0$は反標準偏極の構造対象に対応し、
+相対inverse Serreによるorbit環はVan den Berghの反標準環と一致する。
+(ii) このorbit環は$P/(G)$と表示され、$P$は$R(1,3)$型の
+中心一次拡大AS4代数、$G$は正則正規三次元である。
+(iii) この比較は滑らかな可換marked点からの形式変形と両立し、
+その8方向をAOUの関係式表示がすべて実現する。
+これらの仮定が成立する一般開部分では、命題\ref{prop:aou-candidate}は
 AS4 ambientへの有理射を与え、$R(1,3)$の7次元成分を支配する。
 対応する中心三次対への有理像は8次元であり、その一般ファイバーは有限である。
 従ってambientへの有理射の一般ファイバーは1次元である。

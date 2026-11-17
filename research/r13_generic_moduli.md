@@ -1,12 +1,12 @@
 # R(1,3) の一般モジュライ：アフィン三次函数、Hessian群、八点配置
 
-2026-11-15 / r13-v1。研究再開時には \`00_research_plan.md\` を先に読む。詳細なLuaLaTeX原稿は同日作成した \`r13_component_moduli_20261115_v1.tex\`（現行bundleに収録）。本ノートは現行の新しい定理・証明の骨格・未解決箇所を自己完結して説明する。従来の四頂点potential・directed syzygyの定理は \`papers/sections/projective_three_space_potentials.tex\`、有限行列証明は \`computations/verify_p3_potentials.py\` を参照。
+2026-11-15 / r13-v1。研究再開時には \`00_research_plan.md\` を先に読む。本ノートは一般商・八点配置に関する研究主張と証明の骨格を保存する。主論文は \`papers/nc-cubic-ambient-moduli.tex\`、四頂点potentialの証明は \`papers/sections/surface_stack_comparison.tex\`、現行の有限線型代数証明書は \`computations/verify_r13_potential.py\` を参照。以下の追加の商同定は主論文には未収録で、現行の独立証明書が欠けるため未検証の研究主張として扱う。
 
 ## 対象と既知の入力
 
 標準14641型quadratic Koszul AS正則Z代数のpointed/頂点スカラーを除いたモジュライ。四頂点16矢の符号付きquartic superpotential（長さ2の経路微分）と、directed四頂点12矢の二つのrank6関係空間による同値は別節で証明済み。Pym, *Quantum deformations of projective three-space* (Adv. Math. 281 (2015), §3.4, arXiv:1403.6444) の R(1,3) は中心一次拡大、Le Bruyn–Smith–Van den Bergh, *Central extensions of three-dimensional Artin–Schelter regular algebras* (Math. Z. 222 (1996), Introduction/Thm3.2.6/Prop4.3.9) が一般中心拡大の7次元族・楕円曲線+8点を与える。以下はこの既存の7次元という数だけから商同値を推論するのではなく、余分なZhang同型を排除する証明を追加したもの。新規性の最終確認・外部査読は未完了。
 
-## 定理 A：19係数から7次元の正確な幾何的商
+## 研究主張 A（追加検証が必要）：19係数から7次元の正確な幾何的商
 
 三変数 \(x,y,z\) に対し \(f=f_3+f_2+f_1\) を次数3,2,1の斉次部分とする。定数は不要。係数空間は \(\mathcal F=\operatorname{Sym}^3(k^3)\oplus\operatorname{Sym}^2(k^3)\oplus k^3\simeq\mathbb A^{19}\)。中心一次元tを導入し \(F=f_3+t f_2+t^2 f_1\)。代数 \(B_f\) は
 \[
@@ -39,7 +39,7 @@
 \]
 ここで \(\mathcal F^\circ\) は必要に応じた非空不変開への縮小。全成分・全境界の同型ではない。
 
-## 定理 B：七係数と位数216の有限群
+## 研究主張 B（追加検証が必要）：七係数と位数216の有限群
 
 三次最高項をHesseにして \(f_3=a(x^3+y^3+z^3)+bxyz\)。一般f2を \(\sum q_{ii}x_i^2+q_{yz}yz+q_{xz}xz+q_{xy}xy\) とする。translation \(x_i\mapsto x_i+\beta_i\) は二次オフ対角係数をそれぞれ
 \(q_{yz}\mapsto q_{yz}+b\beta_x,\ q_{xz}\mapsto q_{xz}+b\beta_y,\ q_{xy}\mapsto q_{xy}+b\beta_z\)
@@ -53,7 +53,7 @@ Hesse pencilのflex 9点を保つprojective群は \(G_{216}=(\mathbb Z/3)^2\rtim
 \]
 七係数写像の一般次数216。計算ではQ(ω)上の3×3行列をprojectiveに216個全列挙し、数値(a,b)=(3,5)のHesse係数軌道24点・安定化群9を確認。有限群の不変関数体の最小生成元・関係式は未計算。
 
-## 定理 C：特殊な8点配置による代数幾何学的同定
+## 研究主張 C（追加検証が必要）：特殊な8点配置による代数幾何学的同定
 
 一般のfについて \(Z_f=V(f_x,f_y,f_z)\subset\mathbb A^3\)。f3が滑らかなので三つの最高次数二次式には無限遠で共通零点がなく、Z_fは長さ8の(2,2,2) complete intersection、一般には8個の異なる点。これらはB_fのt≠0のpoint modules（t中心なので点のshiftは定常、t=1で交換子を零にすることは∂f=0）。
 
@@ -67,7 +67,7 @@ Hilb^8(A3)の「8個の異なる点が三つの二次式でscheme論的に切り
 \]
 （対応する同じ非空開に制限）。これは「楕円曲線＋8点」よりも復元操作を明示した正確な代数幾何学的モジュライであり、point schemeは楕円Eと8点Z_fを持つ。ただし(E,σ,Z_f)のみからの無条件な一意復元は主張しない。
 
-非空性のQQ証明書：f=3(x³+y³+z³)+5xyz+x²+2y²+3z²+x+2y+4z。Groebner消去の一変数多項式は8次squarefree。Sklyanin商の一次central pair条件18×6行列rank6。勾配二次式の別frameのintegrabilityは12×9行列rank8で核がスカラー恒等行列。translate offdiag=b I3、Aff determinant twistの合成は整数有理記号式でPASS。再現コードは継続bundle内の \`verify_r13_generic_geometry.py\` と \`verify_hesse216.py\`。前回のrank188はこの作業では再実行していない。
+非空性のQQ証明書：f=3(x³+y³+z³)+5xyz+x²+2y²+3z²+x+2y+4z。Groebner消去の一変数多項式は8次squarefree。Sklyanin商の一次central pair条件18×6行列rank6。勾配二次式の別frameのintegrabilityは12×9行列rank8で核がスカラー恒等行列。translate offdiag=b I3、Aff determinant twistの合成は整数有理記号式でPASS。八点配置とHesse群の独立再現コードは現行リポジトリにない。対応するrank値・216元列挙は現在の証明書からは検証できない。四頂点rank188は \`computations/verify_r13_potential.py\` と現行証明書を参照。
 
 ## 全既約成分の境界で未解決の問題
 

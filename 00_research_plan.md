@@ -1,6 +1,6 @@
 # 研究方針：内在的非可換三次曲面とambientモジュライの比較
 
-2026-11-17 / surface-v2 / 独立研究正本。**再開時は本書を最初に読む。** 次に `research/cubic_surface_comparison.md`、`research/r13_generic_moduli.md`、`papers/cubic_surface_ambient_moduli.tex` と入力節を読む。
+2026-11-17 / surface-v3 / 独立研究正本。**再開時は本書を最初に読む。** 次に `research/cubic_surface_comparison.md`、`research/r13_generic_moduli.md`、`papers/nc-cubic-ambient-moduli.tex` と入力節を読む。
 
 ## I. 恒常的な研究原則と保存許可
 
@@ -20,7 +20,7 @@ weakly marked intrinsic非可換三次曲面のモジュライとambient AS4・4
 
 ## IV. 次の課題と具体的な着手
 
-(1) AOU有限代数から相対Serre・反標準線型系を直接比較する。必要なbase-changeとheart保存を検査する。(2) Pym R(1,3) locus上でambient射のファイバー・慣性を全幾何学的点で計算する。(3) P3 directed/rolled-up箙と4周期Z代数の整合性を検証し、一般非捩れpotential部分を全AS locusと混同しない。(4) コンパクト化境界、marked忘却、モジュライの代数性を調べる。
+(1) AOU有限代数から相対Serre・反標準線型系を直接比較する。必要なbase-changeとheart保存を検査する。(2) Pym R(1,3) locus上でambient射のファイバー・慣性を全幾何学的点で計算する。(3) P3 directed/rolled-up箙と4周期Z代数の整合性を検証し、一般非捩れpotential部分を全AS locusと混同しない。(4) コンパクト化境界、marked忘却、モジュライの代数性を調べる。(5) AOU反標準環が一般中心三次商で表される比較仮定の適用範囲を一次資料で再確認し、条件付き定理の無条件化を目指す。
 
 ## V. 再現
 
@@ -28,7 +28,7 @@ weakly marked intrinsic非可換三次曲面のモジュライとambient AS4・4
 python3 -m pip install -r requirements-surface.txt
 python3 computations/verify_surface_incidence.py
 python3 computations/verify_r13_potential.py
-latexmk -lualatex papers/cubic_surface_ambient_moduli.tex
+latexmk -lualatex papers/nc-cubic-ambient-moduli.tex
 python3 scripts/verify_surface_bundle.py
 ```
 

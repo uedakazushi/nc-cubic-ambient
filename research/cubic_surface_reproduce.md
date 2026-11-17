@@ -8,7 +8,7 @@
 python3 -m pip install -r requirements-surface.txt
 python3 computations/verify_surface_incidence.py
 python3 computations/verify_r13_potential.py
-latexmk papers/cubic_surface_ambient_moduli.tex
+latexmk papers/nc-cubic-ambient-moduli.tex
 python3 scripts/verify_surface_bundle.py
 ```
 
