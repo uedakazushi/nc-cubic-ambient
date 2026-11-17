@@ -1,4 +1,4 @@
-# 研究指示 — nc-cubic-ambient-moduli
+# 研究指示 — nc-cubic-ambient
 
 2026-11-17 / ambient-v1。本リポジトリは非可換三次曲面のambient射、四周期superpotential、R(1,3)成分の正本である。最初に `00_research_plan.md`、次に `papers/nc-cubic-ambient.tex` と入力節、研究ノート、証明書を読む。**標識忘却は `uedakazushi/nc-cubic-unmark` の独立論文が正本**であり、この研究で同じ標識忘却の主論文を再作成しない。
 

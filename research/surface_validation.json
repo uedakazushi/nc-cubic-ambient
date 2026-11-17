@@ -2,7 +2,7 @@
   "date": "2026-11-17",
   "version": "ambient-v1",
   "source": {
-    "repository": "uedakazushi/nc-cubic-ambient-moduli",
+    "repository": "uedakazushi/nc-cubic-ambient",
     "main": "papers/nc-cubic-ambient.tex",
     "section": "papers/sections/surface_stack_comparison.tex",
     "separation": "Marking-forgetful paper moved to uedakazushi/nc-cubic-unmark"
