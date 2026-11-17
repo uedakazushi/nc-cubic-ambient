@@ -13,6 +13,7 @@ def visit(path):
     for name in re.findall(r'\\input\{([^}]+)\}',text):
         visit(name if name.endswith('.tex') else name+'.tex')
 visit('papers/nc-cubic-ambient.tex')
+assert (root/'computations/verify_r13_affine_quotient.py').is_file()
 assert (root/'computations/verify_pencil_discriminant.py').is_file()
 assert (root/'computations/verify_quantum_casimir_obstruction.py').is_file()
 

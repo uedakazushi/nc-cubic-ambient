@@ -6,4 +6,4 @@
 
 研究区切りにはユーザーの追加承諾なく軽量継続bundleをLibraryへ保存してよい。GitHub mainへのpush、Library保存、組版・計算検証は別々に確認。Libraryの既存ファイルを明示指示なく削除しない。PR・Actions・force pushを使わずmainへfast-forwardする。約15分を目安に研究の区切りでpushする。
 
-検証: `python3 scripts/verify_surface_bundle.py`; `latexmk -lualatex papers/nc-cubic-ambient.tex`。全内在的対象のambient自動認識は保留したまま、R(1,3)の幾何学的同一視・AOU相対比較・境界のH3性を優先する。
+検証: `python3 scripts/verify_surface_bundle.py`; `latexmk -lualatex papers/nc-cubic-ambient.tex`。全内在的対象のambient自動認識は保留したまま、次数付きJacobian型中心拡大はAff3商として証明済みで、全四頂点Zhang同型商とは区別する。次はその差・AOU相対比較・境界のH3性を優先する。

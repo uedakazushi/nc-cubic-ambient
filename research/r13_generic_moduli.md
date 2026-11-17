@@ -1,12 +1,12 @@
 # R(1,3) の一般モジュライ：アフィン三次函数、Hessian群、八点配置
 
-2026-11-15 / r13-v1。研究再開時には \`00_research_plan.md\` を先に読む。本ノートは一般商・八点配置に関する研究主張と証明の骨格を保存する。主論文は \`papers/nc-cubic-ambient.tex\`、四頂点potentialの証明は \`papers/sections/surface_stack_comparison.tex\`、現行の有限線型代数証明書は \`computations/verify_r13_potential.py\` を参照。以下の追加の商同定は主論文には未収録で、現行の独立証明書が欠けるため未検証の研究主張として扱う。
+2026-11-17 / ambient-v2。研究再開時には `00_research_plan.md` を先に読む。本ノートは一般商・八点配置に関する研究主張と証明の骨格を保存する。主論文は `papers/nc-cubic-ambient.tex`、四頂点potentialの証明は `papers/sections/surface_stack_comparison.tex`、現行の有限線型代数証明書は `computations/verify_r13_potential.py` を参照。次数付き代数のアフィン同型商については現行主論文thm:r13-affineに完全証明を追加した。以下の**任意周期のZ代数における余分なZhang同一視の排除**、Hesse216の一般次数、八点配置からの逆復元は未検証の研究主張として区別する。
 
 ## 対象と既知の入力
 
 標準14641型quadratic Koszul AS正則Z代数のpointed/頂点スカラーを除いたモジュライ。四頂点16矢の符号付きquartic superpotential（長さ2の経路微分）と、directed四頂点12矢の二つのrank6関係空間による同値は別節で証明済み。Pym, *Quantum deformations of projective three-space* (Adv. Math. 281 (2015), §3.4, arXiv:1403.6444) の R(1,3) は中心一次拡大、Le Bruyn–Smith–Van den Bergh, *Central extensions of three-dimensional Artin–Schelter regular algebras* (Math. Z. 222 (1996), Introduction/Thm3.2.6/Prop4.3.9) が一般中心拡大の7次元族・楕円曲線+8点を与える。以下はこの既存の7次元という数だけから商同値を推論するのではなく、余分なZhang同型を排除する証明を追加したもの。新規性の最終確認・外部査読は未完了。
 
-## 研究主張 A（追加検証が必要）：19係数から7次元の正確な幾何的商
+## 確立した次数付き商と未解決のZhang剛性
 
 三変数 \(x,y,z\) に対し \(f=f_3+f_2+f_1\) を次数3,2,1の斉次部分とする。定数は不要。係数空間は \(\mathcal F=\operatorname{Sym}^3(k^3)\oplus\operatorname{Sym}^2(k^3)\oplus k^3\simeq\mathbb A^{19}\)。中心一次元tを導入し \(F=f_3+t f_2+t^2 f_1\)。代数 \(B_f\) は
 \[
@@ -25,11 +25,11 @@
 \(\sum_{l,m}A_{il}A_{jm}\epsilon_{lmn}=(\det A)\sum_k\epsilon_{ijk}(A^{-1})_{nk}\)
 を使う。 \(F'\equiv(\det A)^{-1}F(AX+b t,c t)\pmod{k t^3}\)。四変数全体のスカラーを除けばc=1とできる。よって中心直線を保存するgraded同型はこの12次元群の作用と正確に一致する。
 
-### 補題：楕円Sklyaninには一次正規直線族がない
+### 研究補題（追加検証が必要）：楕円Sklyaninには一次正規直線族がない
 
 \(S=B_f/(t)\) の点schemeを滑らかな平面三次曲線 \(E\)、shiftをtranslation \(\sigma_p\)、 \(\mathcal L=\mathcal O_E(1)\) (deg3)、 \(3p\ne0\) とする。もし非零直線 \(L_i=k\ell_i\subset S_1\) が \(L_i S_1=S_1L_{i+1}\) を満たせば、point module graph \((q,\sigma_pq)\) 上で二つの3次元切断空間のbase divisorはそれぞれ \(\mathrm{div}(\ell_i)\) と \(\sigma_p^{-1}\mathrm{div}(\ell_{i+1})\)。部分空間の一致は零schemeの一致を与え、\(\mathcal L\simeq\sigma_p^*\mathcal L\) を強制する。しかしdegree3線束のtranslationによるPicard変化は3pなので矛盾。よって存在しない。
 
-### 定理：一般中心拡大では余分なZhang同一視はない
+### 研究主張（未検証）：一般中心拡大では余分なZhang同一視はない
 
 添字保存Z-algebra同型 \(\check B_f\simeq\check B_{f'}\) を各次数一次の \(g_i\) で書く。 \(t_i\) の像 \(\ell_i=g_i(t)\) は正規直線族をなす。ターゲット中心元t'による商Sklyaninへ射影すると、上の補題と整域性から全像が零となり、 \(\ell_i=c_i t'\)。さらに元の中心性 \(t_i v_{i+1}=v_i t_{i+1}\) を輸送すると \(c_i t'g_{i+1}(v)=c_{i+1}g_i(v)t'\)。t'を消去し \(g_{i+1}=(c_{i+1}/c_i)g_i\)。従ってg_iは一つの線型同型のスカラー倍であり、頂点スカラーを除けばgraded同型。小Artin拡大でも、t'からの一次変位α_iが満たす \(\alpha_i v=v\alpha_{i+1}\) を楕円点graphに評価し、 \(\sigma_p(q)\ne q\) の稠密開からα_i=0を得る。したがって形式自己同型群oidにも余分なZhang変形がない。
 
@@ -37,7 +37,7 @@
 \[
 \boxed{\mathfrak M^\circ_{R(1,3)}\simeq[\mathcal F^\circ/\mathrm{Aff}_3]},\qquad \dim=19-12=7 .
 \]
-ここで \(\mathcal F^\circ\) は必要に応じた非空不変開への縮小。全成分・全境界の同型ではない。
+ここで \(\mathcal F^\circ\) は必要に応じた非空不変開への縮小。**左辺を四頂点Z代数の任意周期商と同一視する部分は未証明**であり、右辺の次数付き代数の商だけを今回論文に昇格した。全成分・全境界の同型でもない。
 
 ## 研究主張 B（追加検証が必要）：七係数と位数216の有限群
 
@@ -67,7 +67,7 @@ Hilb^8(A3)の「8個の異なる点が三つの二次式でscheme論的に切り
 \]
 （対応する同じ非空開に制限）。これは「楕円曲線＋8点」よりも復元操作を明示した正確な代数幾何学的モジュライであり、point schemeは楕円Eと8点Z_fを持つ。ただし(E,σ,Z_f)のみからの無条件な一意復元は主張しない。
 
-非空性のQQ証明書：f=3(x³+y³+z³)+5xyz+x²+2y²+3z²+x+2y+4z。Groebner消去の一変数多項式は8次squarefree。Sklyanin商の一次central pair条件18×6行列rank6。勾配二次式の別frameのintegrabilityは12×9行列rank8で核がスカラー恒等行列。translate offdiag=b I3、Aff determinant twistの合成は整数有理記号式でPASS。八点配置とHesse群の独立再現コードは現行リポジトリにない。対応するrank値・216元列挙は現在の証明書からは検証できない。四頂点rank188は \`computations/verify_r13_potential.py\` と現行証明書を参照。
+非空性のQQ証明書：f=3(x³+y³+z³)+5xyz+x²+2y²+3z²+x+2y+4z。Groebner消去の一変数多項式は8次squarefree。Sklyanin商の一次central pair条件18×6行列rank6。勾配二次式の別frameのintegrabilityは12×9行列rank8で核がスカラー恒等行列。translate offdiag=b I3、Aff determinant twistの合成は整数有理記号式でPASS。八点配置とHesse群の独立再現コードは現行リポジトリにない。対応するrank値・216元列挙は現在の証明書からは検証できない。四頂点rank188は `computations/verify_r13_potential.py` と現行証明書を参照。
 
 ## 全既約成分の境界で未解決の問題
 

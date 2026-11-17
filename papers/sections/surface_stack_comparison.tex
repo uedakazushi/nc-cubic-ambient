@@ -174,6 +174,144 @@ $O_{13}$へ降りる。stabilizerのLie代数零条件も開に制限できる�
 一般次数や有限stabilizerの位数をまだ算出していないので、$N$を粗モジュライそのものとは呼ばない。
 GL商のstack次元は$67-64=3$で、4次元スカラー慣性をrigidifyすると7となる。
 
+
+\subsection{中心一次拡大の次数付き同型とアフィン商}
+\label{sec:r13-affine-quotient}
+以下では四頂点の任意周期の同型ではなく、\emph{一頂点の次数付き代数}
+$B_f$の同型を考える。これは大域Zhang同値の主張とは異なる。
+$U=\kk^3$、$\mathcal F_{19}=\{f\in\kk[U]_{\le3}:f(0)=0\}\simeq\mathbb A^{19}$
+とし、$f_3$が滑らかな平面三次を定める非空開集合を
+$\mathcal F_{19}^{\rm sm}$とする。
+$f=f_3+f_2+f_1$を$t$で斉次化した$F_f$に対して
+式\eqref{eq:r13-relations}で定まる次数付き代数を$B_f$と書く。
+
+\begin{theorem}[R(1,3)中心拡大の次数付き同型]\label{thm:r13-affine}
+$f,f'\in\mathcal F_{19}^{\rm sm}$とする。
+$B_f$の次数一次の中心は$\kk t$であり、
+$B_f$と$B_{f'}$が次数付き代数として同型である必要十分条件は、
+ある$(A,b)\in\operatorname{GL}_3\ltimes U=\operatorname{Aff}_3$
+によって
+\begin{equation}\label{eq:affine-action}
+ f'(u)=\rho_{A,b}(f)(u):=
+ \frac{f(Au+b)-f(b)}{\det A}
+\end{equation}
+となることである（同型の向きを反転すれば群作用の逆を用いる）。
+任意の次数付き同型は、全次数一次生成元の共通スカラー倍を除けば
+$t\mapsto t$、$u\mapsto Au+b t$の形に一意に表される。
+従って次数の共通$\mathbb G_m$-スカラーをrigidifyした
+\emph{次数付き表示族}の同型群oidは
+\[
+ [\mathcal F_{19}^{\rm sm}/\operatorname{Aff}_3]
+\]
+で表される。
+定理\ref{thm:r13-open}の有理数証明点を含むある非空不変開部分では
+stabilizerが有限であり、この商は滑らかな7次元Deligne--Mumford stackである。
+\end{theorem}
+\begin{proof}
+$B_f$の二次関係は、$\wedge^2\kk^4$から$\operatorname{Sym}^2\kk^4$
+へのgraphをなすので、二次部分は完全対称化により
+$\operatorname{Sym}^2\kk^4$と線型同型である。
+一次元$\ell=a_1x+a_2y+a_3z+ct$が中心なら、
+$\ell$と$x,y,z$の交換子はこの対称化表示で
+$a\times\nabla f_3$を最高active次数に持つ。
+$a\ne0$ならこの三つが零であることは、
+適当な線型座標で$f_3$が一変数の三乗になることを強制し、
+平面三次の滑らかさに矛盾する。
+従って$Z(B_f)_1=\kk t$である。
+同じ計算は族でも成り立つ。一次中心を定める有限自由加群間の
+交換子写像は、$\kk^3=\langle x,y,z\rangle$上で各幾何学的ファイバーに
+階数3を持つ。よって基底上で局所的に三次小行列式を可逆にでき、
+一次中心は$\OO_Tt$という直線束であり、任意の底変更と可換する。
+従って以下の同型の記述はfpqc局所的な族についても適用できる。
+
+次数付き同型$\psi:B_f\to B_{f'}$は$\psi(t)=c t'$を満たす。
+全次数一次元を同じ$c^{-1}$倍する次数付き自己同型を
+ターゲットに合成して$\psi(t)=t'$に規格化できる。
+このとき$\psi(u)=Au'+b t'$で、$A$は可逆である。
+$B_{f'}$の交換子を使えば、列ベクトル表示で
+\[
+ \begin{pmatrix}[\psi(y),\psi(z)]\\
+                 [\psi(z),\psi(x)]\\
+                 [\psi(x),\psi(y)]\end{pmatrix}
+ =(\det A)A^{-T}\,\operatorname{sym}(\nabla F_{f'}).
+\]
+一方、$B_f$の関係を$\psi$で送ると、右辺は
+$\operatorname{sym}(\nabla F_f(Au'+bt',t'))$である。
+完全対称化は線型変換に両立するので、
+$\nabla_{u'}F_f(Au'+bt',t')=(\det A)\nabla_{u'}F_{f'}(u',t')$
+が必要十分である。
+従って両斉次三次式は$t'^3$の倍数を除いて等しく、
+$t'=1$で定数項を零へ規格化すると式\eqref{eq:affine-action}となる。
+逆に同式のもとでは六つの二次関係が全て保たれるので、
+$u\mapsto Au'+bt'$は次数付き同型を与える。
+これにより同型の全てと共通スカラーによるrigidificationを得る。
+
+$\dim\mathcal F_{19}^{\rm sm}=19$、
+$\dim\operatorname{Aff}_3=12$である。
+一般stabilizerが有限であることは次の簡単な点で直接検査できる。
+\[
+ f_*=x^3+y^3+z^3+x^2+2y^2+3z^2+x+2y+4z.
+\]
+$\operatorname{Aff}_3$のLie代数元$(M,\beta)$による
+$f$の一次変化は、定数項を除いて
+\[
+ Df(u)(Mu+\beta)-(\operatorname{tr}M)f(u)
+\]
+である。
+$f_*$の三次部分でこれが零なら、
+$x_i^2x_j$の係数から$M$の非対角成分は零、
+$x_i^3$の係数から$M=s\,\mathrm{id}$となる。
+二次部分の係数から
+$\beta=(s/3,2s/3,s)$であり、一次部分の$x$係数は
+$-2s+2s/3=-4s/3$となる。
+従って$s=0$、$M=\beta=0$である。
+この点のstabilizerは標数零の有限型代数群でLie代数が零なので有限。
+有限stabilizer条件の非空不変開へ縮小し、
+滑らかな商の次元$19-12=7$を得る。
+\end{proof}
+\begin{remark}
+Pym\cite[\S3.4]{Pym}および
+Le Bruyn--Smith--Van den Bergh\cite[\S3]{LBS}の
+中心拡大の一般表示と整合する定理であり、
+\emph{graded algebra}の同型類を正確に記述したものである。
+四頂点の任意周期付きZ代数の全同型を
+$\operatorname{Aff}_3$で尽くしたとは主張しない。
+四頂点potentialの商とgraded表示商を一般開上で同型にするには、
+余分なZhang同一視を排除する別の比較が必要である。
+\end{remark}
+
+\begin{proposition}[八次臨界値多項式のアフィン共変性]
+\label{prop:critical-discriminant-covariance}
+$f\in\mathcal F_{19}^{\rm sm}$のJacobian環
+$J_f=\kk[u_1,u_2,u_3]/(\partial_1f,\partial_2f,\partial_3f)$と
+八次多項式$\Delta_f(\lambda)=\det(\lambda+m_f\mid J_f)$
+を考える。
+$f'=\rho_{A,b}(f)$とすると、アフィン変換$u\mapsto Au+b$は
+$\operatorname{Spec}J_{f'}$と$\operatorname{Spec}J_f$を同型にし、
+\begin{equation}\label{eq:critical-discriminant-covariance}
+ \boxed{\quad
+ \Delta_{f'}(\lambda)
+ =(\det A)^{-8}\,
+   \Delta_f\bigl((\det A)\lambda-f(b)\bigr)
+ \quad}
+\end{equation}
+が成立する。これは非被約な臨界点schemeも含めて成り立つ。
+特に、一般の8個のnodalな特異メンバーの対応は、
+次数付き中心拡大$B_f$の同型に対して自然である。
+\end{proposition}
+\begin{proof}
+式\eqref{eq:affine-action}を微分すると
+$\nabla f'(u)=(\det A)^{-1}A^T\nabla f(Au+b)$となる。
+従って二つのJacobianイデアルはアフィン座標変換で対応する。
+対応する有限長8の環上では、$f'$の乗法は
+$(m_f-f(b)\,\mathrm{id})/\det A$に移る。
+その特性多項式を取れば式\eqref{eq:critical-discriminant-covariance}を得る。
+この議論は固有値の相異性を使わず有限長環上で行うので
+非被約な臨界点も含む。
+一般の8つの通常二重点については
+定理\ref{thm:pencil-critical}を適用する。
+\end{proof}
+
 \subsection{任意の周期を持つ関係式stackとの一般点での比較}
 \begin{proposition}\label{prop:period-formal-rigidity}
 $\check B$のFrobenius標準4周期点を取り、二次関係$R\subset B_1^{\otimes2}$の

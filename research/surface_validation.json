@@ -1,6 +1,6 @@
 {
   "date": "2026-11-17",
-  "version": "ambient-v1",
+  "version": "ambient-v2",
   "source": {
     "repository": "uedakazushi/nc-cubic-ambient",
     "main": "papers/nc-cubic-ambient.tex",
@@ -13,18 +13,28 @@
     "AOU_ambient_dominance": "CONDITIONAL on relative inverse Serre base change and formal deformation comparison",
     "global_ambient_recognition": "SUSPENDED, NOT PROVED",
     "all_AS_boundary": "NOT PROVED",
-    "quantum_casimir_mismatch": "Exact finite example, not general theorem"
+    "quantum_casimir_mismatch": "Exact finite example, not general theorem",
+    "R13_graded_affine_quotient": "Proof in thm:r13-affine: exact graded isomorphisms, not arbitrary periodic Z-algebra/Zhang isomorphisms; 19-dimensional cubic coefficient space modulo Aff3; smooth 7-dim DM open.",
+    "critical_value_covariance": "Proof in prop:critical-discriminant-covariance, including nonreduced Jacobian algebras."
   },
   "checks": {
-    "static_source": "To be checked on final standalone paper",
+    "static_source": "In-memory TeX consistency preflight of both modified sources: 33 unique labels, 50 internal references resolved, 9 bib entries, 29 citations resolved, braces and theorem environments balanced.",
     "current_lualatex_run": false,
     "existing_ambient_heavy_computations_rerun": false,
     "earlier_certificates_retained": true,
     "novelty_exhaustive": false,
-    "externally_refereed": false
+    "externally_refereed": false,
+    "affine_witness": "PASS exact SymPy source in container on 2026-11-17: affine gradient covariance, eight rational critical points, degree-eight critical-value polynomial covariance, 19x12 Lie orbit rank 12.",
+    "latexmk_current_version_run": false,
+    "bibliography_primary": "Pym 2015 Adv Math §3.4 PDF and LBS 1996 Math Z §§3,4.3 PDF inspected including screenshots",
+    "affine_script_source": "computations/verify_r13_affine_quotient.py; exact script source executed locally, will verify repository blob after push",
+    "primary_sources": [
+      "Pym Adv. Math. 281 (2015), §3.4 (arXiv PDF checked and screenshot inspected)",
+      "Le Bruyn–Smith–Van den Bergh Math. Z. 222 (1996), §§3, 4.3, especially Props. 4.3.7/4.3.9 (primary PDF checked and screenshot inspected)"
+    ]
   },
   "persistence": {
-    "github_main": "To be confirmed by tool receipt",
+    "github_main": "Not yet committed",
     "library_saved": false
   }
 }

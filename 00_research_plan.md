@@ -1,6 +1,6 @@
 # 研究方針：非可換三次曲面のambient射とR(1,3)成分
 
-2026-11-17 / ambient-v1。研究再開時は本ファイルを最初に読み、`papers/nc-cubic-ambient.tex` と入力節 `papers/sections/surface_stack_comparison.tex`、`research/cubic_surface_comparison.md` を参照する。GitHub mainをこの研究の正本とする。
+2026-11-17 / ambient-v2。研究再開時は本ファイルを最初に読み、`papers/nc-cubic-ambient.tex` と入力節 `papers/sections/surface_stack_comparison.tex`、`research/cubic_surface_comparison.md` を参照する。GitHub mainをこの研究の正本とする。
 
 ## I. 恒常的な研究原則と保存許可
 
@@ -10,7 +10,7 @@
 
 ## II. 今の研究目標
 
-本研究は**ambientが与えられた非可換三次曲面のモジュライ比較**を扱う。四次元quadratic Koszul AS正則代数の正規三次商、四周期Z代数の関係式stack、符号付き四次superpotentialの同値関係、R(1,3)の成分、Poisson延長、固定ambientの正規三次ファイバー、AOUの反標準orbit環からの有理射を明確化する。
+本研究は**ambientが与えられた非可換三次曲面のモジュライ比較**を扱う。四次元quadratic Koszul AS正則代数の正規三次商、四周期Z代数の関係式stack、符号付き四次superpotentialの同値関係、R(1,3)の成分、次数付き中心拡大のアフィン同型群oid、Poisson延長、八次判別式の共変性、固定ambientの正規三次ファイバー、AOUの反標準orbit環からの有理射を明確化する。
 
 **保留：** 内在的弱標識付き非可換三次曲面の全対象でambientのAS正則性が自動的に従うか（反例も未発見）。本稿の定義は内在的な許容構造対象を簡潔に再掲するが、ambient射は超曲面認識部分に限定する。
 
@@ -18,6 +18,8 @@
 
 ## III. 主結果と状態
 
+- 【新たに証明】R(1,3)中心一次拡大$B_f$の一次中心は$kt$。次数付き同型は（全次数共通スカラーを除いて）$f\mapsto(f(Au+b)-f(b))/\det A$の$\operatorname{Aff}_3$作用と完全に一致。graded表示の群oid商$[\mathcal F_{19}^{sm}/\operatorname{Aff}_3]$は一般に滑らかなDM 7次元。素朴なZhang商への昇格は未証明（\`thm:r13-affine\`）。固定次数の計算と独立したLie安定化群の有理数上のrank12証明点を収録。
+- 【新たに証明】Jacobian臨界値八次多項式は$\Delta_{\rho_{A,b}f}(\lambda)=(\det A)^{-8}\Delta_f((\det A)\lambda-f(b))$と変換する。非被約Jacobian schemeにも成立（\`prop:critical-discriminant-covariance\`）。
 - 【証明・正確な計算証明書】R(1,3)四頂点quartic superpotentialの二flattening全方向の接空間、67次元既約成分の一般正則性、rigidified7次元DM商のエタールatlas（`thm:r13-open`）。
 - 【証明】任意に指定した四周期付き関係式stackと非捩れpotentialが同一でない具体的反例（`prop:period-counterexample`）。二因子stabilizerが有限な一般点での形式一致（`prop:period-formal-rigidity`）。
 - 【証明】可換三次曲面のPoisson構造の一意ambient延長、中心三次ペンシル、八次臨界値多項式、8個の通常二重点と中心一次拡大の8個のpoint moduleへの対応（`thm:extension`, `thm:pencil-critical`, `prop:critical-point-modules`）。八点の既知LBS結果と新しい具体的対応を区別。
@@ -28,7 +30,7 @@
 ## IV. 優先課題
 
 1. AOU有限代数の相対inverse Serre・heart・base changeを一次資料と照合し、支配性定理の仮定のどこを無条件化できるか決定する。
-2. R(1,3)の実際の幾何学的ファイバー・慣性・Zhang同型を7係数・Affine3群の商として解析し、数値atlasだけでなく一般同一視を得る。
+2. R(1,3)の**次数付き**同型はAff3商として決定した。次はこれと四頂点Z代数の一般Zhang同型群oidとの差、Hesseの有限同一視の次数、境界・慣性・七係数atlasの群oidを厳密に比較する。
 3. 既知中心三次商の境界、正規性・H3適合性・homological singularityと量子中心値の関係を調べる。
 4. 四周期raw GL商、rigidified PGL商、twisted/untwisted potentialの群oid差を明確化する。標識忘却の一般認識は本研究の達成条件にしない。
 
@@ -36,6 +38,7 @@
 
 ```sh
 python3 -m pip install -r requirements-surface.txt
+python3 computations/verify_r13_affine_quotient.py
 python3 computations/verify_r13_potential.py
 python3 computations/verify_surface_incidence.py
 python3 computations/verify_pencil_discriminant.py

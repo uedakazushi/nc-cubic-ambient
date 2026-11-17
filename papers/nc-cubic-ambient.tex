@@ -21,7 +21,7 @@
 \newcommand{\Cw}{\mathfrak C^{\rm w}}\newcommand{\Cu}{\mathfrak C^{\rm u}}
 \title{非可換三次曲面のambient射と$R(1,3)$成分\\\large 四周期superpotential・Poisson構造・三次超曲面のファイバー}
 \author{植田一石}
-\date{2026年11月17日 / ambient-v1}
+\date{2026年11月17日 / ambient-v2}
 \begin{document}\maketitle
 \begin{abstract}
 標準二次Koszul AS正則な非可換射影三空間と、
@@ -31,10 +31,14 @@
 Pymの$R(1,3)$成分に対し四頂点potentialの全方向の接空間を有理数上で計算し、
 67次元の既約成分の一般正則性と、7次元の滑らかなDeligne--Mumford商の
 エタールatlasを構成する。
+中心一次元を用いて次数付き代数の全同型をアフィン座標変換に帰着し、
+19次元の三次函数空間の$\operatorname{Aff}_3$商として
+別の7次元モジュライ表示を得る。
 可換三次曲面上のPoisson構造は射影三空間へ一意に延長し、
 固定ambientの中心三次超曲面は一般に一次元のペンシルをなす。
 その特異値は八次のJacobian臨界値多項式で検出され、
 一般には8個のnodalな曲面が、ambientの8個のpoint moduleと対応する。
+臨界点schemeと八次多項式のアフィン変換則を非被約な場合も含めて証明する。
 一般のAOU点における反標準orbit環の復元と、
 相対比較仮定の下でのambientへの支配性も述べる。
 内在的三次曲面の全対象に対するAS正則ambientの自動認識、
@@ -48,11 +52,15 @@ AOUからの射の全境界への延長と大域的な標識忘却の商は未�
 Hilbert級数$(1-t^3)/(1-t)^4$を持つ反標準環を
 四次元quadratic Koszul AS正則代数の正規三次商として表すものである。
 この表示が内在的条件から全ての対象について存在するかは未解決であり、
-本稿では**ambientを持つ認識部分**の幾何とそのモジュライに対象を限定する。
+本稿では\emph{ambientを持つ認識部分}の幾何とそのモジュライに対象を限定する。
 
 Van den Bergh\cite[Chapter 12]{VdB}の反標準模型とblow-up自体を区別する。
-Pym\cite[\S3.4]{Pym}の$R(1,3)$中心一次拡大、Le Bruyn--Smith--Van den Bergh
-\cite{LBS}のAS正則性・中心の計算、Mori--Smith\cite{MS}と
+Pym\cite[\S3.4]{Pym}は$R(1,3)$成分の中心一次拡大を
+三次函数のHesse型から与えている。
+Le Bruyn--Smith--Van den Bergh\cite[\S3, Propositions 4.3.7, 4.3.9]{LBS}
+は中心拡大のAS正則性と、一般の8個の特別なpoint moduleをすでに研究した。
+従って本稿では、その存在そのものを新規性として主張しない。
+Mori--Smith\cite{MS}と
 Etingof--Ginzburg\cite{EG}のPBW理論、
 Bocklandt--Schedler--Wemyss\cite{BSW}の符号付きhigher superpotentialを使う。
 AOU\cite{AOU}およびOkawa--Ueda\cite{OU2025}の標識付き三次曲面から
@@ -60,6 +68,8 @@ ambientを復元する問題では、導来同値・heart・底変更を区別�
 
 主結果は命題\ref{prop:period-counterexample}の四周期反例、
 定理\ref{thm:r13-open}の67次元成分と7次元商、
+定理\ref{thm:r13-affine}の次数付き同型の
+$\operatorname{Aff}_3$表示および命題\ref{prop:critical-discriminant-covariance}の八次判別式の共変性、
 定理\ref{thm:extension}のPoisson延長、
 定理\ref{thm:pencil-critical}と命題\ref{prop:critical-point-modules}の
 八つの臨界値とpoint module、
@@ -67,6 +77,10 @@ ambientを復元する問題では、導来同値・heart・底変更を区別�
 命題\ref{prop:aou-orbit-generic}および条件付き定理
 \ref{thm:aou-dominance}のAOU比較である。
 有限計算による証明書と全次数のAS性を文献から導く議論は区別する。
+さらに、ここで完全に扱うのは\emph{次数付き代数}の同型であり、
+任意周期付きZ代数の全同型・全境界の分類ではない。
+定理\ref{thm:aou-dominance}の支配性は形式変形の相対比較を仮定している。
+参考文献の既知結果、本文の証明、現行版で再実行した有限計算を区別して記録する。
 
 内在的な標識忘却自体は独立論文
 \href{https://github.com/uedakazushi/nc-cubic-unmark/blob/main/papers/nc-cubic-unmark.tex}
@@ -74,6 +88,14 @@ ambientを復元する問題では、導来同値・heart・底変更を区別�
 （\texttt{nc-cubic-unmark.tex}）にまとめる。
 本論文のambient射は弱標識付き対象の一部に定義される射であり、
 全大域的な$W(E_6)$商を前提にしない。
+
+\paragraph{成果の階層.}
+前半では四周期の表現と非捩れpotentialの違いを示す。
+次に四頂点potentialの成分性と、
+一頂点の次数付きJacobian型中心拡大のアフィン商を別々に記述する。
+後半ではPoisson中心三次ペンシルと8個の特別なpoint moduleの幾何を調べ、
+最後にAOUからの有理射の定義域と残る相対比較仮定を整理する。
+四頂点の一般Zhang同型をアフィン商と同一視することは未証明である。
 
 \begin{definition}[ambient射の定義域となる内在的対象]\label{def:weak-cubic}
 $\kk$線型noetherian Abel圏$\mathcal A$と対象$\OO$を取り、

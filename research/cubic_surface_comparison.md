@@ -1,6 +1,16 @@
 # ambient射・四周期superpotential・R(1,3)成分の現行研究ノート
 
-2026-11-17 / ambient-v1。再開時は `00_research_plan.md` を最初に読み、次に `papers/nc-cubic-ambient.tex` と `papers/sections/surface_stack_comparison.tex` を読む。証明全文は原稿に置き、本ノートは分類・数値検算・障害の現在有効な情報のみ保持する。標識忘却は別正本 `uedakazushi/nc-cubic-unmark` に移した。
+2026-11-17 / ambient-v2。再開時は `00_research_plan.md` を最初に読み、次に `papers/nc-cubic-ambient.tex` と `papers/sections/surface_stack_comparison.tex` を読む。証明全文は原稿に置き、本ノートは分類・数値検算・障害の現在有効な情報のみ保持する。標識忘却は別正本 `uedakazushi/nc-cubic-unmark` に移した。
+
+## 次数付き中心一次拡大のアフィン同型と八次臨界値の共変性
+
+現行原稿 `papers/sections/surface_stack_comparison.tex` の定理 `thm:r13-affine` と命題 `prop:critical-discriminant-covariance` に証明全文を保持する。
+
+f=f3+f2+f1 ∈ k[u1,u2,u3]（定数項0、最高斉次三次f3が滑らか）をtで斉次化し、[t,ui]=0、[u2,u3]=sym ∂1 F、巡回式で中心拡大B_fを構成する。B_fの一次中心はktである。中心一次元の像を全次数共通スカラーで正規化すれば、任意のgraded代数同型の次数一成分はu↦Au+bt、A∈GL3、b∈k3。関係式を完全対称化した次数二表示で比較するとf' = [f(Au+b)−f(b)]/det(A)。逆にも六関係を保つので、graded表示のrigidified群oidは [F19^sm/Aff3] に一致する。これは**任意に指定した四周期Z代数のZhang同型**を分類したものではない。
+
+安定化群の有限性はf*=x³+y³+z³+x²+2y²+3z²+x+2y+4zで独立に証明できる。Aff3のLie元(M,β)の変形式はDf(Mu+β)−tr(M)f（定数を無視）で、三次係数からM=sI、二次係数からβ=(s/3,2s/3,s)、一次x係数が−4s/3なのでs=0。このrank12が開条件。したがって商はある非空不変開部分でsmooth DM、次元19−12=7。プログラム `computations/verify_r13_affine_quotient.py` はこのrank12をQQで厳密に検算する。
+
+Jacobian環J_f=k[u]/(∂f)は長さ8（f3が滑らか）。臨界値多項式Δ_f(λ)=det(λ+m_f|J_f)。g=(A,b)∈Aff3でf'=ρ_g fとすると臨界schemeはu↦Au+bで同型、m_f'= [m_f−f(b)]/det(A)なので Δ_f'(λ)=(det A)^−8 Δ_f((det A)λ−f(b))。これは重複した臨界点を含むfinite algebraの特性多項式の恒等式。量子中心三次元の固有値はこの可換臨界値と一般には一致しないので混同しない。Pym §3.4およびLBS §3, §4.3の既知中心拡大・八点と、新しい明示同型／変換則をIntroductionで区別。
 
 ## 四周期表示とambientの同値関係
 
