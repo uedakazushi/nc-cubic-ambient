@@ -1,18 +1,21 @@
 # 現行研究ノート：R13・内在的三次曲面・Weyl商
 
-2026-11-17 / surface-v6。最初に `00_research_plan.md` を読む。証明本文は `papers/nc-cubic-ambient-moduli.tex` とその唯一のinput。以下は作業日誌ではない。
+2026-11-17 / surface-v7。最初に `00_research_plan.md` を読む。証明本文は `papers/nc-cubic-ambient-moduli.tex` とその唯一のinput。以下は作業日誌ではない。
 
-## マーキング忘却・構造対象の現在の結論
+## 標識忘却・構造対象の現在の結論
 
-- 現行のweakly marked公理は(A,O)をとり、H=S^{-1}[2]のt-exact性、AZ豊富性、三次曲面Hilbert値に加えてGabriel–Krullのrank-one torsion-free性（qO非零単純・A1からOへのHom消滅）とexceptionality（End(O)=k、Ext^{>0}(O,O)=0）を**独立に要求**する。ambientや一次生成性を仮定しない。圏論的な主定理と十分な証明は `papers/sections/marking_forgetful.tex` にある。
+日本語の術語は標識（marking）・標識付き・弱標識付き・無標識・標識変更。標識忘却とambient射は別論文とする方向がよいが、現在の主原稿は両方の成果と証明を保持している。分割に際して標識忘却論文の定理にambientのAS正則性を無意識に加えないこと。
+
+
+- 現行の弱標識付き公理は(A,O)をとり、H=S^{-1}[2]のt-exact性、AZ豊富性、三次曲面Hilbert値に加えてGabriel–Krullのrank-one torsion-free性（qO非零単純・A1からOへのHom消滅）とexceptionality（End(O)=k、Ext^{>0}(O,O)=0）を**独立に要求**する。ambientや一次生成性を仮定しない。圏論的な主定理と十分な証明は `papers/sections/marking_forgetful.tex` にある。
 
 - 忘却は `M_AOU^adm -> C^w -> C^u`。固定圏上では許容九対象threadの選択群oid、許容構造対象の選択群oidとなる。圏の同定を忘れるとexact自己同値2-groupでのhomotopy quotientとなる。従ってPicard商と呼ぶときはraw 2-groupとスカラーrigidification、同型類集合の商を区別する。
 
 - 可換滑らかな三次曲面Xでは許容構造対象EはL⊗I_Zとなるが、RRからχ(E,E)=1−2length(Z)、exceptionalityからZ=∅。従って線束Lだけが許容。自然同型で割ったexact自己同値はPic(X)⋊Aut(X)、pointedの選択商はBAut(X)。AOUのrelation algebra End(⊕E_i)は全対象の共通tensorで変わらず、relation GIT点をさらにPicで重複して割らない。
 
-- 特殊ファイバーと同定したArtin flat Abel変形（相対Serre・perfect base change・heart保存を要求）では各線束と標準helixの持上げはExt¹=Ext²=0により一意。各標準markingの形式chartは同じweak deformationへ対応し、有限W(E6) torsorになる。全境界・非可換一般点における大域商は未証明。
+- 特殊ファイバーと同定したArtin flat Abel変形（相対Serre・perfect base change・heart保存を要求）では各線束と標準helixの持上げはExt¹=Ext²=0により一意。各標準標識の形式chartは同じweak deformationへ対応し、有限W(E6) torsorになる。全境界・非可換一般点における大域商は未証明。
 
-- **新しい障害の公式**：u=(ξ,π)∈H¹(T_X)⊕H⁰(∧²T_X)、線束LのMorita re-markingによる一次変化は規約を除き (ξ,π)↦(ξ+δ_π(L),π)、δ_π(L)=H¹(π^sharp)c₁(L)。構造対象Lが圏の変形へ持ち上がることと、(-)⊗Lが**同じ変形**の自己同値へ持ち上がることは異なる。後者にはδ=0が必要。
+- **新しい障害の公式**：u=(ξ,π)∈H¹(T_X)⊕H⁰(∧²T_X)、線束LのMorita同値による標識変更の一次変化は規約を除き (ξ,π)↦(ξ+δ_π(L),π)、δ_π(L)=H¹(π^sharp)c₁(L)。構造対象Lが圏の変形へ持ち上がることと、(-)⊗Lが**同じ変形**の自己同値へ持ち上がることは異なる。後者にはδ=0が必要。
 
 - πの零因子Cが滑らかな反標準楕円曲線なら0→Ω¹_X→T_X→T_X|_C→0で、長完全列の階数は7−h⁰(T_X|_C)=3+r（r=0または1）。非空開でr=1：X={x³+y³+z³+txy+t³=0}, C={t=0}ではCの平面移動t=εzがJacobian環のxyzに対応しKS非零。従って一般にrank4。**反標準線束の方向はδの核**：局所Cの方程式s_iに対してπ^sharp(dlog s_i)は正則で、そのČech差がδ_π(O(C))。従ってroot格子Q=K^⊥へのδの制限は全Picに対して同じ階数、一般には4。非常に一般の(X,π)の整数kernelは下記の新定理で計算済み。高次障害は未計算。
 
@@ -22,9 +25,9 @@
 
 主論文の定理 `thm:very-general-picard-kernel` と系 `cor:first-order-pointings` に完全証明。
 
-(1) marked滑らかな三次曲面の既約moduli M^m は六本の順序付き斜交直線のblow-down（一般位置のP²六点）で記述される。W(E6)がmarkingを変える。一次資料：Dolgachev–van Geemen–Kondō, *A complex ball uniformization of the moduli space of cubic surfaces via periods of K3 surfaces*, J. reine angew. Math. 588 (2005), 99–148, §§2.5–2.6, DOI 10.1515/crll.2005.2005.588.99（著者公開PDF https://sites.lsa.umich.edu/idolga/wp-content/uploads/sites/1334/2024/08/cubic05.pdf、p.105を確認）。一次re-markingにはToda, *Deformations and Fourier–Mukai transforms*, JDG 81 (2009) 197–224, arXiv:math/0502571を参照。
+(1) 標識付き滑らかな三次曲面の既約moduli M^m は六本の順序付き斜交直線のblow-down（一般位置のP²六点）で記述される。W(E6)が標識を変える。一次資料：Dolgachev–van Geemen–Kondō, *A complex ball uniformization of the moduli space of cubic surfaces via periods of K3 surfaces*, J. reine angew. Math. 588 (2005), 99–148, §§2.5–2.6, DOI 10.1515/crll.2005.2005.588.99（著者公開PDF https://sites.lsa.umich.edu/idolga/wp-content/uploads/sites/1334/2024/08/cubic05.pdf、p.105を確認）。一次標識変更にはToda, *Deformations and Fourier–Mukai transforms*, JDG 81 (2009) 197–224, arXiv:math/0502571を参照。
 
-(2) smooth anticanonical Poisson sectionを持つmarked pair空間P^mも既約。標準Picard格子Λ=I_{1,6}を自明化してΛ_C=C K⊕Q_C、Q=K^⊥=E6。全パラメータのδ核の共通部分NはW(E6)安定でCKを含む。WのQ_C上の反射表現は既約：任意の非零W安定部分が根と非直交なvを含むなら反射差から根を含み、その軌道72根はQ_Cを張る。非空開でδのrank4なのでNはΛ_C全体でなく、N=CK。ゆえに各D∈Λ\ZKの零点条件δ(D)=0はP^m上の真の閉部分集合。可算個のDを除外すると、非常に一般の(X,π)についてker(δ:Pic(X)→H¹(T_X))=ZK。これは単一のZariski開上での一様な主張ではない。
+(2) smooth anticanonical Poisson sectionを持つ標識付き pair空間P^mも既約。標準Picard格子Λ=I_{1,6}を自明化してΛ_C=C K⊕Q_C、Q=K^⊥=E6。全パラメータのδ核の共通部分NはW(E6)安定でCKを含む。WのQ_C上の反射表現は既約：任意の非零W安定部分が根と非直交なvを含むなら反射差から根を含み、その軌道72根はQ_Cを張る。非空開でδのrank4なのでNはΛ_C全体でなく、N=CK。ゆえに各D∈Λ\ZKの零点条件δ(D)=0はP^m上の真の閉部分集合。可算個のDを除外すると、非常に一般の(X,π)についてker(δ:Pic(X)→H¹(T_X))=ZK。これは単一のZariski開上での一様な主張ではない。
 
 (3) Aut(X)=1の非常に一般な滑らかな可換三次曲面Xと、Poisson成分πが上の条件に入る許容一次Abel変形A_εを考える。特別fiberのexact自己同値はBondal–Orlovによりtensor L（非零shiftなし）。これが固定A_εへ持ち上がればδ_π(L)=0、従ってL∈ZK。逆に相対反Serre H=S_ε^{-1}[2]はt-exactで、特殊fiber上でtensor(-K)なので全ZKを実現する。各LはExt¹=Ext²=0により唯一の許容構造対象L_εへ持ち上がるため、同じA_ε上のpointingをexact自己同値で割った同型類集合はPic/ZK≅Q(E6)^∨≅Z^6。**同型類の集合の結果であり、2-groupの慣性や大域stackの無限成分を主張しない**。当然、全非可換変形や高次形式変形へ無条件には拡張しない。
 
@@ -32,7 +35,7 @@
 
 ### 主要な未解決箇所
 1. NC fiberで許容構造対象のexact自己同値軌道・安定化群・相対慣性を具体化すること。
-2. AOUの標準helix（relation stack）と数値markingの大域的降下を証明すること。
+2. AOUの標準helix（relation stack）と数値標識の大域的降下を証明すること。
 3. 非常に一般の一次変形の整数核は決定済み。特殊fiberの整数核、形式高次の障害、invertible bimoduleによる実際の作用を求めること。
 4. AOU GIT compactificationのどこでheart/構造対象の許容性が保たれるか判定すること。
 
@@ -100,9 +103,9 @@ Hilbert級数(1-t³)/(1-t)^4だけから次数一生成・二次包絡AS4・正�
 
 ## 形式Weyl商と未解決の大域商
 
-一般可換Xの標準markingはW(E6)-torsor。Ext¹(E,E)=Ext²(E,E)=0とLowenにより九対象は各Artin変形へ一意に持ち上がる。DDLの幾何的helix比較で全関係式変形とAbel変形が一致。Oも唯一、逆Serre=helix九移動、ample列によるheartの検出でt-exactness、Artin帰納で反標準ample性とHilbert値が保たれる。HH²=8、HH¹=HH³=0。よって全usual-markingの形式chartのWeyl商はweak形式変形と一致する。
+一般可換Xの標準標識はW(E6)-torsor。Ext¹(E,E)=Ext²(E,E)=0とLowenにより九対象は各Artin変形へ一意に持ち上がる。DDLの幾何的helix比較で全関係式変形とAbel変形が一致。Oも唯一、逆Serre=helix九移動、ample列によるheartの検出でt-exactness、Artin帰納で反標準ample性とHilbert値が保たれる。HH²=8、HH¹=HH³=0。よって通常の全標識の形式chartのWeyl商は弱標識付き形式変形と一致する。
 
-大域化には、全対象へのmarkingの局所存在、K0数値markingによる例外列の一意性、全同型・降下の比較が必要。形式chartの同型や8次元の一致だけで大域商やdegree=|W(E6)|を結論しない。Oを固定するだけでaffine Weyl由来の全追加同一視が自動的に消えるとはしていない。
+大域化には、全対象への標識の局所存在、K0数値標識による例外列の一意性、全同型・降下の比較が必要。形式chartの同型や8次元の一致だけで大域商やdegree=|W(E6)|を結論しない。Oを固定するだけでaffine Weyl由来の全追加同一視が自動的に消えるとはしていない。
 
 ## AOUからambientへの有限計算
 
@@ -112,20 +115,20 @@ AOU§9の(9.44),(9.55)–(9.57)でP0はOへ送られる。Lemma9.2でHは反標�
 
 可換点でtruncation≤3の微分はinjective。関係module J/(VJ+JV)の次数>3が特殊化で零なのでArtin Nakayamaにより消える。このため低次数の自明化は全環・Abel圏の自明化となる。相対Serreと中心三次商の比較仮定が一般位置で成立する場合、AOUの8方向と射影基底15方向を加えた像は23次元。一般の固定ambient中心三次はP1なのでambient像≥22、既知R13族dim22より等号。四頂点rigidified商では8→7、一般fiber1、像の閉包codim0。
 
-ここでは8座標→7座標の展開済み有理式を出していない。finite Serre algorithmの実装、generic degree、Weyl同定、境界での正則性は次の課題。全weakly marked stackの有限型性や全認識定理とも区別する。
+ここでは8座標→7座標の展開済み有理式を出していない。finite Serre algorithmの実装、generic degree、Weyl同定、境界での正則性は次の課題。全弱標識付きstackの有限型性や全認識定理とも区別する。
 
 ## 一次資料（必要箇所）
 
 - Bocklandt–Schedler–Wemyss, arXiv:0802.0162v3, §1、Theorems6.2/6.8。signed/twisted potentialとKoszul解消の関係。
 - Mori–Smith, arXiv:1502.07403v2, Theorem4.2(1)。smoothなcommutative最高三次ならA_(f,λ)は3CY。
 - Pym, arXiv:1403.6444, §2, §3.4。規格化graded CY変形とR13の中心拡大表示。全任意周期stackの分類ではない。
-- AOU, arXiv:2404.00175v1, Introduction(2), §5.4, §9, Lemma9.2, Theorem9.4。(9.44)等のOとmarked threadの対応を確認。
+- AOU, arXiv:2404.00175v1, Introduction(2), §5.4, §9, Lemma9.2, Theorem9.4。(9.44)等のOと標識付き threadの対応を確認。
 - VdB, arXiv:math/9809116, Chapter12、Remark12.0.5。反標準モデルとblow-upそのものを区別。
 - Le Bruyn–Smith–Van den Bergh, Math.Z.222(1996),171–212。一般中心一次拡大のAS性と7次元族。
 - Etingof–Ginzburg, arXiv:0709.3593v4, Proposition7.3.1(ii)、Theorem3.3.2、§9。PBWと中心元。
 - Lowen, arXiv:math/0407019, TheoremA。対象の持上げのExt²障害／Ext¹自由度。
 - De Deken–Lowen, JNCG5(2011),477–505, DOI10.4171/JNCG/83, Theorems4.5/5.13/5.15、Definition5.12。公式PDF https://ems.press/content/serial-article-files/30497 。forward Ext消滅、flat性、Z生成helixを確認して使用。
-- Okawa–Ueda, arXiv:2508.04986v1, Definition1.1, Theorem6.4。marked AS面と楕円データの双有理比較。weak Weyl quotient定理ではない。
+- Okawa–Ueda, arXiv:2508.04986v1, Definition1.1, Theorem6.4。標識付き AS面と楕円データの双有理比較。weak Weyl quotient定理ではない。
 - Okawa–Ueda, OWR44/2024, pp2557–2558, DOI10.4171/OWR/2024/44。affine Weyl、K0一意性、pure helixに関するConjectures1–3。
 
 新規性の網羅的確認・外部査読は未実施。再現手順と今回の検証範囲は隣のreproduce/validationを読む。

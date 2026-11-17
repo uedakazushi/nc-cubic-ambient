@@ -19,9 +19,9 @@
 \newcommand{\Pic}{\operatorname{Pic}}\newcommand{\Aut}{\operatorname{Aut}}
 \newcommand{\End}{\operatorname{End}}\newcommand{\RHom}{\operatorname{RHom}}
 \newcommand{\Cw}{\mathfrak C^{\rm w}}\newcommand{\Cu}{\mathfrak C^{\rm u}}
-\title{非可換三次曲面のマーキング忘却とPicard作用\\\large 構造対象・形式Weyl商・ambient比較}
+\title{非可換三次曲面の標識忘却とPicard作用\\\large 構造対象・形式Weyl商・ambient比較}
 \author{植田一石}
-\date{2026年11月17日 / surface-v6}
+\date{2026年11月17日 / surface-v7}
 \begin{document}\maketitle
 \begin{abstract}
 非可換三次曲面を、反標準Serre作用、Artin--Zhang豊富性と三次曲面のHilbert値を持つ
@@ -32,7 +32,7 @@ AOUの標準九対象helixから構造対象へ、さらに基礎Abel圏へ至�
 共通線束捩れが例外列のrelation表示に新しい点を与えないことを示す。
 相対Serre作用とbase-changeの条件を明示したArtin形式近傍において、
 構造対象・標準helixの持上げと有限$W(E_6)$商を比較する。
-一次非可換変形でのPicard re-marking障害を
+一次非可換変形でのPicard群による標識変更の障害を
 $H^1(\pi^\sharp)c_1(L)$として計算し、滑らかな反標準楕円曲線のもとで
 その階数が3または4、一般には4であることを示す。
 反標準方向は一次障害の核に入り、非常に一般の組$(X,\pi)$では
@@ -50,8 +50,8 @@ point moduleに関する結果も保持する。
 
 
 \section{目的・先行研究・結果の適用範囲}
-本稿の中心問題はAOUのmarkedな九対象helixを弱い構造対象へ、
-さらに構造対象を忘れて基礎Abel圏へ移す二段階のモジュライ比較である。
+本稿の中心問題は、AOUの標識付き九対象helixから許容構造対象だけを残し、
+さらに構造対象を忘れて基礎Abel圏へ移る二段階のモジュライ比較である。
 内在的定義にはrank-one torsion-free性とexceptionalityを独立に要求し、
 ambientのquadratic AS-regularityは仮定しない。
 定理\ref{thm:forgetful-fibres}は忘却の2-fiberと自己同値作用の一般的記述、
@@ -66,7 +66,7 @@ $W(E_6)$商である。
 構造対象のexact自己同値軌道を決定する。
 
 Abdelgadir--Okawa--Ueda\cite{AOU}は九頂点18矢の関係式モジュライを構成した。
-Okawa--Ueda\cite{OU2025}はmarked AS surfaceをhelixで定義する。
+Okawa--Ueda\cite{OU2025}は標識付き AS surfaceをhelixで定義する。
 低次数の変形の比較にはDe Deken--Lowen\cite{DDL}とLowen\cite{Lowen}を用いる。
 可換圏の自己同値の分類にはBondal--Orlov\cite{BO}、
 Poisson方向を含むAbel変形の一次比較にはToda\cite{Toda}を参照する。
@@ -81,7 +81,7 @@ Van den Bergh\cite[Chapter 12]{VdB}の反標準モデルとblow-upを区別し�
 Pym\cite[\S3.4]{Pym}の$R(1,3)$成分、LBS\cite{LBS}の中心拡大、
 Etingof--Ginzburg\cite{EG}のPBW構成を使う。
 定理\ref{thm:aou-dominance}は相対比較仮定の下での一般支配性であり、
-marking忘却の大域商を証明するものではない。
+標識忘却の大域商を証明するものではない。
 
 \input{papers/sections/marking_forgetful.tex}
 \input{papers/sections/surface_stack_comparison.tex}
@@ -392,7 +392,7 @@ Serre関手が$\mathsf S_A=(-1)[2]$なら
 \[
  \HH^1(X)=0,\qquad \dim\HH^2(X)=4+4=8,\qquad \HH^3(X)=0.
 \]
-従ってHochschild複体で制御される通常のmarked形式変形は無障害で、
+従ってHochschild複体で制御される通常の標識付き形式変形は無障害で、
 そのminiversalな底は8次元形式円板である。
 \end{proposition}
 \begin{proof}
@@ -410,7 +410,7 @@ $\wedge^3T_X=0$なので$\HH^3=0$。
 \end{proof}
 
 \section{二種類の箙と、未完の大域比較}
-AOUのmarked曲面模型では9頂点18矢の箙に9本の二次関係があり、
+AOUの標識付き曲面模型では9頂点18矢の箙に9本の二次関係があり、
 3-CY completionは9頂点27矢の三次potentialを持つ。
 非可換$\PP^3$の標準4周期模型では4頂点16矢、四次superpotentialの二階微分を使う。
 前者は曲面の例外列・helixに付随し、後者は4次元AS正則ambientに付随する。
@@ -426,16 +426,16 @@ CY次元も3と4で異なり、同じ箙の単純な部分potentialではない�
 を作り、低次数での積を計算して$Q(A)$を得ることである。
 これは構造対象とSerre関手が同定された良い範囲でのレシピである。
 全体で射にするには、相対Homの底変更、豊富性、二次包絡のAS性、正規三次核、
-heartとmarkingの同値関係を証明する必要がある。
+heartと標識の同値関係を証明する必要がある。
 
 \paragraph{現在の結論と限界.}
 定理\ref{thm:r13-open}は四頂点potentialの全方向で成分の一般正則性と7次元atlasを与える。
 命題\ref{prop:period-formal-rigidity}はこの一般点で任意の選択周期の追加方向を排除するが、
 命題\ref{prop:period-counterexample}が示す大域的な相違は残る。
 定理\ref{thm:formal-weyl}は可換点の形式Weyl商であり、
-大域商のためには命題\ref{prop:global-weyl-criterion}のmarking認識を証明する必要がある。
+大域商のためには命題\ref{prop:global-weyl-criterion}の標識認識を証明する必要がある。
 定理\ref{thm:aou-dominance}では一般AOUからの有理ambient射と余次元0を得たが、
-全weakly marked対象が超曲面認識部分に入ること、コンパクト化全体で射が正則であること、
+全弱標識付き対象が超曲面認識部分に入ること、コンパクト化全体で射が正則であること、
 全境界でのsmooth proper性は未証明である。
 全potential境界の明示分類、7係数atlasの有限同一視の次数、Weyl商の大域的な一般次数も未決定である。
 

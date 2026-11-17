@@ -1,7 +1,7 @@
 % !TeX root = ../nc-cubic-ambient-moduli.tex
-\section{内在的定義と二段階のマーキング忘却}\label{sec:weak-definition}
+\section{内在的定義と二段階の標識忘却}\label{sec:weak-definition}
 本節では$\kk=\mathbb C$とする。ambient、次数一生成性、二次包絡のAS正則性は仮定しない。
-\begin{definition}[許容構造対象とweak marking]\label{def:weak-cubic}
+\begin{definition}[許容構造対象と弱標識]\label{def:weak-cubic}
 $\mathcal A$を$\kk$線型noetherian Abel圏とし、$D^b(\mathcal A)$は
 Hom有限なsmooth proper dg enhancementとSerre関手$\mathsf S$を持つとする。
 $H=\mathsf S^{-1}[2]$は$t$-exactで$H(\mathcal A)=\mathcal A$を満たす。
@@ -20,7 +20,7 @@ $q:\mathcal A\to\mathcal A/\mathcal A_1$を商関手とする。
 \end{equation}
 を満たすことをいう。式\eqref{eq:gk-rank}が内在的な
 rank-one torsion-free性の意味である。組$(\mathcal A,\OO)$を
-\emph{weakly marked非可換三次曲面}と呼ぶ。
+\emph{弱標識付き非可換三次曲面}と呼ぶ。
 \end{definition}
 これらは明示的な公理であり、exceptionalityやrank条件が以前の数値的公理から
 自動的に従うとは主張しない。exactなAbel同値はGabriel--Krull filtration、
@@ -71,7 +71,7 @@ $\mathscr S(\mathcal A)$、固定した$(\mathcal A,\OO)$内の
 先頭同定付き許容標準helixの群oidを$\mathscr M(\mathcal A,\OO)$とする。
 式\eqref{eq:two-forgettings}の基礎圏との同定を保持した2-fiberはそれぞれ
 $\mathscr M(\mathcal A,\OO)$と$\mathscr S(\mathcal A)$である。
-基礎圏の同定を忘れ、その同値類の上で考えると、weak markingの群oidは
+基礎圏の同定を忘れ、その同値類の上で考えると、弱標識の群oidは
 \[
  [\mathscr S(\mathcal A)/\Aut^{(2)}_{\rm ex}(\mathcal A)]
 \]
@@ -197,8 +197,8 @@ $\mathfrak m_RM$への$\Ext^1$消滅によって$M$への射が得られ、
 rank条件は特殊ファイバー上で確認済みである。
 \end{proof}
 
-\begin{theorem}[通常のmarkingに限った形式Weyl商]\label{thm:formal-weyl}
-$\Aut(X)=1$なる滑らかな三次曲面$X$を取り、通常の幾何学的markingの集合を
+\begin{theorem}[通常の標識に限った形式Weyl商]\label{thm:formal-weyl}
+$\Aut(X)=1$なる滑らかな三次曲面$X$を取り、通常の幾何学的標識の集合を
 $\operatorname{Mark}(X)$とする。各$m$の標準九対象line-bundle helixで先頭を
 $\OO_X$に正規化し、頂点スカラーをrigidifyする。
 許容相対変形にそのhelixの持上げを加える形式関手を$\widehat{\mathfrak M}_m$とすると
@@ -223,16 +223,16 @@ helixの生成性と持上げ、Abel圏・helix代数・有限threadの変形の
 反標準部分列の豊富性と切断数は前定理の証明で保持される。
 
 $\operatorname{Mark}(X)$は古典的$W(E_6)$-torsorである\cite[\S2.3]{AOU}。
-各chartを同じ忘却先と同定することでre-marking作用を定義でき、
+各chartを同じ忘却先と同定することで標識変更作用を定義でき、
 持上げの一意性により合成は整合的である。
 $\HH^1=\HH^3=0$、$\dim\HH^2=8$は命題\ref{prop:hh}による。
 通常のHochschild変形理論との比較を満たす範囲で無障害性と8次元の形式底を得る。
 \end{proof}
 
 \begin{proposition}[大域商の十分条件]\label{prop:global-weyl-criterion}
-$\Cw$の部分$\mathfrak C^\circ$と許容marked部分$M^\circ$について、
-(i) 族がエタール局所で標準markingを持ち、
-(ii) markingの忘却が集合層を表し数値的markingの層と一致し、
+$\Cw$の部分$\mathfrak C^\circ$と許容標識付き部分$M^\circ$について、
+(i) 族がエタール局所で標準標識を持ち、
+(ii) 標識の忘却が集合層を表し数値的標識の層と一致し、
 (iii) この数値層が$W(E_6)$-torsorでAOU側の全対象・全同型を表す、と仮定する。
 このとき$M^\circ\to\mathfrak C^\circ$は$W(E_6)$-torsorで、
 $[M^\circ/W(E_6)]\simeq\mathfrak C^\circ$である。
@@ -241,7 +241,7 @@ $[M^\circ/W(E_6)]\simeq\mathfrak C^\circ$である。
 (ii),(iii)は$M^\circ\times_{\mathfrak C^\circ}M^\circ\simeq M^\circ\times W(E_6)$を与え、
 (i)がエタール全射性を与える。従ってtorsorの降下groupoidと一致する。
 \end{proof}
-三条件は非可換全域では未証明である。通常のmarkingの形式的持上げから、
+三条件は非可換全域では未証明である。通常の標識の形式的持上げから、
 全てのhelixが同じ有限Weyl軌道にあることや大域的な有限次数を結論しない。
 
 \section{Picard作用は固定した非可換fiberを保つとは限らない}\label{sec:picard-first-order}
@@ -249,13 +249,13 @@ $[M^\circ/W(E_6)]\simeq\mathfrak C^\circ$である。
 一般のFourier--Mukai同値はHochschild変形パラメータも移す
 \cite[Theorem 1.1]{Toda}。以下はそのline-bundleの場合をČech表示で確認するものである。
 
-\begin{proposition}[一次のre-marking障害]\label{prop:picard-first-order}
+\begin{proposition}[一次の標識変更障害]\label{prop:picard-first-order}
 滑らかな三次曲面$X$の一次Abel変形を、HKRの規約
 \[
  HH^2(X)=H^1(X,T_X)\oplus H^0(X,\wedge^2T_X),\qquad u=(\xi,\pi)
 \]
 で記述する。局所積は$a*b=ab+\frac\epsilon2\pi(da,db)$とする。
-$L$を持ち上げた右加群の局所自己準同型環を使うre-markingは、変形類を
+$L$を持ち上げた右加群の局所自己準同型環を使う標識変更は、変形類を
 \begin{equation}\label{eq:picard-shear}
  r_L(\xi,\pi)=(\xi+\delta_\pi(L),\pi),\qquad
  \delta_\pi(L)=H^1(\pi^\sharp)(c_1(L))\in H^1(X,T_X)
@@ -279,7 +279,7 @@ $\xi_{ij}+\pi^\sharp(d\log g_{ij})$となり、式\eqref{eq:picard-shear}を得�
 $L$の持上げに必要な一次の遷移補正は内的共役を一次では変えない。
 三重交叉上のスカラー障害とその変更は$H^2(\OO_X)$に入るが、三次曲面では零である。
 従ってこの計算はAbel変形の同型類に依存する。
-固定変形の自己同値が持ち上がれば、re-marking前後の変形類は同じでなければならず、
+固定変形の自己同値が持ち上がれば、標識変更前後の変形類は同じでなければならず、
 $H^1(T_X)$成分の差は零となる。ここではこの必要条件から高次Artin底上の
 十分性を結論していない。
 \end{proof}
@@ -388,13 +388,13 @@ $\delta_\pi:\Pic(X)\to H^1(X,T_X)$の整数核は
 その3次元核がPicard整数格子の階数3の部分格子を含むとは限らない。
 \end{theorem}
 \begin{proof}
-六本の順序付き互いに交わらない直線でmarkedした滑らかな三次曲面の
+六本の順序付きで互いに交わらない直線によって標識を付けた滑らかな三次曲面の
 モジュライ$\mathcal M^{\rm m}$は、一般位置の六点配置の
-$\PGL_3$商として既約であり、$W(E_6)$はmarking変更によって作用する
+$\PGL_3$商として既約であり、$W(E_6)$は標識変更によって作用する
 \cite[\S\S2.5--2.6]{DGK}。
 この上でPoisson構造$\pi$の零因子が滑らかな部分の非零全空間を
 $\mathcal P^{\rm m}$とする。これは既約である。
-標準Picard格子$\Lambda=I_{1,6}$はmarkingによって自明化され、
+標準Picard格子$\Lambda=I_{1,6}$は標識によって自明化され、
 \[
  \Lambda_\mathbb C=\mathbb C K\oplus Q_\mathbb C,
  \qquad Q=K^\perp\simeq E_6
@@ -407,7 +407,7 @@ $\delta_b$の核の共通部分を
  N=\bigcap_{b\in\mathcal P^{\rm m}}
        \ker(\delta_b:\Lambda_\mathbb C\to H^1(X,T_X))
 \]
-と置く。これはmarking変更の自然性から$W(E_6)$不変である。
+と置く。これは標識変更の自然性から$W(E_6)$不変である。
 命題\ref{prop:canonical-kernel}により$\mathbb CK\subset N$である。
 $W(E_6)$は$Q_\mathbb C$上で既約に作用する。
 実際、任意の非零な不変部分空間$U$のベクトルがある根$\alpha$と
@@ -474,7 +474,7 @@ $\Pic(X)/\mathbb ZK_X$となる。
 この結果は「非常に一般」という条件と一次Artin底、
 許容相対heart・Serreの仮定を持つ。
 任意の有限型の非可換大域成分の一般点に直ちに適用するものではなく、
-高次変形での自己同値の全持上げやAOUのmarked GIT商の有限性も結論しない。
+高次変形での自己同値の全持上げやAOUの標識付きGIT商の有限性も結論しない。
 とくに$Q(E_6)^\vee$は整数格子の商であり、
 Poisson一次変形の底に新しい連続的な6次元成分を作ったわけではない。
 \end{remark}

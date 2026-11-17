@@ -1,6 +1,6 @@
 {
   "date": "2026-11-17",
-  "version": "surface-v6",
+  "version": "surface-v7",
   "proof_review": {
     "new_surface_proofs_examined": true,
     "new_categorical_statements": "Ordinary proofs with explicitly cited hypotheses; not formalized or externally refereed",
@@ -172,5 +172,13 @@
     "very_general_picard_kernel": "Proof newly written and checked algebraically, not externally refereed; uses W(E6) irreducibility and countable avoidance",
     "fixed_nc_first_order_orbits": "Conditional on admissible relative Abel deformation and trivial Aut(X); no stack inertia classified",
     "genericity": "Very general in irreducible marked smooth cubic-Poisson parameter space; not a single Zariski-open assertion"
+  },
+  "editorial_update": {
+    "japanese_terminology": "標識・標識付き・弱標識付き・無標識・標識忘却・標識変更",
+    "preserved": "English bibliographic titles, repository file names, TeX labels and mathematics",
+    "publication_plan": "Two papers recommended (forgetting/Picard versus ambient/R(1,3)); physical split not yet performed",
+    "new_proofs_added": false,
+    "source_compilation_not_rerun": true,
+    "status": "Terminology and publication-structure plan updated; referential checks pending final tree validation"
   }
 }
