@@ -100,5 +100,39 @@
       "charpoly_identity": true,
       "notes": "SymPy exact witness checked in the working container with an equivalent version of the source; genericity proof is in manuscript."
     }
-  ]
+  ],
+  "computational_observation": {
+    "script": "computations/verify_quantum_casimir_obstruction.py",
+    "date": "2026-11-17",
+    "executed_equivalent_source_locally": true,
+    "exact_repository_source_reexecuted": false,
+    "relations_rank_4": 86,
+    "shape": [
+      102,
+      121
+    ],
+    "center_verified_by_rowspace_membership": true,
+    "classical_values": [
+      -146,
+      -142,
+      -114,
+      -110,
+      110,
+      114,
+      142,
+      146
+    ],
+    "quantum_center_values": [
+      -290,
+      -254,
+      -30,
+      -2,
+      2,
+      30,
+      254,
+      290
+    ],
+    "affine_equivalence_rejected": true,
+    "claim_status": "Exact finite example, not general theorem"
+  }
 }

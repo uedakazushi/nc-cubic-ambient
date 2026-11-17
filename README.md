@@ -4,12 +4,15 @@
 
 目標はintrinsic H3／weakly marked三次曲面、14641 ambient・4頂点potential、AOUのmarked AS曲面モジュライを比較し、対応射の定義域・像・ファイバー・同型を決定すること。Pym R(1,3)の接空間やW(E6)の形式近傍は扱うが、全大域weakモジュライのWeyl商同定と全対象の超曲面認識は**未証明**。AOUの一般幾何学的点でのinverse Serre orbit環は既存の導来同値から復元できるが、支配性は相対底変更と形式変形の比較仮定の下での結論である。Poisson中心三次ペンシルには一般に8個のnodalな特異曲面があり、中心一次拡大の$t\neq0$の8個のpoint moduleと同じJacobian臨界点で記述される（現行論文の定理・命題）。8個のpoint moduleの存在自体はLBS (1996)の既知結果。
 
+量子中心三次元の値が古典的な8臨界値に一致しない厳密な計算例を研究ノートに保持する。この結果は一般的な量子判別式の定理としては未確立。
+
 ## 再現
 ```sh
 python3 -m pip install -r requirements-surface.txt
 python3 computations/verify_surface_incidence.py
 python3 computations/verify_r13_potential.py
 python3 computations/verify_pencil_discriminant.py
+python3 computations/verify_quantum_casimir_obstruction.py
 latexmk -lualatex papers/nc-cubic-ambient-moduli.tex
 python3 scripts/verify_surface_bundle.py
 ```

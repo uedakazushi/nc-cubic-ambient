@@ -20,7 +20,7 @@ weakly marked intrinsic非可換三次曲面のモジュライとambient AS4・4
 
 ## IV. 次の課題と具体的な着手
 
-(1) AOU有限代数から相対Serre・反標準線型系を直接比較する。必要なbase-changeとheart保存を検査する。(2) Pym R(1,3) locus上でambient射のファイバー・慣性を全幾何学的点で計算する。とくに8個のaffine point moduleにおける量子中心三次元の値と、可換臨界値の比較を行う。(3) P3 directed/rolled-up箙と4周期Z代数の整合性を検証し、一般非捩れpotential部分を全AS locusと混同しない。(4) コンパクト化境界、marked忘却、モジュライの代数性を調べる。(5) AOU Theorem 9.4・Lemma 9.2とVdB Chapter 12から一般幾何学的点の反標準orbit環F=P/(G)を証明した。残る相対Serre・base-change・heartの比較と形式変形8方向の比較を検証して支配性の条件を外す。
+(1) AOU有限代数から相対Serre・反標準線型系を直接比較する。必要なbase-changeとheart保存を検査する。(2) Pym R(1,3) locus上でambient射のファイバー・慣性を全幾何学的点で計算する。8個のaffine point module上の量子中心値と可換臨界値は一般に一致するとは限らないことを有限計算例で確認済み。今後は量子中心三次商の幾何的特異値・心の変化とこの中心値との関係を調べる。(3) P3 directed/rolled-up箙と4周期Z代数の整合性を検証し、一般非捩れpotential部分を全AS locusと混同しない。(4) コンパクト化境界、marked忘却、モジュライの代数性を調べる。(5) AOU Theorem 9.4・Lemma 9.2とVdB Chapter 12から一般幾何学的点の反標準orbit環F=P/(G)を証明した。残る相対Serre・base-change・heartの比較と形式変形8方向の比較を検証して支配性の条件を外す。
 
 ## V. 再現
 
