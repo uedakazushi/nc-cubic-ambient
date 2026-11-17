@@ -21,7 +21,7 @@
 \newcommand{\Cw}{\mathfrak C^{\rm w}}\newcommand{\Cu}{\mathfrak C^{\rm u}}
 \title{非可換三次曲面のマーキング忘却とPicard作用\\\large 構造対象・形式Weyl商・ambient比較}
 \author{植田一石}
-\date{2026年11月17日 / surface-v5}
+\date{2026年11月17日 / surface-v6}
 \begin{document}\maketitle
 \begin{abstract}
 非可換三次曲面を、反標準Serre作用、Artin--Zhang豊富性と三次曲面のHilbert値を持つ
@@ -35,8 +35,12 @@ AOUの標準九対象helixから構造対象へ、さらに基礎Abel圏へ至�
 一次非可換変形でのPicard re-marking障害を
 $H^1(\pi^\sharp)c_1(L)$として計算し、滑らかな反標準楕円曲線のもとで
 その階数が3または4、一般には4であることを示す。
-反標準方向は一次障害の核に入るが、$E_6$ root方向は一般に核に入らない。
-これにより、構造対象の持上げと同一変形の自己同値の持上げを区別する。
+反標準方向は一次障害の核に入り、非常に一般の組$(X,\pi)$では
+Picard整数格子上の核はちょうど$\mathbb ZK_X$となる。
+相対反Serre自己同値を併用して、許容一次非可換変形の固定圏上で
+構造対象のexact自己同値類が$\Pic(X)/\mathbb ZK_X\simeq\mathbb Z^6$
+で分類されることを証明する。これにより構造対象の持上げと、
+同一変形の自己同値の持上げを区別する。
 四頂点potentialの$R(1,3)$成分、Poisson延長、中心三次ペンシルと八点の
 point moduleに関する結果も保持する。
 全対象のambient認識、大域Weyl商、全非可換圏での構造対象の軌道分類は未解決とする。
@@ -57,6 +61,9 @@ ambientのquadratic AS-regularityは仮定しない。
 $W(E_6)$商である。
 命題\ref{prop:picard-first-order}、定理\ref{thm:picard-obstruction-rank}、
 命題\ref{prop:canonical-kernel}は非可換一次変形におけるPicard作用の障害を記述する。
+さらに定理\ref{thm:very-general-picard-kernel}は整数Picard群上での障害の核を、
+系\ref{cor:first-order-pointings}は固定された許容非可換一次変形における
+構造対象のexact自己同値軌道を決定する。
 
 Abdelgadir--Okawa--Ueda\cite{AOU}は九頂点18矢の関係式モジュライを構成した。
 Okawa--Ueda\cite{OU2025}はmarked AS surfaceをhelixで定義する。
@@ -482,6 +489,12 @@ Theorems 4.5, 5.13, 5.15 and Definition 5.12.
 \emph{Marked Artin--Schelter surfaces of del Pezzo types},
 \href{https://arxiv.org/abs/2508.04986}{arXiv:2508.04986v1} (2025),
 Definition 1.1 and Theorem 6.4.
+\bibitem{DGK} I. Dolgachev, B. van Geemen, S. Kond\=o,
+\emph{A complex ball uniformization of the moduli space of cubic surfaces
+via periods of K3 surfaces},
+J. reine angew. Math. 588 (2005), 99--148,
+\href{https://doi.org/10.1515/crll.2005.2005.588.99}{doi:10.1515/crll.2005.2005.588.99};
+\S\S 2.5--2.6.
 \bibitem{BO} A. Bondal, D. Orlov,
 \emph{Reconstruction of a variety from the derived category and groups of autoequivalences},
 Compositio Math. 125 (2001), 327--344;

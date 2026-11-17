@@ -1,6 +1,6 @@
 {
   "date": "2026-11-17",
-  "version": "surface-v5",
+  "version": "surface-v6",
   "proof_review": {
     "new_surface_proofs_examined": true,
     "new_categorical_statements": "Ordinary proofs with explicitly cited hypotheses; not formalized or externally refereed",
@@ -123,10 +123,10 @@
     "affine_equivalence_rejected": true,
     "claim_status": "Exact finite example, not general theorem"
   },
-  "focus": "Marking forgetful maps and first-order Picard re-marking",
+  "focus": "Integral Picard obstruction kernel and first-order forgetting orbits",
   "current_checks": {
     "date": "2026-11-17",
-    "source_reference_check": "run on three TeX sources in connector preflight; labels and bibliography all resolved",
+    "source_reference_check": "Rechecked all 3 current TeX sources in connector before push",
     "new_computation": {
       "script": "computations/verify_marking_lattice.py",
       "run": true,
@@ -134,6 +134,43 @@
     },
     "latexmk_current_version_run": false,
     "legacy_ambient_ranks_rechecked": false,
-    "novelty_exhaustive_review": false
+    "novelty_exhaustive_review": false,
+    "new_theorems": [
+      "thm:very-general-picard-kernel",
+      "cor:first-order-pointings"
+    ],
+    "proof_location": "papers/sections/marking_forgetful.tex",
+    "new_argument": "W(E6) irreducibility on Q_C plus countable avoidance on irreducible marked moduli; exact autoequivalence image via Toda obstruction and relative inverse Serre",
+    "e6_orbit_test": {
+      "executed": true,
+      "method": "independent SymPy exact test in working container",
+      "orbit_size": 72,
+      "span_rank": 6,
+      "canonical_fixed": true
+    },
+    "current_latexmk_run": false,
+    "full_python_check_not_rerun": true,
+    "tex_sources": 3,
+    "labels": 53,
+    "unique_labels": 53,
+    "unresolved_references": 0,
+    "references": 70,
+    "bibliography_entries": 15,
+    "unresolved_citations": 0,
+    "citations": 39,
+    "balanced_environments": true,
+    "balanced_braces": true,
+    "new_exact_container_checks": {
+      "e6_simple_reflections_orbit_size": 72,
+      "span_rank": 6,
+      "canonical_fixed": true,
+      "cubic_smooth_witness": true,
+      "nonzero_ks_class": "xyz"
+    }
+  },
+  "verified_math_status": {
+    "very_general_picard_kernel": "Proof newly written and checked algebraically, not externally refereed; uses W(E6) irreducibility and countable avoidance",
+    "fixed_nc_first_order_orbits": "Conditional on admissible relative Abel deformation and trivial Aut(X); no stack inertia classified",
+    "genericity": "Very general in irreducible marked smooth cubic-Poisson parameter space; not a single Zariski-open assertion"
   }
 }

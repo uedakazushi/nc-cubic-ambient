@@ -1,6 +1,6 @@
 # 三次曲面研究の再現
 
-2026-11-15 / surface-v2。最初に `00_research_plan.md` を読む。
+2026-11-17 / surface-v6。最初に `00_research_plan.md` を読む。
 
 必要環境はPython3、SymPy1.14.0、日本語LuaLaTeX（LuaTeX-ja、HaranoAji）、latexmk。計算はネットワークや外部データを使わない。リポジトリrootから実行する。
 
@@ -15,7 +15,7 @@ latexmk papers/nc-cubic-ambient-moduli.tex
 python3 scripts/verify_surface_bundle.py
 ```
 
-二つの計算はQQ上で行い、JSON証明書を所定パスへ再生成する。potential側は数分程度かかり得る。`--quick`はminor一覧を出さないので完全再現の代用にしない。証明書には行・列番号と非零行列式を保存し、容易に再生成できる巨大行列そのものは保存しない。
+従来の二つの大型計算はQQ上で行い、JSON証明書を所定パスへ再生成する。Picard格子の検算はE6 Weyl orbitが72根を巡りrank6を張ることもチェックする（本文の非常に一般の核の証明の有限補助）。potential側は数分程度かかり得る。`--quick`はminor一覧を出さないので完全再現の代用にしない。証明書には行・列番号と非零行列式を保存し、容易に再生成できる巨大行列そのものは保存しない。
 
 PDFの出力先はbuild/。GitではPDFを追跡せず、GitHub mainを正本とする。旧版・ログ・aux・cache・外部文献PDFは含めない。surface bundleは三次曲面とR13比較を自己完結的に再開できる。別の三次三様体研究のソースはGitHubで保持されるが、このsurface稿の組版・検証には不要。
 

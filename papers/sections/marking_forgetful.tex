@@ -333,7 +333,7 @@ $xyz$はJacobian環$\mathbb C[x,y,z]/(x^2,y^2,z^2)$の次数3において非零�
 
 \begin{remark}[ここから結論していないこと]
 階数は$\Pic(X)\otimes\mathbb C$上の階数であり、
-整数群$\ker(\delta_\pi:\Pic(X)\to H^1(T_X))$のrankを直ちに決定しない。
+整数群$\ker(\delta_\pi:\Pic(X)\to H^1(T_X))$のrankをこの階数計算だけでは直ちに決定しない。非常に一般の組については定理\ref{thm:very-general-picard-kernel}で決定する。
 またこの障害は一次であり、全次数での自己同値の持上げや大域Picard商の存在は未解決である。
 一方、固定した一次変形上で全Picard群が自己同値として作用するという
 素朴な予想を否定するには十分である。
@@ -373,6 +373,112 @@ $K_X$方向で$\delta_\pi=0$なので、全Picardと$Q$への制限の階数は�
 非零の根格子方向は同じ一次変形における自己同値としては持ち上がらない。
 \end{proof}
 
+
+\begin{theorem}[非常に一般の一次Picard障害の整数核]\label{thm:very-general-picard-kernel}
+滑らかな複素三次曲面$X$と非零のPoisson構造
+$\pi\in H^0(X,-K_X)$の組$(X,\pi)$を動かす。
+非常に一般の組に対して、群準同型
+$\delta_\pi:\Pic(X)\to H^1(X,T_X)$の整数核は
+\begin{equation}\label{eq:very-general-picard-kernel}
+ \boxed{\ker\delta_\pi=\mathbb Z K_X}
+\end{equation}
+である。ここで「非常に一般」とは、適切な既約パラメータ空間内の
+可算個の真の閉部分集合の合併の外を意味する。
+複素線型写像$\delta_\pi\otimes\mathbb C$は一般には階数4であり、
+その3次元核がPicard整数格子の階数3の部分格子を含むとは限らない。
+\end{theorem}
+\begin{proof}
+六本の順序付き互いに交わらない直線でmarkedした滑らかな三次曲面の
+モジュライ$\mathcal M^{\rm m}$は、一般位置の六点配置の
+$\PGL_3$商として既約であり、$W(E_6)$はmarking変更によって作用する
+\cite[\S\S2.5--2.6]{DGK}。
+この上でPoisson構造$\pi$の零因子が滑らかな部分の非零全空間を
+$\mathcal P^{\rm m}$とする。これは既約である。
+標準Picard格子$\Lambda=I_{1,6}$はmarkingによって自明化され、
+\[
+ \Lambda_\mathbb C=\mathbb C K\oplus Q_\mathbb C,
+ \qquad Q=K^\perp\simeq E_6
+\]
+となる。
+
+$\mathcal P^{\rm m}$のすべての点$b=(X,\varphi,\pi)$についての
+$\delta_b$の核の共通部分を
+\[
+ N=\bigcap_{b\in\mathcal P^{\rm m}}
+       \ker(\delta_b:\Lambda_\mathbb C\to H^1(X,T_X))
+\]
+と置く。これはmarking変更の自然性から$W(E_6)$不変である。
+命題\ref{prop:canonical-kernel}により$\mathbb CK\subset N$である。
+$W(E_6)$は$Q_\mathbb C$上で既約に作用する。
+実際、任意の非零な不変部分空間$U$のベクトルがある根$\alpha$と
+交叉積非零なら、反射$s_\alpha(v)-v=(v,\alpha)\alpha$から
+$\alpha\in U$となる。根のWeyl軌道は$Q_\mathbb C$を張るので
+$U=Q_\mathbb C$である。
+定理\ref{thm:picard-obstruction-rank}の階数4の非空開部分があるため、
+$N$は$\Lambda_\mathbb C$全体ではない。
+従って$N=\mathbb CK$である。
+
+各$D\in\Lambda\setminus\mathbb ZK$に対し、
+$\delta_b(D)$は$\mathcal P^{\rm m}$上で恒等的に零ではない
+（$K$は原始元である）。
+これは代数的ベクトル束の切断なので、零点集合$Z_D$は真の閉部分集合である。
+$\Lambda$は可算なので、
+$\mathcal P^{\rm m}\setminus\bigcup_{D\notin\mathbb ZK}Z_D$
+上では非反標準の全整数クラスの障害が非零となる。
+他方、$\mathbb ZK$は常に障害の核に入る。
+これで式\eqref{eq:very-general-picard-kernel}を得る。
+\end{proof}
+
+\begin{corollary}[非常に一般の非可換fiberでの構造対象の同型類]\label{cor:first-order-pointings}
+$X$は自己同型群が自明な滑らかな三次曲面とし、
+$\mathcal A_\varepsilon$は特殊ファイバー$\operatorname{coh}X$との同定を持つ
+許容相対一次Abel変形（$\varepsilon^2=0$）とする。
+HKRのPoisson成分$\pi$を含む組$(X,\pi)$が
+定理\ref{thm:very-general-picard-kernel}の非常に一般の条件を満たすとき、
+exactな$\mathbb C[\varepsilon]/(\varepsilon^2)$線型自己同値を
+特殊ファイバーへ制限する準同型
+\[
+ \pi_0\Aut_{\rm ex}(\mathcal A_\varepsilon)
+       \longrightarrow\Pic(X)
+\]
+の像は$\mathbb Z[-K_X]$に一致する。
+従って特殊ファイバーで線束となる許容構造対象の持上げを
+固定圏内のexact自己同値で同一視した同型類の集合は
+\begin{equation}\label{eq:very-general-pointings}
+ \Pic(X)/\mathbb ZK_X
+ \ \simeq\ Q(E_6)^\vee
+ \ \simeq\mathbb Z^6
+\end{equation}
+である。これは同型類の集合の主張であり、
+全慣性を含む商stackが離散集合であるという主張ではない。
+\end{corollary}
+\begin{proof}
+定理\ref{thm:formal-structure}により、各線束$L$は
+構造対象$L_\varepsilon$へ一意に持ち上がる。
+Bondal--Orlovによるexact自己同値の可換特殊化の分類
+（定理\ref{thm:commutative-structure}）と$\Aut(X)=1$から、
+任意の相対exact自己同値の特殊化は$(-)\otimes L$となる。
+命題\ref{prop:picard-first-order}の必要条件は
+$\delta_\pi(L)=0$なので、前定理により$L$の類は$\mathbb ZK_X$に属す。
+逆に、相対Serre作用から定まる$t$-exact自己同値
+$H_\varepsilon=\mathsf S_\varepsilon^{-1}[2]$は
+特殊ファイバー上で$(-)\otimes\OO_X(-K_X)$となる。
+従って$H_\varepsilon$の全冪が実際の自己同値を与え、
+特殊化像は$\mathbb Z[-K_X]$と一致する。
+線束持上げの一意性とこの作用から同型類の商が
+$\Pic(X)/\mathbb ZK_X$となる。
+最後の格子同型は命題\ref{prop:picard-root-index}による。
+\end{proof}
+
+\begin{remark}
+この結果は「非常に一般」という条件と一次Artin底、
+許容相対heart・Serreの仮定を持つ。
+任意の有限型の非可換大域成分の一般点に直ちに適用するものではなく、
+高次変形での自己同値の全持上げやAOUのmarked GIT商の有限性も結論しない。
+とくに$Q(E_6)^\vee$は整数格子の商であり、
+Poisson一次変形の底に新しい連続的な6次元成分を作ったわけではない。
+\end{remark}
+
 \section{有限Weyl群、root latticeとPicard格子の区別}
 \begin{proposition}[反標準方向を除いたPicard格子]\label{prop:picard-root-index}
 $\Lambda=\Pic(X)=\mathbb Zh\oplus\bigoplus_{i=1}^6\mathbb Ze_i$に
@@ -403,5 +509,5 @@ $Q$は原始部分格子、$\Lambda$はunimodularだから、
 $\Lambda/\mathbb ZK$をtranslationとする記述はweight lattice型の拡大となる。
 ただし命題\ref{prop:common-tensor}により共通tensorはrelation表示では既に見えない。
 従ってこの指数3だけからモジュライの三重被覆や三つの成分を主張してはならない。
-さらに命題\ref{prop:canonical-kernel}が示すように、反標準方向は一次障害の核に入るが、root latticeの方向は一般に核に入らない。非可換変形上のPicard作用は
+さらに定理\ref{thm:very-general-picard-kernel}が示すように、非常に一般の一次変形では整数Picard群の障害の核は反標準方向だけである。非可換変形上のPicard作用は
 一般には底の変形パラメータをも動かす。今後の大域比較ではこの作用と慣性を同時に追う。

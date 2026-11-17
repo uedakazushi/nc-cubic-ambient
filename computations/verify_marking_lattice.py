@@ -31,4 +31,19 @@ F = x**3 + y**3 + z**3 + t*x*y + t**3
 G = sp.groebner([sp.diff(F, a) for a in (x, y, z, t)], x, y, z, t)
 assert G.is_zero_dimensional
 assert sp.groebner([x**2, y**2, z**2], x, y, z).reduce(x*y*z)[1] == x*y*z
+# The Weyl orbit of any root spans the irreducible 6-dimensional root representation.
+root_orbit = {tuple(root_basis[0])}
+queue = [root_basis[0]]
+for v in queue:
+    for alpha in root_basis:
+        reflected = v + inter(v, alpha) * alpha
+        key = tuple(reflected)
+        if key not in root_orbit:
+            root_orbit.add(key)
+            queue.append(reflected)
+assert len(root_orbit) == 72
+assert sp.Matrix.hstack(*queue).rank() == 6
+assert all(inter(alpha, K) == 0 for alpha in root_basis)
+print('PASS: a Weyl reflection orbit of 72 roots spans Q(E6), rank 6')
+
 print('PASS: E6 roots=72, lines=27, discriminant=3; smooth cubic and nonzero KS witness')
