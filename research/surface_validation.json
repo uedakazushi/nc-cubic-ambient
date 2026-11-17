@@ -19,7 +19,7 @@
     "eight_point_reconstruction": "Proof in thm:r13-eight-reconstruction: I(Z_f)∩S_≤2 equals gradient quadrics, and generic integrability kernel scalar. Generic fiber of critical scheme map is G_m; image dimension 18; affine configuration quotient dimension 6. Does not identify the full periodic Z-algebra quotient."
   },
   "checks": {
-    "static_source": "In-memory TeX consistency preflight of both modified sources: 33 unique labels, 50 internal references resolved, 9 bib entries, 29 citations resolved, braces and theorem environments balanced.",
+    "static_source": "Post-commit audit: two TeX sources; 37 unique labels, 57 internal references resolved, 9 bibliography entries, 30 citations resolved, environments/braces balanced.",
     "current_lualatex_run": false,
     "existing_ambient_heavy_computations_rerun": false,
     "earlier_certificates_retained": true,
@@ -33,10 +33,18 @@
       "Pym Adv. Math. 281 (2015), §3.4 (arXiv PDF checked and screenshot inspected)",
       "Le Bruyn–Smith–Van den Bergh Math. Z. 222 (1996), §§3, 4.3, especially Props. 4.3.7/4.3.9 (primary PDF checked and screenshot inspected)"
     ],
-    "integrability_witness": "PASS exact QQ: f*=3 sum(u_i^3)+5u1u2u3+u1^2+2u2^2+3u3^2+u1+2u2+4u3, 12x9 closedness matrix rank8 with kernel scalar identity."
+    "integrability_witness": "PASS exact QQ: f*=3 sum(u_i^3)+5u1u2u3+u1^2+2u2^2+3u3^2+u1+2u2+4u3, 12x9 closedness matrix rank8 with kernel scalar identity.",
+    "post_commit_validation_date": "2026-11-17",
+    "published_results_version": "ambient-v2",
+    "tex_lines": {
+      "main": 487,
+      "section": 634
+    },
+    "lualatex_current_version_run": false,
+    "exact_new_script_executed": true
   },
   "persistence": {
-    "github_main": "Pending commit",
+    "github_main": "aad787f605ba10ee3df44edf6c2088e2c4a41c67 confirmed after push; this metadata update will make a successor commit",
     "library_saved": false
   }
 }
