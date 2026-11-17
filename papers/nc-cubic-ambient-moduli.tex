@@ -18,7 +18,7 @@
 \newcommand{\OO}{\mathcal O}\newcommand{\rank}{\operatorname{rank}}
 \title{非可換三次曲面と非可換射影三空間のモジュライ\\\large 四周期表示・明示的成分・反標準復元とWeyl商}
 \author{植田一石}
-\date{2026年11月17日 / surface-v3}
+\date{2026年11月17日 / surface-v4}
 \begin{document}\maketitle
 \begin{abstract}
 非可換三次曲面の反標準偏極による内在的記述を、
@@ -35,6 +35,8 @@ AOUの一般位置における反標準模型の比較を仮定すると、
 marked曲面から$R(1,3)$成分への有理ambient射は支配的であり、
 一般ファイバーは一次元である。
 中心三次ペンシルの特異値をJacobian環上のモニック8次多項式で記述し、
+その8点を非可換ambientの$t\ne0$のpoint moduleと同定する。
+さらに
 一般には8個のnodalな特異曲面が現れることを示す。
 全weakly markedモジュライの代数性、全対象の超曲面認識、大域Weyl商は
 ここでは証明しない。
@@ -207,6 +209,35 @@ $\lambda=\infty$の端点は三重平面$t^3=0$であり、
 量子化した$B/(\Omega+\lambda t^3)$の特異値も同じであるとは主張しない。
 有理数上の検算は\texttt{computations/verify\_pencil\_discriminant.py}にある。
 \end{remark}
+
+
+\begin{proposition}[八点の臨界集合と非可換point module]\label{prop:critical-point-modules}
+命題\ref{prop:potential-presentation}のJacobian型中心拡大$B_f$を考え、
+$F(x,y,z,t)=t^3 f(x/t,y/t,z/t)$と書く（$t^3$の定数項は任意）。
+すると、$t$が非零に作用する$B_f$のpoint moduleのパラメータschemeは
+\[
+ \operatorname{Spec} J_f,\qquad
+ J_f=\kk[x,y,z]/(f_x,f_y,f_z)
+\]
+と自然に同型である。従って定理\ref{thm:pencil-critical}の一般開部分では
+この型のpoint moduleはちょうど8個存在し、
+それぞれがペンシルの一つのnodalな特異曲面を指定する。
+この対応は係数$f$に依存するもので、量子中心三次元の固有値を
+可換臨界値と同定する主張ではない。
+\end{proposition}
+\begin{proof}
+$t$は中心正則な次数1元であるから、$t$が各次数で非零に作用する
+point moduleは、基底を$t\,m_n=m_{n+1}$となるよう選べる。
+$t x_i=x_i t$により$x_i\,m_n=a_i m_{n+1}$の係数$a_i$は
+$n$に依存しない。命題\ref{prop:potential-presentation}の二次関係
+$[y,z]=\operatorname{sym}F_x$とその巡回式をこのmoduleに作用させれば、
+左辺は零となり、右辺はそれぞれ$f_x(a)$、$f_y(a)$、$f_z(a)$となる。
+逆に$\nabla f(a)=0$なら上の作用は全ての関係を満たし、
+point moduleを与える。scheme構造についても、
+$t$を逆元化した次数零部分$B_f[t^{-1}]_0$の一次元表現環は
+交換子関係の可換化で得られる$J_f$である。
+最後の結論は定理\ref{thm:pencil-critical}から従う。
+\end{proof}
 
 \section{Poisson成分の一般正則性と有限行列検証}\label{sec:surface-witness}
 次の有理係数の点を取る。
