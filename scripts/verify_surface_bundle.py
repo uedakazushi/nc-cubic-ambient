@@ -13,6 +13,8 @@ def visit(path):
     for name in re.findall(r'\\input\{([^}]+)\}',text):
         visit(name if name.endswith('.tex') else name+'.tex')
 visit('papers/nc-cubic-ambient-moduli.tex')
+assert (root/'computations/verify_pencil_discriminant.py').is_file()
+
 text='\n'.join(seen.values())
 labels=re.findall(r'\\label\{([^}]+)\}',text)
 refs=re.findall(r'\\(?:eqref|ref|autoref|pageref)\{([^}]+)\}',text)

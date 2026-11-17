@@ -26,6 +26,10 @@ K=(R0⊗V2)∩(V0⊗R1)⊂V0⊗V1⊗V2
 
 可換P3についてQQ上で直接検算：K=Λ³k⁴、dimK=4、四つの二階flatteningの関係rankはすべて6。計算スクリプト computations/verify_directed_p3_syzygy.py。既存のpotential側の可換点projective接空間dim90から、V3のPGL4-torsor（dim15）を除くとdirected側の接空間dim75。directedのPGL4^3軌道のdim30を除けばHH²(P3)=45と一致。これはAS locusの大域成分計算ではない。
 
+## 中心三次ペンシルの一般ファイバー（現行論文定理 thm:pencil-critical）
+
+最高三次f3が滑らかなときJacobian環J_f=k[x,y,z]/(f_x,f_y,f_z)は長さ8の完全交差。臨界値多項式Δ_f(λ)=det(λI+m_f)はモニック8次で、X_λ=V_+(F+λt³)が特異であることとΔ_f(λ)=0は同値。一般には8根が相異なり、それぞれ1個のA1特異点を持つ。独立計算例はf=x³-3x+y³-12y+z³-48zで臨界値が±110,±114,±142,±146。検算コードcomputations/verify_pencil_discriminant.pyを収録する。無限遠点は三重平面で、量子中心三次商の特異値同定は未解決。
+
 ## 明示族と計算
 
 F=a(x³+y³+z³)+bxyz+t(x²+c2y²+c3z²)+t²(d1x+d2y+d3z)。w=Alt(txyz)-3(1-c+c²-c³)(t sym F)。全二階微分で[t,x]=[t,y]=[t,z]=0、[y,z]=sym F_x等を得る。t³はwに寄与しない。
@@ -52,7 +56,7 @@ Hilbert級数(1-t³)/(1-t)^4だけから次数一生成・二次包絡AS4・正�
 
 AOU有限代数はrank45、globaldim≤2の三block quiver。Θ=RHom_(Λe)(Λ,Λe)はinverse Serre bimodule。P0=e_(0,0)ΛとしてK_m=RHom(P0,P0⊗Θ^⊗m[2m])、m=0..4を計算する。可換点近傍ではrank1,4,10,19,31、V=H0K1、R2=ker(V²→H0K2)でGrassmannianへの候補射がある。
 
-AOU§9の(9.44),(9.55)–(9.57)でP0はOへ送られる。Lemma9.2でHは反標準shift。VdBのgeneric blow-up表示から全orbit環がAS4中心一次拡大Pの正規三次商F=P/(G)になる。Sklyanin頂部でGが中心、σ(t)=t、σ(x_i)=x_i+c_i t、Hessian比較でc_i=0なので一般にはGも中心。
+AOU§9の(9.44),(9.55)–(9.57)でP0はOへ送られる。Lemma9.2でHは反標準shift。Fの深さ3とArtin–Zhangのsection環の完全列により、一般幾何学的点のinverse Serre orbit環はF=P/(G)と同型（現行論文命題prop:aou-orbit-generic）。ただしこれは導来同値であり、heartの一致や相対底変更は含まない。Sklyanin頂部でGが中心、σ(t)=t、σ(x_i)=x_i+c_i t、Hessian比較でc_i=0なので一般にはGも中心。
 
 可換点でtruncation≤3の微分はinjective。関係module J/(VJ+JV)の次数>3が特殊化で零なのでArtin Nakayamaにより消える。このため低次数の自明化は全環・Abel圏の自明化となる。相対Serreと中心三次商の比較仮定が一般位置で成立する場合、AOUの8方向と射影基底15方向を加えた像は23次元。一般の固定ambient中心三次はP1なのでambient像≥22、既知R13族dim22より等号。四頂点rigidified商では8→7、一般fiber1、像の閉包codim0。
 

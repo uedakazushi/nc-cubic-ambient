@@ -1,6 +1,6 @@
 {
   "date": "2026-11-17",
-  "version": "surface-v3",
+  "version": "surface-v4",
   "proof_review": {
     "new_surface_proofs_examined": true,
     "new_categorical_statements": "Ordinary proofs with explicitly cited hypotheses; not formalized or externally refereed",
@@ -59,7 +59,7 @@
   "build": {
     "command": "latexmk -lualatex papers/nc-cubic-ambient-moduli.tex",
     "success": null,
-    "notes": "Not executed on surface-v3. Original manuscript build was reported successful."
+    "notes": "Current version not compiled yet; preflight still required."
   },
   "persistence": "This file records generated and verified content only. GitHub commit and Library upload are separately confirmed by tool receipts; not asserted here.",
   "previous_validation": {
@@ -76,5 +76,27 @@
     "certificate_metadata_shapes_consistent": true,
     "calculation_reexecuted": false,
     "typography_compiled": false
-  }
+  },
+  "current_computations": [
+    {
+      "script": "computations/verify_pencil_discriminant.py",
+      "date": "2026-11-17",
+      "executed_equivalent_source_locally": true,
+      "exact_repository_source_reexecuted": false,
+      "field": "QQ",
+      "critical_values": [
+        -146,
+        -142,
+        -114,
+        -110,
+        110,
+        114,
+        142,
+        146
+      ],
+      "hessian_det_all_nonzero": true,
+      "charpoly_identity": true,
+      "notes": "SymPy exact witness checked in the working container with an equivalent version of the source; genericity proof is in manuscript."
+    }
+  ]
 }
