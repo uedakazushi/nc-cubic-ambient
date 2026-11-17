@@ -250,9 +250,7 @@ AOUの全コンパクト化との双有理同定を前提としない。
 \begin{proposition}[固定ambientの全正規形式ファイバー]\label{prop:normal}
 命題\ref{prop:center}の$B$について、二因子stabilizer
 $H_R\subset\PGL(B_1)^2$が有限であるとする。
-さらに任意の局所Artin底$T$について
-$Z(B)_3\otimes_\kk T\longrightarrow Z(B\otimes_\kk T)_3$
-が同型であると仮定する。このとき中心三次元$G$における、
+このとき中心三次元$G$における、
 固定した$\check B$上のindexed正規三次イデアルの形式変形は、
 中心三次直線の形式変形に一致する。従って厳密形式ファイバーは
 $\operatorname{Spf}\kk[[s]]$である。
@@ -268,7 +266,15 @@ Artin底で恒等を持ち上げる射影対は恒等だけである。
 $G_i x=xG_{i+1}$にできる。$x=t$と置けば$t$は中心正則なので$G_i=G_{i+1}$。
 よって一つの中心元を全添字で反復した族となる。
 逆に中心三次直線はそのような族を与える。
-仮定した中心の底変更同型と命題\ref{prop:center}により、中心空間はArtin底でもrank2である。
+ここで$B$は次数一生成なので、$Z(B)_3$は有限次元線型写像
+\[
+ B_3\longrightarrow\Hom_\kk(B_1,B_4),\qquad
+ u\longmapsto(v\mapsto uv-vu)
+\]
+の核である。体$\kk$上の任意の局所Artin代数$T$は平坦なので、
+この核は$T$へのテンソル積と可換する。従って
+$Z(B\otimes_\kk T)_3=Z(B)_3\otimes_\kk T$となる。
+命題\ref{prop:center}から、この中心空間はArtin底でもrank2である。
 従って$\PP^1$の一点での完備化である。
 \end{proof}
 

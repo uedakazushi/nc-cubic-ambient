@@ -14,7 +14,7 @@ weakly marked intrinsic非可換三次曲面のモジュライとambient AS4・4
 
 ## III. 現在の到達点
 
-現行原稿と `research/surface_validation.json` に証明と検算範囲を記す。R(1,3)の全4頂点potentialの接空間から67次元成分と7次元rigidified商・有限型エタールatlas、Poisson側の一意延長とペンシル、AOU marked形式近傍のW(E6) torsorと一般支配性、固定ambient中心三次ファイバーP1などを保持する。これらの適用仮定と原稿での証明の所在を確認してから引用する。
+現行原稿と `research/surface_validation.json` に証明と検算範囲を記す。R(1,3)の全4頂点potentialの接空間から67次元成分と7次元rigidified商・有限型エタールatlas、Poisson側の一意延長とペンシル、AOU marked形式近傍のW(E6) torsorと、比較仮定に依存する一般支配性、固定ambient中心三次ファイバーP1などを保持する。これらの適用仮定と原稿での証明の所在を確認してから引用する。
 
 全大域weak moduliがWeyl商と一致すること、全intrinsic曲面が正規三次超曲面で認識されること、全境界のAS条件と全スタック降下は未解決。これらを成立済みと記さない。
 

@@ -54,7 +54,7 @@ AOU有限代数はrank45、globaldim≤2の三block quiver。Θ=RHom_(Λe)(Λ,Λ
 
 AOU§9の(9.44),(9.55)–(9.57)でP0はOへ送られる。Lemma9.2でHは反標準shift。VdBのgeneric blow-up表示から全orbit環がAS4中心一次拡大Pの正規三次商F=P/(G)になる。Sklyanin頂部でGが中心、σ(t)=t、σ(x_i)=x_i+c_i t、Hessian比較でc_i=0なので一般にはGも中心。
 
-可換点でtruncation≤3の微分はinjective。関係module J/(VJ+JV)の次数>3が特殊化で零なのでArtin Nakayamaにより消える。このため低次数の自明化は全環・Abel圏の自明化となる。AOUの8方向と射影基底15方向を加えた像は23次元。一般の固定ambient中心三次はP1なのでambient像≥22、既知R13族dim22より等号。四頂点rigidified商では8→7、一般fiber1、像の閉包codim0。
+可換点でtruncation≤3の微分はinjective。関係module J/(VJ+JV)の次数>3が特殊化で零なのでArtin Nakayamaにより消える。このため低次数の自明化は全環・Abel圏の自明化となる。相対Serreと中心三次商の比較仮定が一般位置で成立する場合、AOUの8方向と射影基底15方向を加えた像は23次元。一般の固定ambient中心三次はP1なのでambient像≥22、既知R13族dim22より等号。四頂点rigidified商では8→7、一般fiber1、像の閉包codim0。
 
 ここでは8座標→7座標の展開済み有理式を出していない。finite Serre algorithmの実装、generic degree、Weyl同定、境界での正則性は次の課題。全weakly marked stackの有限型性や全認識定理とも区別する。
 

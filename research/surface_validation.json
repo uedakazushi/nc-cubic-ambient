@@ -66,5 +66,15 @@
     "date": "2026-11-15",
     "version": "surface-v2",
     "note": "Old finite computations and build records below were recorded for the prior manuscript, and have not been rerun for surface-v3."
+  },
+  "current_source_checks": {
+    "date": "2026-11-17",
+    "method": "Connector in-memory static checks (no TeX engine and no Python execution)",
+    "braces_balanced": true,
+    "tex_environments_balanced": true,
+    "references_and_bibliography_resolved": true,
+    "certificate_metadata_shapes_consistent": true,
+    "calculation_reexecuted": false,
+    "typography_compiled": false
   }
 }
