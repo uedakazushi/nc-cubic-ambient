@@ -34,6 +34,8 @@
 AOUの一般位置における反標準模型の比較を仮定すると、
 marked曲面から$R(1,3)$成分への有理ambient射は支配的であり、
 一般ファイバーは一次元である。
+中心三次ペンシルの特異値をJacobian環上のモニック8次多項式で記述し、
+一般には8個のnodalな特異曲面が現れることを示す。
 全weakly markedモジュライの代数性、全対象の超曲面認識、大域Weyl商は
 ここでは証明しない。
 \end{abstract}
@@ -67,7 +69,7 @@ Pym\cite[\S3.4]{Pym}の$R(1,3)$成分は、三変数Sklyanin代数の中心一�
 \subsection*{主結果と適用範囲}
 命題\ref{prop:period-counterexample}は四周期の関係式stackと非捩れpotential表示の相違を示す。
 定理\ref{thm:r13-open}は標準AS条件を満たす$R(1,3)$族の一般開部分を構成する。
-定理\ref{thm:extension}と命題\ref{prop:center}はPoisson延長と中心三次ペンシルを記述する。
+定理\ref{thm:extension}、定理\ref{thm:pencil-critical}と命題\ref{prop:center}はPoisson延長と中心三次ペンシルの特異値を記述する。
 定理\ref{thm:formal-weyl}は可換点の形式変形に限定される。
 定理\ref{thm:aou-dominance}は一般位置の比較仮定の下での結論であり、
 全非可換対象や全境界での支配性を主張しない。
@@ -154,6 +156,56 @@ $F\bmod\kk h^3$の19次元で合計22次元である。
 $V(F,h)$を共有する。これは幾何学的な1次元忘却の説明である。
 $\Pi$自体をスカラー射影化するとambientの次元は21になる。
 本稿の22と7はPoissonスカラーを残す規約である。
+\end{remark}
+
+
+\begin{theorem}[中心三次ペンシルの臨界値多項式]\label{thm:pencil-critical}
+$F\in\kk[x,y,z,t]_3$について$f_3:=F(x,y,z,0)$が滑らかな
+平面三次曲線を定めるとし、$f:=F(x,y,z,1)$と置く。
+\[
+ J_f=\kk[x,y,z]/(f_x,f_y,f_z),\qquad
+ \Delta_f(\lambda)=\det(\lambda\,\mathrm{id}_{J_f}+m_f)
+\]
+と定める。ここで$m_f$は$f$による乗法である。
+このとき$\dim_\kk J_f=8$、$\Delta_f$はモニック8次であり、
+$X_\lambda:=V_+(F+\lambda t^3)\subset\PP^3$が特異であることと
+$\Delta_f(\lambda)=0$は同値である。
+さらに係数空間の非空Zariski開集合上で$\Delta_f$は8個の相異なる根を持ち、
+各特異$X_\lambda$にはただ一つの通常二重点がある。
+この開集合では、滑らかな三次曲面のパラメータは
+$\mathbb A^1\setminus V(\Delta_f)$である。
+\end{theorem}
+\begin{proof}
+三つの二次式$f_x,f_y,f_z$を斉次化して得る$\PP^3$上の共通零点は
+無限遠平面$t=0$に存在しない。実際そのような点では
+$(f_3)_x=(f_3)_y=(f_3)_z=0$となり、
+Eulerの恒等式と$f_3=0$の滑らかさに矛盾する。
+従って三つの二次式は零次元完全交差を定め、
+B\'ezoutの定理によって長さは$2^3=8$である。
+全ての零点は$t\ne0$に属するから$\dim_\kk J_f=8$となる。
+
+$X_\lambda$は$t=0$に特異点を持たない。
+$t=1$では方程式が$f+\lambda=0$となり、
+特異点の条件は$f_x=f_y=f_z=f+\lambda=0$である
+（$t$偏微分の消滅はEulerの恒等式による）。
+従って$\lambda$は$m_f$の固有値の負であることが必要十分である。
+
+非空性には$F_0=x^3+y^3+z^3-t^2(3x+12y+48z)$を考える。
+$\nabla f_0=0$の8点は$(\pm1,\pm2,\pm4)$であり、
+Hessianは$\operatorname{diag}(6x,6y,6z)$だから全て非退化である。
+これらの点での臨界値は
+$\{-146,-142,-114,-110,110,114,142,146\}$で相異なる。
+よって$\Delta_{f_0}$の判別式は非零である。
+この条件およびJacobian環のエタール性は開条件だから、
+同じ性質は非空Zariski開部分で成立する。
+各特異曲面には非退化臨界点が一つだけあり、通常二重点となる。
+\end{proof}
+\begin{remark}
+$\lambda=\infty$の端点は三重平面$t^3=0$であり、
+上の8個のnodalな曲面には数えない。
+また、この定理は可換Poissonペンシルに関するものであり、
+量子化した$B/(\Omega+\lambda t^3)$の特異値も同じであるとは主張しない。
+有理数上の検算は\texttt{computations/verify\_pencil\_discriminant.py}にある。
 \end{remark}
 
 \section{Poisson成分の一般正則性と有限行列検証}\label{sec:surface-witness}
