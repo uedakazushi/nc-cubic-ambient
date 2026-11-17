@@ -1,8 +1,30 @@
 # 現行研究ノート：R13・内在的三次曲面・Weyl商
 
-2026-11-15 / surface-v2。最初に `00_research_plan.md` を読む。証明本文は `papers/nc-cubic-ambient-moduli.tex` とその唯一のinput。以下は作業日誌ではない。
+2026-11-17 / surface-v5。最初に `00_research_plan.md` を読む。証明本文は `papers/nc-cubic-ambient-moduli.tex` とその唯一のinput。以下は作業日誌ではない。
 
-## 表示と同値関係
+## マーキング忘却・構造対象の現在の結論
+
+- 現行のweakly marked公理は(A,O)をとり、H=S^{-1}[2]のt-exact性、AZ豊富性、三次曲面Hilbert値に加えてGabriel–Krullのrank-one torsion-free性（qO非零単純・A1からOへのHom消滅）とexceptionality（End(O)=k、Ext^{>0}(O,O)=0）を**独立に要求**する。ambientや一次生成性を仮定しない。圏論的な主定理と十分な証明は `papers/sections/marking_forgetful.tex` にある。
+
+- 忘却は `M_AOU^adm -> C^w -> C^u`。固定圏上では許容九対象threadの選択群oid、許容構造対象の選択群oidとなる。圏の同定を忘れるとexact自己同値2-groupでのhomotopy quotientとなる。従ってPicard商と呼ぶときはraw 2-groupとスカラーrigidification、同型類集合の商を区別する。
+
+- 可換滑らかな三次曲面Xでは許容構造対象EはL⊗I_Zとなるが、RRからχ(E,E)=1−2length(Z)、exceptionalityからZ=∅。従って線束Lだけが許容。自然同型で割ったexact自己同値はPic(X)⋊Aut(X)、pointedの選択商はBAut(X)。AOUのrelation algebra End(⊕E_i)は全対象の共通tensorで変わらず、relation GIT点をさらにPicで重複して割らない。
+
+- 特殊ファイバーと同定したArtin flat Abel変形（相対Serre・perfect base change・heart保存を要求）では各線束と標準helixの持上げはExt¹=Ext²=0により一意。各標準markingの形式chartは同じweak deformationへ対応し、有限W(E6) torsorになる。全境界・非可換一般点における大域商は未証明。
+
+- **新しい障害の公式**：u=(ξ,π)∈H¹(T_X)⊕H⁰(∧²T_X)、線束LのMorita re-markingによる一次変化は規約を除き (ξ,π)↦(ξ+δ_π(L),π)、δ_π(L)=H¹(π^sharp)c₁(L)。構造対象Lが圏の変形へ持ち上がることと、(-)⊗Lが**同じ変形**の自己同値へ持ち上がることは異なる。後者にはδ=0が必要。
+
+- πの零因子Cが滑らかな反標準楕円曲線なら0→Ω¹_X→T_X→T_X|_C→0で、長完全列の階数は7−h⁰(T_X|_C)=3+r（r=0または1）。非空開でr=1：X={x³+y³+z³+txy+t³=0}, C={t=0}ではCの平面移動t=εzがJacobian環のxyzに対応しKS非零。従って一般にrank4。**反標準線束の方向はδの核**：局所Cの方程式s_iに対してπ^sharp(dlog s_i)は正則で、そのČech差がδ_π(O(C))。従ってroot格子Q=K^⊥へのδの制限は全Picに対して同じ階数、一般には4。整数kernelや高次障害は未計算。
+
+- Pic(X) rank7、Q(E6) rank6、Pic/(Q+ZK)=Z/3、Pic/ZK≅Q^∨。AOU/OUのaffine Weyl translation QとPic全体を同一視しない。新しい計算スクリプト `computations/verify_marking_lattice.py` は72根、27線、E6判別式3とsmoothな例のJacobian確認をQQ上で行う。一次障害と相対降下の数学的証明はコードではなく本文にある。
+
+### 主要な未解決箇所
+1. NC fiberで許容構造対象のexact自己同値軌道・安定化群・相対慣性を具体化すること。
+2. AOUの標準helix（relation stack）と数値markingの大域的降下を証明すること。
+3. δのPic(X)上の**整数**核、形式高次の障害、invertible bimoduleによる作用を求めること。
+4. AOU GIT compactificationのどこでheart/構造対象の許容性が保たれるか判定すること。
+
+## 保持するambient比較と表示の区別
 
 四窓のR_i∈Gr(6,V_i⊗V_(i+1))をGL4^4で割るのは、AS Z代数に任意の4周期τを指定した問題。非捩れpotentialはFrobenius適合周期の部分。可換Cの周期にdiag(2,1,1,1)を合成するとR0=R1=R2=Λ²V、R3=(1⊗σ^-1)Λ²V。最高syzygyがΛ⁴VなのにR3が交代でないため非捩れpotentialは存在しない。twisted potentialを使うときはNakayamaとtraceの同値関係も必要。
 

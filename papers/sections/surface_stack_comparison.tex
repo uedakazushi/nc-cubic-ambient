@@ -202,28 +202,7 @@ Nakayamaは最高次数traceを固定するから$\prod_{i=0}^3c_i=1$。
 従って命題\ref{prop:period-counterexample}の大域的な不一致と、
 $R(1,3)$一般点での形式的な一致は両立する。
 
-\section{Weakly marked三次曲面の内在的stack}\label{sec:weak-definition}
-\begin{definition}\label{def:weak-cubic}
-体上のweakly marked三次曲面は、noetherianな$\kk$線型Abel圏$\mathcal A$と対象$\OO$の組で、
-$D^b(\mathcal A)$にsmooth properなdg enhancementとSerre自己同値$\mathsf S$があり、
-$H=\mathsf S^{-1}[2]$が$t$-exactな自己同値となり、次を満たすものとする。
-\[
- \sum_{m\ge0}\dim\Hom(\OO,H^m\OO)t^m
- =\frac{1-t^3}{(1-t)^4},
- \qquad(\mathcal A,\OO,H)\text{ はArtin--Zhang ample}.
-\]
-族は、局所的に有限な相対dg模型と有界noetherian heart、平坦な$\OO$、相対Serre同値を持ち、
-上のHomが各次数で所定rankの局所自由加群となり底変更と可換するものとする。
-Abel同値と$\OO$の同定を射、適合する自然同型を2射としてfpqc stack化する。
-二次自己同型を除く必要がある箇所では$\OO$上の恒等を要求してrigidifyする。
-\end{definition}
-
-「$H$がheartを保つ」は片方向の包含ではなく$H(\mathcal A)=\mathcal A$で読む。
-相対性・Hom底変更・enhancementを指定しないまま、体上の対象集合をstackとは呼ばない。
-また、この定義で有限型代数性を既に示したわけではない。
-AOU\cite[Introduction, (2)]{AOU}はSerreと反標準次数によるこの立場を既に提案している。
-本稿のHilbert級数の指定はその数値条件を全次数に精密化したものに当たる。
-
+\section{反標準環と認識部分のambient射}
 次数一生成の次数付き環$A$に対し、その\emph{二次包絡}を
 \[
  Q(A):=T_\kk(A_1)\Big/
@@ -249,7 +228,7 @@ AZ amplenessと有限性の下でsection algebra再構成\cite{AZ}を適用す�
 二次包絡は長さ二の合成核だけから定義される。
 \end{proof}
 
-Hilbert級数だけでは次数一生成や二次包絡のAS正則性を証明したことにならない。
+内在的公理（rank-one torsion-free性とexceptionalityを含む）だけから、次数一生成や二次包絡のAS正則性が従うかは未証明であり、本稿では保留する。
 本稿ではその一般的な反例を与えてはいないが、これらの含意は未証明である。
 そこで内在的stackの\emph{超曲面認識部分関手}$\mathfrak C^{\rm hyp}$を、
 $A=\Gamma_{\rm ac}$が次数一生成、$B=Q(A)$が標準AS4、
@@ -269,94 +248,6 @@ presentation stackを用い、その正規incidenceの射を取る。内在的�
 次数付きorbit algebraからの選択周期は次数shiftの4乗である。
 非捩れpotentialのtargetを使う場合は適合周期へ規格化する。
 この二つの選択は一般には同じ対象でなく、$R(1,3)$のCY表示上では適合する。
-
-\section{AOUのマーキングを忘れること：形式定理と大域の条件}\label{sec:weyl}
-AOUのコンパクトGIT scheme、関係式の商stack、AS locus、
-反標準ample locusを別々に扱う。2025年のOkawa--Ueda\cite[Theorem 6.4]{OU2025}は
-marked AS曲面のstackと楕円曲線・二つの次数3線束・六つの次数1線束のデータの
-双有理比較を与える。しかしweakly markedな対象全体が有限Weyl商になるという定理ではない。
-2024年のOkawa--Uedaの報告\cite{OWR}は、例外対象の$K_0$による一意性、
-純粋helixの全域での保存、affine Weyl軌道による分類をそれぞれ予想として分けている。
-本稿はそれらを無条件の入力にしない。
-
-\begin{theorem}[可換点での形式Weyl商]\label{thm:formal-weyl}
-$X$を自己同型群が自明な滑らかな三次曲面とし、特殊ファイバーとの同定を保持する
-flat Artin変形を考える。各通常の幾何学的マーキング$m\in\operatorname{Mark}(X)$について、
-AOUの標準九対象helixを選び、各例外対象のスカラー同定をrigidifyする。
-weakly marked変形にこのhelixの持上げを加えた関手を$\widehat{\mathfrak M}_m$とする。
-すると、忘却は各$m$について形式変形関手の同値
-\[
- \widehat{\mathfrak M}_m\simeq
- \widehat{\mathfrak C}_{(\operatorname{coh}X,\OO_X)}
-\]
-である。ここではflat Abel変形とその相対smooth proper模型を用いる。
-AOUの関係式商の$m$における完備化が左辺を表す。
-従って$W(E_6)$による形式的なre-marking作用が存在し、
-\begin{equation}\label{eq:formal-weyl}
- \left[\coprod_{m\in\operatorname{Mark}(X)}\widehat{\mathfrak M}_m
-       \,\middle/\,W(E_6)\right]
- \simeq\widehat{\mathfrak C}_{(\operatorname{coh}X,\OO_X)}.
-\end{equation}
-このfunctorのminiversalな底は$\operatorname{Spf}\kk[[q_1,\ldots,q_8]]$である。
-この同定は相対helixのflat性・生成性とDe Deken--Lowenの比較条件を
-Artin変形の範囲で保つことに依拠する。
-\end{theorem}
-\begin{proof}
-$X$の標準九対象は線束の完全強例外列であり、そのhelixは高次Extの消える幾何的な
-$\mathbb Z$-生成列である。$\OO_X$はその第$(0,0)$対象である
-\cite[(4.1), (9.44)]{AOU}。各対象$E$について
-$\Ext^1(E,E)=\Ext^2(E,E)=0$なので、Lowenの対象持上げの障害理論\cite{Lowen}
-により各Artin小拡大でflat liftが存在し、同型類は一意である。
-相対Hom複体の特殊ファイバーが次数0だけに集中している場合、perfect複体の
-底変更判定によりHomは自由となり高次Ext消滅も持ち上がる。
-De Deken--Lowen\cite[Theorems 4.5, 5.13, 5.15]{DDL}をInd-completionに適用すると、
-Abel変形、helixの$\mathbb Z$-代数の変形、その九対象threadの有限代数の変形が同値になる。
-この適用の入力は、forward Ext$^{1,2}$消滅、生成性、対象のflat性であり、すべて上記helixで満たされる。
-有限代数の変形は冪等元を持ち上げて矢・関係の変形で表される。
-
-$\OO$も一意に持ち上がり、逆Serreはhelixを九項移動する。
-ampleな生成列に対する高次Hom消滅でheartを特徴付ければ、この九項移動は$t$-exactとなる。
-$\OO(m)$の高次コホモロジー消滅 ($m\ge0$) はperfect底変更によって持ち上がるので、
-反標準Homのrankは指定Hilbert関数に一致する。
-反標準subsequenceのAZ生成性とHom全射性は、Artin底の冪零イデアルによる有限filtrationに
-沿う帰納法とSerre消滅によって持ち上がる。
-逆にweakly marked変形からこのhelixを一意に持ち上げられるので、forgetful関手は同値である。
-これは接空間の次元一致だけによる同定ではない。
-
-古典的な$\operatorname{Mark}(X)$は$W(E_6)$のtorsorである\cite[\S2.3]{AOU}。
-持上げの一意性により、各形式chartを同じ忘却先へ同定してre-markingを定義できる。
-rigidification後に同型は一意なのでCoxeterの合成の整合性も従い、商は忘却先に一致する。
-$\HH^2(X)=8$、$\HH^3(X)=\HH^1(X)=0$は命題\ref{prop:hh}で計算する。
-Hochschild変形の無障害性と無限小自己同型の消滅から8次元形式円板を得る。
-\end{proof}
-
-\begin{remark}[何が有限Weylで、何が未証明か]
-上の定理は\emph{commutative pointへの特殊化を指定した通常のマーキングの持上げ}についてのもの。
-全ての非可換対象に通常のマーキングが存在すること、同じ数値類の例外対象が大域的に一意なこと、
-完成したトーリック境界でWeyl作用が正則なことは含まない。
-一般のhelixを忘れる問題にはaffine Weyl群が現れる\cite{OWR}。
-$\OO$を保持することだけから、あらゆる非可換自己同値の余分な同一視が消えるとは結論しない。
-可換点の上の$\OO$を指定した通常のmarking問題では有限$W(E_6)$になる。
-\end{remark}
-
-\begin{proposition}[大域商を証明するための十分条件]\label{prop:global-weyl-criterion}
-内在的stackの部分$\mathfrak C^\circ$とAOUの適切にrigidifyされた良い部分$M^\circ$について、
-次の条件を仮定する。
-(i) 任意の族がエタール局所で標準九対象markingを持つ。
-(ii) そのmarkingの忘却は集合層を表し、数値的markingの層との自然写像が同型である。
-(iii) 数値marking層は$W(E_6)$-torsorで、AOUの全対象・全同型を表す。
-このとき$M^\circ\to\mathfrak C^\circ$は$W(E_6)$-torsorであり、
-$[M^\circ/W(E_6)]\simeq\mathfrak C^\circ$となる。
-\end{proposition}
-\begin{proof}
-仮定(ii),(iii)から、二つのmarkingを持つ同一対象の族の層は
-$M^\circ\times W(E_6)$であり、
-$M^\circ\times_{\mathfrak C^\circ}M^\circ$と同定される。
-仮定(i)がエタール全射性を与えるので、通常のtorsor降下による商stackが$\mathfrak C^\circ$である。
-\end{proof}
-本稿ではこれら三条件を全大域成分で証明していない。
-特にHilbert級数とAZ amplenessだけで(ii)は従わず、
-形式定理\ref{thm:formal-weyl}を大域Weyl商へ無断で昇格させない。
 
 \section{AOUからの有限なambient構成と一般点の支配性}\label{sec:aou-ambient}
 AOUの関係式族は、三つのblockを持つacyclic quiverの代数

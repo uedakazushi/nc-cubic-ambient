@@ -1,6 +1,6 @@
 \documentclass[11pt,a4paper]{ltjsarticle}
 \usepackage[margin=23mm]{geometry}
-\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,mathrsfs}
 \usepackage[haranoaji]{luatexja-preset}
 \usepackage[unicode,hidelinks]{hyperref}
 \newtheorem{theorem}{定理}[section]
@@ -16,66 +16,67 @@
 \newcommand{\Hom}{\operatorname{Hom}}\newcommand{\HH}{\operatorname{HH}}
 \newcommand{\Spec}{\operatorname{Spec}}\newcommand{\PGL}{\operatorname{PGL}}
 \newcommand{\OO}{\mathcal O}\newcommand{\rank}{\operatorname{rank}}
-\title{非可換三次曲面と非可換射影三空間のモジュライ\\\large 四周期表示・明示的成分・反標準復元とWeyl商}
+\newcommand{\Pic}{\operatorname{Pic}}\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\End}{\operatorname{End}}\newcommand{\RHom}{\operatorname{RHom}}
+\newcommand{\Cw}{\mathfrak C^{\rm w}}\newcommand{\Cu}{\mathfrak C^{\rm u}}
+\title{非可換三次曲面のマーキング忘却とPicard作用\\\large 構造対象・形式Weyl商・ambient比較}
 \author{植田一石}
-\date{2026年11月17日 / surface-v4}
+\date{2026年11月17日 / surface-v5}
 \begin{document}\maketitle
 \begin{abstract}
-非可換三次曲面の反標準偏極による内在的記述を、
-四周期の二次関係を持つ非可換射影三空間および四次superpotentialのモジュライと比較する。
-任意に指定した四周期構造と非捩れpotential構造が一般には一致しないことを例示する。
-中心一次拡大から得られる$R(1,3)$族では、四頂点potentialの全テンソル方向の
-接空間を有理数上で計算し、67次元既約成分の滑らかな一般開部分と
-7次元Deligne--Mumford商stackのエタール表示を得る。
-滑らかな三次曲面のPoisson構造のambientへの一意延長と、
-固定ambientの中心三次超曲面のペンシルを記述する。
-反標準orbit環による超曲面認識部分の比較射を定義し、
-可換点の形式近傍では通常の幾何学的markingの忘却を$W(E_6)$商として記述する。
-AOUの一般位置における反標準模型の比較を仮定すると、
-marked曲面から$R(1,3)$成分への有理ambient射は支配的であり、
-一般ファイバーは一次元である。
-中心三次ペンシルの特異値をJacobian環上のモニック8次多項式で記述し、
-その8点を非可換ambientの$t\ne0$のpoint moduleと同定する。
-一般には各臨界値にただ一つのnodalな特異曲面が対応する。
-全weakly markedモジュライの代数性、全対象の超曲面認識、大域Weyl商は
-ここでは証明しない。
+非可換三次曲面を、反標準Serre作用、Artin--Zhang豊富性と三次曲面のHilbert値を持つ
+Abel圏と、rank-one torsion-free exceptionalな構造対象の組として定義する。
+AOUの標準九対象helixから構造対象へ、さらに基礎Abel圏へ至る
+二段階の忘却を、固定圏上の選択群oidと自己同値2-groupの作用によって記述する。
+滑らかな可換三次曲面上の許容構造対象は線束に限られること、
+共通線束捩れが例外列のrelation表示に新しい点を与えないことを示す。
+相対Serre作用とbase-changeの条件を明示したArtin形式近傍において、
+構造対象・標準helixの持上げと有限$W(E_6)$商を比較する。
+一次非可換変形でのPicard re-marking障害を
+$H^1(\pi^\sharp)c_1(L)$として計算し、滑らかな反標準楕円曲線のもとで
+その階数が3または4、一般には4であることを示す。
+反標準方向は一次障害の核に入るが、$E_6$ root方向は一般に核に入らない。
+これにより、構造対象の持上げと同一変形の自己同値の持上げを区別する。
+四頂点potentialの$R(1,3)$成分、Poisson延長、中心三次ペンシルと八点の
+point moduleに関する結果も保持する。
+全対象のambient認識、大域Weyl商、全非可換圏での構造対象の軌道分類は未解決とする。
 \end{abstract}
 {\small\tableofcontents}
 \clearpage
 
 
-\section{先行研究と対象の区別}
-非可換三次曲面には、反標準偏極による定義、非可換平面の6点blow-up、
-4次元AS正則代数の正規三次商、例外列からの箙関係という複数の表示がある。
-これらの全族・全境界での同値は、本稿の前提にはしない。
-Van den Bergh\cite[Chapter 12]{VdB}は、楕円的な非可換blow-upに付随する反標準型環を
-4次元AS正則環の正規三次商として構成した。ただし反標準モデルとblow-upそのものの
-区別に注意する（同章Remark 12.0.5）。
+\section{目的・先行研究・結果の適用範囲}
+本稿の中心問題はAOUのmarkedな九対象helixを弱い構造対象へ、
+さらに構造対象を忘れて基礎Abel圏へ移す二段階のモジュライ比較である。
+内在的定義にはrank-one torsion-free性とexceptionalityを独立に要求し、
+ambientのquadratic AS-regularityは仮定しない。
+定理\ref{thm:forgetful-fibres}は忘却の2-fiberと自己同値作用の一般的記述、
+定理\ref{thm:commutative-structure}は可換fiberのPicard基準、
+命題\ref{prop:common-tensor}はAOU関係式の共通捩れ不変性を与える。
+定理\ref{thm:formal-weyl}は可換点の許容相対Artin変形に限った
+$W(E_6)$商である。
+命題\ref{prop:picard-first-order}、定理\ref{thm:picard-obstruction-rank}、
+命題\ref{prop:canonical-kernel}は非可換一次変形におけるPicard作用の障害を記述する。
 
-Abdelgadir--Okawa--Ueda\cite{AOU}は9頂点18矢の箙と9個の二次関係を用い、
-marked非可換三次曲面のトーリックGITモジュライを構成した。その稠密トーラスは
-$(\mathbb G_m)^8$である（\S5.4）。同論文Theorem 1.1は楕円decupleによる
-双有理表示、Theorem 9.4は所定のblow-upとの導来同値を与える。
-本稿ではこれを「反標準環の族とそのambientへの射の全域での同定」と読み替えない。
-2025年のOkawa--Ueda\cite{OU2025}によるmarked AS曲面の一般化も一次資料として比較する。
+Abdelgadir--Okawa--Ueda\cite{AOU}は九頂点18矢の関係式モジュライを構成した。
+Okawa--Ueda\cite{OU2025}はmarked AS surfaceをhelixで定義する。
+低次数の変形の比較にはDe Deken--Lowen\cite{DDL}とLowen\cite{Lowen}を用いる。
+可換圏の自己同値の分類にはBondal--Orlov\cite{BO}、
+Poisson方向を含むAbel変形の一次比較にはToda\cite{Toda}を参照する。
+affine Weyl作用による大域分類は\cite{OWR}で予想とされており、これを定理として使用しない。
 
-Pym\cite[\S3.4]{Pym}の$R(1,3)$成分は、三変数Sklyanin代数の中心一次拡大に対応する。
-中心拡大の代数構造はLe Bruyn--Smith--Van den Bergh\cite{LBS}、
-非斉次potentialの中心元と量子del Pezzo構成はEtingof--Ginzburg\cite{EG}に属する。
-本稿の寄与は、四窓全体の接空間を計算するとともに、
-周期の選択およびmarking忘却の効果を明示して、特定の一般開部分における
-対応射・ファイバー・形式変形を比較することである。
-この結果の既知の記述との優先権の照合はなお必要である。
+\paragraph{ambient比較の位置付け.}
+quadratic AS-regular ambientの存在は内在的公理からはまだ導出されていない。
+その認識問題は本稿では保留する。
+一方、与えられたAS4 ambient上の四周期関係式・potential・三次正規商の
+従来の定理と証明は、以下の独立した比較節に保持する。
+Van den Bergh\cite[Chapter 12]{VdB}の反標準モデルとblow-upを区別し、
+Pym\cite[\S3.4]{Pym}の$R(1,3)$成分、LBS\cite{LBS}の中心拡大、
+Etingof--Ginzburg\cite{EG}のPBW構成を使う。
+定理\ref{thm:aou-dominance}は相対比較仮定の下での一般支配性であり、
+marking忘却の大域商を証明するものではない。
 
-\subsection*{主結果と適用範囲}
-命題\ref{prop:period-counterexample}は四周期の関係式stackと非捩れpotential表示の相違を示す。
-定理\ref{thm:r13-open}は標準AS条件を満たす$R(1,3)$族の一般開部分を構成する。
-定理\ref{thm:extension}、定理\ref{thm:pencil-critical}と命題\ref{prop:center}はPoisson延長と中心三次ペンシルの特異値を記述する。
-定理\ref{thm:formal-weyl}は可換点の形式変形に限定される。
-定理\ref{thm:aou-dominance}は一般位置の比較仮定の下での結論であり、
-全非可換対象や全境界での支配性を主張しない。
-以下では選択周期、構造対象、頂点スカラーのrigidificationを区別する。
-
+\input{papers/sections/marking_forgetful.tex}
 \input{papers/sections/surface_stack_comparison.tex}
 
 \section{三次曲面のPoisson構造の一意延長}
@@ -481,6 +482,13 @@ Theorems 4.5, 5.13, 5.15 and Definition 5.12.
 \emph{Marked Artin--Schelter surfaces of del Pezzo types},
 \href{https://arxiv.org/abs/2508.04986}{arXiv:2508.04986v1} (2025),
 Definition 1.1 and Theorem 6.4.
+\bibitem{BO} A. Bondal, D. Orlov,
+\emph{Reconstruction of a variety from the derived category and groups of autoequivalences},
+Compositio Math. 125 (2001), 327--344;
+\href{https://arxiv.org/abs/alg-geom/9712029}{arXiv:alg-geom/9712029}.
+\bibitem{Toda} Y. Toda, \emph{Deformations and Fourier--Mukai transforms},
+J. Differential Geom. 81 (2009), 197--224;
+\href{https://arxiv.org/abs/math/0502571}{arXiv:math/0502571}.
 \bibitem{OWR} K. Ueda (joint work with S. Okawa),
 \emph{Affine Weyl group actions on moduli spaces of marked noncommutative del Pezzo surfaces},
 Oberwolfach Reports 44/2024, pp. 2557--2558,

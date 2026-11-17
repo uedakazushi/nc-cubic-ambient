@@ -1,14 +1,17 @@
 {
   "date": "2026-11-17",
-  "version": "surface-v4",
+  "version": "surface-v5",
   "proof_review": {
     "new_surface_proofs_examined": true,
     "new_categorical_statements": "Ordinary proofs with explicitly cited hypotheses; not formalized or externally refereed",
     "global_Weyl_quotient": "NOT PROVED",
-    "intrinsic_recognition_for_all_objects": "NOT PROVED",
+    "intrinsic_recognition_for_all_objects": "SUSPENDED / NOT PROVED",
     "AOU_ambient_dominance": "Conditional on generic Serre/blow-up/comparison assumptions stated in theorem; applicability not independently reconfirmed",
     "all_previous_threefold_proofs_reaudited": false,
-    "novelty_priority_exhaustive_search": false
+    "novelty_priority_exhaustive_search": false,
+    "new_categorical_results": "Proofs now in papers/sections/marking_forgetful.tex; not externally refereed",
+    "picard_action": "First-order formula with convention-dependent sign; proof in marking_forgetful.tex; higher-order lift unresolved",
+    "new_weak_definition": "Gabriel-Krull rank-one torsion-free and exceptional included as independent axioms"
   },
   "environment": {
     "python": "3.13.5",
@@ -51,22 +54,7 @@
       "matches_existing_certificate": true
     }
   ],
-  "static": {
-    "checker": "scripts/verify_surface_bundle.py",
-    "executed": false,
-    "notes": "Checker path updated; current Python checker has not been executed."
-  },
-  "build": {
-    "command": "latexmk -lualatex papers/nc-cubic-ambient-moduli.tex",
-    "success": null,
-    "notes": "Current version not compiled yet; preflight still required."
-  },
   "persistence": "This file records generated and verified content only. GitHub commit and Library upload are separately confirmed by tool receipts; not asserted here.",
-  "previous_validation": {
-    "date": "2026-11-15",
-    "version": "surface-v2",
-    "note": "Old finite computations and build records below were recorded for the prior manuscript, and have not been rerun for surface-v3."
-  },
   "current_source_checks": {
     "date": "2026-11-17",
     "method": "GitHub connector in-memory source verification",
@@ -134,5 +122,18 @@
     ],
     "affine_equivalence_rejected": true,
     "claim_status": "Exact finite example, not general theorem"
+  },
+  "focus": "Marking forgetful maps and first-order Picard re-marking",
+  "current_checks": {
+    "date": "2026-11-17",
+    "source_reference_check": "run on three TeX sources in connector preflight; labels and bibliography all resolved",
+    "new_computation": {
+      "script": "computations/verify_marking_lattice.py",
+      "run": true,
+      "result": "PASS over QQ: 72 roots, 27 lines, discriminant 3, smooth cubic witness, nonzero embedded KS"
+    },
+    "latexmk_current_version_run": false,
+    "legacy_ambient_ranks_rechecked": false,
+    "novelty_exhaustive_review": false
   }
 }

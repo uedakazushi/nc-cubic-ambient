@@ -1,20 +1,17 @@
-# 非可換三次曲面のambient・markedモジュライ比較
+# 非可換三次曲面のマーキング忘却とPicard作用
 
-**最初に[研究方針](00_research_plan.md)を読む。** 現行論文は [nc-cubic-ambient-moduli.tex](papers/nc-cubic-ambient-moduli.tex) と [surface_stack_comparison.tex](papers/sections/surface_stack_comparison.tex)。[研究ノート](research/cubic_surface_comparison.md)・[R13](research/r13_generic_moduli.md)・[再現手順](research/cubic_surface_reproduce.md)・[検証範囲](research/surface_validation.json)を参照。
+**[研究方針](00_research_plan.md)から読む。** 現行公表稿は [nc-cubic-ambient-moduli.tex](papers/nc-cubic-ambient-moduli.tex) で、[markingの主節](papers/sections/marking_forgetful.tex) と [ambientの既存結果](papers/sections/surface_stack_comparison.tex) を読み込む。[研究ノート](research/cubic_surface_comparison.md)・[再現手順](research/cubic_surface_reproduce.md)・[検証状態](research/surface_validation.json)を参照。
 
-目標はintrinsic H3／weakly marked三次曲面、14641 ambient・4頂点potential、AOUのmarked AS曲面モジュライを比較し、対応射の定義域・像・ファイバー・同型を決定すること。Pym R(1,3)の接空間やW(E6)の形式近傍は扱うが、全大域weakモジュライのWeyl商同定と全対象の超曲面認識は**未証明**。AOUの一般幾何学的点でのinverse Serre orbit環は既存の導来同値から復元できるが、支配性は相対底変更と形式変形の比較仮定の下での結論である。Poisson中心三次ペンシルには一般に8個のnodalな特異曲面があり、中心一次拡大の$t\neq0$の8個のpoint moduleと同じJacobian臨界点で記述される（現行論文の定理・命題）。8個のpoint moduleの存在自体はLBS (1996)の既知結果。
+現在の最優先研究は、標準九対象helix（AOU）→rank-one torsion-free exceptional構造対象を指定したweakly marked圏→unmarked Abel圏、という二段階の忘却の幾何学的ファイバーと慣性である。ambient quadratic AS-regularityの自動認識問題は**保留**し、既に証明したambient結果は後半に保持する。
 
-量子中心三次元の値が古典的な8臨界値に一致しない厳密な計算例を研究ノートに保持する。この結果は一般的な量子判別式の定理としては未確立。
+可換三次曲面では構造対象が線束となり、exact自己同値のPicard作用で推移的。非可換一次変形では線束の持上げとtensor自己同値の持上げが異なり、障害は `delta_pi(L)=H^1(pi^sharp)c1(L)`。反標準方向は消えるがroot lattice方向は一般に消えない。可換点での形式的W(E6)商は相対heart条件付きで、全大域weak商同定は未証明。AOUのGIT関係式表示に共通tensorが既に見えない点にも注意。
 
 ## 再現
 ```sh
 python3 -m pip install -r requirements-surface.txt
-python3 computations/verify_surface_incidence.py
-python3 computations/verify_r13_potential.py
-python3 computations/verify_pencil_discriminant.py
-python3 computations/verify_quantum_casimir_obstruction.py
-latexmk -lualatex papers/nc-cubic-ambient-moduli.tex
+python3 computations/verify_marking_lattice.py
 python3 scripts/verify_surface_bundle.py
+latexmk -lualatex papers/nc-cubic-ambient-moduli.tex
 ```
 
-GitHub mainが唯一の正本。PDF・ZIP・中間生成物はGit追跡しない。分類の正本は [nc-cubic-moduli](https://github.com/uedakazushi/nc-cubic-moduli)、楕円E6量子化は [nc-cubic-e6](https://github.com/uedakazushi/nc-cubic-e6)、非AS短報は [nc-cubic-non-as](https://github.com/uedakazushi/nc-cubic-non-as)。資料の移行元は [固定commit](https://github.com/uedakazushi/nc-cubic-moduli/tree/c5fd8a8301f6b1c283a6f0510cde80ae6a006e80)。
+完全な数値計算の追加手順は研究ノート参照。PDF・ZIP・aux等はGit追跡しない。H3全分類の別正本は [nc-cubic-moduli](https://github.com/uedakazushi/nc-cubic-moduli)、非AS短報は [nc-cubic-non-as](https://github.com/uedakazushi/nc-cubic-non-as)。

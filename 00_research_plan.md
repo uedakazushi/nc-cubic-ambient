@@ -1,36 +1,51 @@
-# 研究方針：内在的非可換三次曲面とambientモジュライの比較
+# 研究方針：非可換三次曲面のマーキング忘却とPicard作用
 
-2026-11-17 / surface-v4 / 独立研究正本。**再開時は本書を最初に読む。** 次に `research/cubic_surface_comparison.md`、`research/r13_generic_moduli.md`、`papers/nc-cubic-ambient-moduli.tex` と入力節を読む。
+2026-11-17 / surface-v5 / 研究再開時に最初に読む。次に `papers/nc-cubic-ambient-moduli.tex` と `papers/sections/marking_forgetful.tex`、補足ノート `research/cubic_surface_comparison.md`、検証情報 `research/surface_validation.json` を読む。GitHub mainをTeX研究の正本とする。
 
-## I. 恒常的な研究原則と保存許可
+## I. 恒常的研究原則と保存許可
 
-数学的重要性、新規性、理解の深化、実現可能性、正確性を重視し研究方針を柔軟に更新する。重要な変更は現行方針として理由を記し、履歴を積まない。証明済み・条件付き・未証明・予想・計算結果を区別し、既存と新規の成果を区別する。先行研究の一次資料と仮定を確認し、未確認の書誌・新規性を推測で補わない。論文は原則日本語LuaLaTeXで現在の成果と必要な証明を保持し、研究ノートは日誌にしない。旧ZIP・バックアップ・ログ・PDF・キャッシュをGitに入れず、必要なコード・入力・小証明書を保持する。
+数学的重要性、新規性、理解の深化、応用可能性、正確性、実現可能性を総合し研究全体の価値を最大化する。目標と方法は現時点の証明状況に応じて柔軟に変更し、変更履歴を蓄積しない。証明済み・追加仮定付き・未証明・予想・計算観察を区別する。既存文献と本稿の成果を区別し、一次資料の仮定と適用範囲を確認する。新規性と書誌の未確認点は明記する。論文は日本語LuaLaTeXとし、有効な成果・証明を残し、研究ノートは有用な現在の知識だけにする。再生成に必要な計算コード・証明書は保持し、旧版、ログ、キャッシュ、PDF、ZIPはGit管理から除く。PDFはローカルで再生成する。
 
-研究区切りで承諾なくLibrary保存する一般許可はあるが、このリポジトリはGitHub mainが正本であり、push成功時はLibrary保存せず、GitHub失敗時の緊急避難に限る。既存Libraryファイルは明示指示なしに削除しない。
+研究区切りにユーザーの追加承諾なく、研究方針・研究ノート・現行論文・再現資産からなる軽量bundleをLibraryへ保存する一般許可がある。GitHub mainへのpush、計算・組版検証、Library保存は独立の状態として正確に報告する。Libraryの既存版を明示指示なく削除しない。
 
-## II. 研究の最優先目標と達成基準
+## II. 今の最優先目標と達成基準
 
-weakly marked intrinsic非可換三次曲面のモジュライとambient AS4・4頂点potentialモジュライおよびAOU/OUのmarked AS surfaceモジュライを比較する。自然な射と忘却の定義域、一般ファイバー、W(E6)のmarking商、境界、幾何学的同型・慣性、相対基底変更・降下を達成基準とする。period指定のZ代数と無標識の圏、通常のpotentialとtwisted potentialを区別する。
+**最優先：二段階のmarking忘却**。
+```
+AOU型標準九対象helixの許容部分
+  -> weakly marked (A,O)
+  -> unmarked A
+```
+全段階でobject・同型・2射、相対heart、幾何学的fiber、慣性、base changeを揃える。weakの公理はnoetherian Hom有限smooth proper、H=S^{-1}[2]のt-exact性、AZ豊富性、三次曲面Hilbert値に加えて**Gabriel–Krull rank-one torsion-free性とexceptionality**を要求する。ambientのquadratic AS4性や一次生成を定義に入れない。
 
-## III. 現在の到達点
+達成基準は (1) AOU relation GIT、rigidified relation stack、幾何的markingの比較を同型まで明確化、(2) weak/unmarkedの許容構造対象とexact自己同値群oidの実際のファイバーを計算、(3) Picard/root/affine-Weylの作用と固定NC変形の安定化条件を決定、(4) 少なくとも自然な開部分で大域的な群oid商・エタール降下を証明すること。
 
-現行原稿と `research/surface_validation.json` に証明と検算範囲を記す。R(1,3)の全4頂点potentialの接空間から67次元成分と7次元rigidified商・有限型エタールatlas、Poisson側の一意延長・中心三次ペンシル・一般8個のnodal特異曲面と対応する非可換point module、AOU marked形式近傍のW(E6) torsorと、比較仮定に依存する一般支配性、固定ambient中心三次ファイバーP1などを保持する。これらの適用仮定と原稿での証明の所在を確認してから引用する。
+**保留事項**：内在的全対象に一次生成およびquadratic AS正則ambientが自動的に存在するか（一般反例も未確認）。ambientの既存結果を削除せず現行論文の後半に保持するが、方針の主軸にはしない。
 
-全大域weak moduliがWeyl商と一致すること、全intrinsic曲面が正規三次超曲面で認識されること、全境界のAS条件と全スタック降下は未解決。これらを成立済みと記さない。
+## III. 主要到達点と証明の所在
 
-## IV. 次の課題と具体的な着手
+- **定義・群oid（証明済み／形式的）**：主論文 `marking_forgetful.tex` の定義・forgetful-fibres。固定圏内の選択群oidとexact自己同値2-groupによるhomotopy quotientを区別。相対族の代数性は未証明。
+- **可換基準（証明済み）**：滑らかな三次曲面の許容構造対象は線束に一致。rank-one torsion-free `L\otimes I_Z` の `chi(E,E)=1-2 length Z` とexceptionalityから `Z=empty`。弱い指定を忘れると通常のPicard作用群oid、自然同型で割ったexact自己同値群はPic(X)⋊Aut(X)。
+- **AOU relation不変性（証明済み）**：helixの全項の共通線束捩れは有限End代数を変えない。raw GIT商をさらにPicで機械的に割らない。
+- **形式比較（追加した相対条件の下）**：可換点の各線束と標準helixはArtin flat変形へ一意に持ち上がる。通常のmarked近傍は `W(E6)`-torsor。global weak=AOU/W(E6)は未証明。
+- **一次re-marking障害（証明済み、規約で符号差あり）**：`delta_pi(L)=H^1(pi^sharp)c1(L)`。零因子Cが滑らかなときcomplex線型階数は3または4で、明示的な滑らかな三次曲面・反標準楕円曲線上で4。反標準方向 `-K_X` は障害の核、root lattice `Q(E6)` への制限も階数4となる非空開がある。これは整数群のkernel rankを決定したものではなく、非可換固定fiberの全Picard自己同値による推移性は未証明。
+- **格子（証明済み・整数検算）**：Pic rank7、Q(E6) rank6、`Pic/(Q+Z K)=Z/3`、`Pic/Z K≅Q^vee`。根72、直線27をコードで照合。
+- **保持するambient結果（既存の仮定範囲）**：R13四頂点成分67次元・rigidified7次元atlas、Poisson延長、中心三次ペンシルと8点、一般幾何点AOU反標準orbit環復元、仮定付きAOU支配性。証明と検算は主論文後半、詳細はノート。global AS locus/全弱対象の認識は未解決。
 
-(1) AOU有限代数から相対Serre・反標準線型系を直接比較する。必要なbase-changeとheart保存を検査する。(2) Pym R(1,3) locus上でambient射のファイバー・慣性を全幾何学的点で計算する。8個のaffine point module上の量子中心値と可換臨界値は一般に一致するとは限らないことを有限計算例で確認済み。今後は量子中心三次商の幾何的特異値・心の変化とこの中心値との関係を調べる。(3) P3 directed/rolled-up箙と4周期Z代数の整合性を検証し、一般非捩れpotential部分を全AS locusと混同しない。(4) コンパクト化境界、marked忘却、モジュライの代数性を調べる。(5) AOU Theorem 9.4・Lemma 9.2とVdB Chapter 12から一般幾何学的点の反標準orbit環F=P/(G)を証明した。残る相対Serre・base-change・heartの比較と形式変形8方向の比較を検証して支配性の条件を外す。
+## IV. 高優先度の次の課題
 
-## V. 再現
+1. **AOU側のファイバー／慣性**：九対象threadのスカラーtorus、relation GIT、相対heart、数値markingから実際の標準markingへの写像を、同型と家族について比較。可換点での有限Weyl商を、真の許容非可換開部分へ延長できる条件を求める。
+2. **固定NC圏の構造対象**：一次障害のkerを整数格子で求め、中心三次量子化・R13の例でPicard移動が同じAbel変形へ戻る条件を明示。高次Artin障害とinvertible bimoduleを点検する。共通tensorとre-markingの区別を最重要視する。
+3. **群oid商の代数性**：許容構造対象のopen/flat条件、Autの相対表現性、fpqc/étale降下、境界での例外列の純粋性を検討する。
+4. **既存ambient比較との接続**：marking忘却に必要な場合に限り相対Serre・base changeを調べる。ambient認識問題を主目標に戻さない。
+
+## V. 再現と検証
 
 ```sh
 python3 -m pip install -r requirements-surface.txt
-python3 computations/verify_surface_incidence.py
-python3 computations/verify_r13_potential.py
-python3 computations/verify_pencil_discriminant.py
-latexmk -lualatex papers/nc-cubic-ambient-moduli.tex
+python3 computations/verify_marking_lattice.py
 python3 scripts/verify_surface_bundle.py
+latexmk -lualatex papers/nc-cubic-ambient-moduli.tex
 ```
 
-計算のPASSと原稿中の通常の証明を混同しない。検証者の独立査読・先行研究の網羅的な新規性調査は未完。
+既存の重いR13・Poisson証明書は `research/cubic_surface_reproduce.md` を参照。検証記録は `research/surface_validation.json` を参照。有限計算のPASSは圏論的な降下の証明ではない。新規性の網羅的確認と外部査読は未完。

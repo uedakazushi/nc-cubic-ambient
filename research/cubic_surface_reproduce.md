@@ -7,6 +7,7 @@
 ```sh
 python3 -m pip install -r requirements-surface.txt
 python3 computations/verify_surface_incidence.py
+python3 computations/verify_marking_lattice.py
 python3 computations/verify_r13_potential.py
 python3 computations/verify_pencil_discriminant.py
 python3 computations/verify_quantum_casimir_obstruction.py
