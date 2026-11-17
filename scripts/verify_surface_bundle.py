@@ -12,9 +12,7 @@ def visit(path):
     seen[path]=text
     for name in re.findall(r'\\input\{([^}]+)\}',text):
         visit(name if name.endswith('.tex') else name+'.tex')
-visit('papers/nc-cubic-ambient-moduli.tex')
-assert (root/'papers/sections/marking_forgetful.tex').exists()
-assert (root/'computations/verify_marking_lattice.py').exists()
+visit('papers/nc-cubic-ambient.tex')
 assert (root/'computations/verify_pencil_discriminant.py').is_file()
 assert (root/'computations/verify_quantum_casimir_obstruction.py').is_file()
 

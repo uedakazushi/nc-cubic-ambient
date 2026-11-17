@@ -1,184 +1,30 @@
 {
   "date": "2026-11-17",
-  "version": "surface-v7",
-  "proof_review": {
-    "new_surface_proofs_examined": true,
-    "new_categorical_statements": "Ordinary proofs with explicitly cited hypotheses; not formalized or externally refereed",
-    "global_Weyl_quotient": "NOT PROVED",
-    "intrinsic_recognition_for_all_objects": "SUSPENDED / NOT PROVED",
-    "AOU_ambient_dominance": "Conditional on generic Serre/blow-up/comparison assumptions stated in theorem; applicability not independently reconfirmed",
-    "all_previous_threefold_proofs_reaudited": false,
-    "novelty_priority_exhaustive_search": false,
-    "new_categorical_results": "Proofs now in papers/sections/marking_forgetful.tex; not externally refereed",
-    "picard_action": "First-order formula with convention-dependent sign; proof in marking_forgetful.tex; higher-order lift unresolved",
-    "new_weak_definition": "Gabriel-Krull rank-one torsion-free and exceptional included as independent axioms"
+  "version": "ambient-v1",
+  "source": {
+    "repository": "uedakazushi/nc-cubic-ambient-moduli",
+    "main": "papers/nc-cubic-ambient.tex",
+    "section": "papers/sections/surface_stack_comparison.tex",
+    "separation": "Marking-forgetful paper moved to uedakazushi/nc-cubic-unmark"
   },
-  "environment": {
-    "python": "3.13.5",
-    "sympy": "1.14.0",
-    "tex": "LuaLaTeX 1.18.0 + LuaTeX-ja + HaranoAji"
+  "mathematical_claims": {
+    "R13_component": "Ordinary proof and exact finite-rank certificates preserved; current run pending",
+    "poisson": "Ordinary proof and exact finite certificates preserved",
+    "AOU_ambient_dominance": "CONDITIONAL on relative inverse Serre base change and formal deformation comparison",
+    "global_ambient_recognition": "SUSPENDED, NOT PROVED",
+    "all_AS_boundary": "NOT PROVED",
+    "quantum_casimir_mismatch": "Exact finite example, not general theorem"
   },
-  "computations": [
-    {
-      "script": "computations/verify_r13_potential.py",
-      "executed": true,
-      "exit_code": 0,
-      "domain": "QQ, with 19 independent symbolic coefficients for identities",
-      "ranks": {
-        "flattenings": [
-          6,
-          6,
-          6,
-          6
-        ],
-        "full_tangent": 188,
-        "orbit": 61,
-        "family_and_orbit": 68,
-        "seven_slice_and_orbit": 68
-      },
-      "exact_tangent_containment": true,
-      "all_four_maximal_minors_regenerated": true
-    },
-    {
-      "script": "computations/verify_surface_incidence.py",
-      "executed": true,
-      "exit_code": 0,
-      "domain": "QQ",
-      "ranks": [
-        22,
-        15,
-        38,
-        30
-      ],
-      "smooth_witness_and_polynomial_identities_verified": true,
-      "matches_existing_certificate": true
-    }
-  ],
-  "persistence": "This file records generated and verified content only. GitHub commit and Library upload are separately confirmed by tool receipts; not asserted here.",
-  "current_source_checks": {
-    "date": "2026-11-17",
-    "method": "GitHub connector in-memory source verification",
-    "tex_sources": 2,
-    "unique_labels": 34,
-    "duplicate_labels": 0,
-    "unresolved_references": 0,
-    "unresolved_citations": 0,
-    "balanced_braces": true,
-    "balanced_environments": true,
-    "notes": "Recompute label count on final head; no latexmk rerun reported."
+  "checks": {
+    "static_source": "To be checked on final standalone paper",
+    "current_lualatex_run": false,
+    "existing_ambient_heavy_computations_rerun": false,
+    "earlier_certificates_retained": true,
+    "novelty_exhaustive": false,
+    "externally_refereed": false
   },
-  "current_computations": [
-    {
-      "script": "computations/verify_pencil_discriminant.py",
-      "date": "2026-11-17",
-      "executed_equivalent_source_locally": true,
-      "exact_repository_source_reexecuted": false,
-      "field": "QQ",
-      "critical_values": [
-        -146,
-        -142,
-        -114,
-        -110,
-        110,
-        114,
-        142,
-        146
-      ],
-      "hessian_det_all_nonzero": true,
-      "charpoly_identity": true,
-      "notes": "SymPy exact witness checked in the working container with an equivalent version of the source; genericity proof is in manuscript."
-    }
-  ],
-  "computational_observation": {
-    "script": "computations/verify_quantum_casimir_obstruction.py",
-    "date": "2026-11-17",
-    "executed_equivalent_source_locally": true,
-    "exact_repository_source_reexecuted": false,
-    "relations_rank_4": 86,
-    "shape": [
-      102,
-      121
-    ],
-    "center_verified_by_rowspace_membership": true,
-    "classical_values": [
-      -146,
-      -142,
-      -114,
-      -110,
-      110,
-      114,
-      142,
-      146
-    ],
-    "quantum_center_values": [
-      -290,
-      -254,
-      -30,
-      -2,
-      2,
-      30,
-      254,
-      290
-    ],
-    "affine_equivalence_rejected": true,
-    "claim_status": "Exact finite example, not general theorem"
-  },
-  "focus": "Integral Picard obstruction kernel and first-order forgetting orbits",
-  "current_checks": {
-    "date": "2026-11-17",
-    "source_reference_check": "Rechecked all 3 current TeX sources in connector before push",
-    "new_computation": {
-      "script": "computations/verify_marking_lattice.py",
-      "run": true,
-      "result": "PASS over QQ: 72 roots, 27 lines, discriminant 3, smooth cubic witness, nonzero embedded KS"
-    },
-    "latexmk_current_version_run": false,
-    "legacy_ambient_ranks_rechecked": false,
-    "novelty_exhaustive_review": false,
-    "new_theorems": [
-      "thm:very-general-picard-kernel",
-      "cor:first-order-pointings"
-    ],
-    "proof_location": "papers/sections/marking_forgetful.tex",
-    "new_argument": "W(E6) irreducibility on Q_C plus countable avoidance on irreducible marked moduli; exact autoequivalence image via Toda obstruction and relative inverse Serre",
-    "e6_orbit_test": {
-      "executed": true,
-      "method": "independent SymPy exact test in working container",
-      "orbit_size": 72,
-      "span_rank": 6,
-      "canonical_fixed": true
-    },
-    "current_latexmk_run": false,
-    "full_python_check_not_rerun": true,
-    "tex_sources": 3,
-    "labels": 53,
-    "unique_labels": 53,
-    "unresolved_references": 0,
-    "references": 70,
-    "bibliography_entries": 15,
-    "unresolved_citations": 0,
-    "citations": 39,
-    "balanced_environments": true,
-    "balanced_braces": true,
-    "new_exact_container_checks": {
-      "e6_simple_reflections_orbit_size": 72,
-      "span_rank": 6,
-      "canonical_fixed": true,
-      "cubic_smooth_witness": true,
-      "nonzero_ks_class": "xyz"
-    }
-  },
-  "verified_math_status": {
-    "very_general_picard_kernel": "Proof newly written and checked algebraically, not externally refereed; uses W(E6) irreducibility and countable avoidance",
-    "fixed_nc_first_order_orbits": "Conditional on admissible relative Abel deformation and trivial Aut(X); no stack inertia classified",
-    "genericity": "Very general in irreducible marked smooth cubic-Poisson parameter space; not a single Zariski-open assertion"
-  },
-  "editorial_update": {
-    "japanese_terminology": "標識・標識付き・弱標識付き・無標識・標識忘却・標識変更",
-    "preserved": "English bibliographic titles, repository file names, TeX labels and mathematics",
-    "publication_plan": "Two papers recommended (forgetting/Picard versus ambient/R(1,3)); physical split not yet performed",
-    "new_proofs_added": false,
-    "source_compilation_not_rerun": true,
-    "status": "Terminology and publication-structure plan updated; referential checks pending final tree validation"
+  "persistence": {
+    "github_main": "To be confirmed by tool receipt",
+    "library_saved": false
   }
 }

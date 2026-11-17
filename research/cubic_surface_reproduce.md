@@ -1,22 +1,22 @@
-# 三次曲面研究の再現
+# ambient射・R(1,3)成分の再現
 
-2026-11-17 / surface-v7。最初に `00_research_plan.md` を読む。
+2026-11-17 / ambient-v1。再開時は `00_research_plan.md` を先に読む。
 
-必要環境はPython3、SymPy1.14.0、日本語LuaLaTeX（LuaTeX-ja、HaranoAji）、latexmk。計算はネットワークや外部データを使わない。リポジトリrootから実行する。
+Python3、SymPy（`requirements-surface.txt`）、日本語LuaLaTeX、LuaTeX-ja、HaranoAji、latexmkが必要。リポジトリrootで実行する。
 
 ```sh
 python3 -m pip install -r requirements-surface.txt
-python3 computations/verify_surface_incidence.py
-python3 computations/verify_marking_lattice.py
+python3 computations/verify_directed_p3_syzygy.py
 python3 computations/verify_r13_potential.py
+python3 computations/verify_surface_incidence.py
 python3 computations/verify_pencil_discriminant.py
 python3 computations/verify_quantum_casimir_obstruction.py
-latexmk papers/nc-cubic-ambient-moduli.tex
 python3 scripts/verify_surface_bundle.py
+latexmk -lualatex papers/nc-cubic-ambient.tex
 ```
 
-従来の二つの大型計算はQQ上で行い、JSON証明書を所定パスへ再生成する。Picard格子の検算はE6 Weyl orbitが72根を巡りrank6を張ることもチェックする（本文の非常に一般の核の証明の有限補助）。potential側は数分程度かかり得る。`--quick`はminor一覧を出さないので完全再現の代用にしない。証明書には行・列番号と非零行列式を保存し、容易に再生成できる巨大行列そのものは保存しない。
+`verify_r13_potential.py`はR13の四flattening、全接空間、群軌道と横断方向を有理数上で検証し、`r13_potential_certificate.json` を再生成する。 `verify_surface_incidence.py` はPoisson接空間と二因子stabilizerを検査し、`surface_incidence_certificate.json` を再生成する。大量のminorの列挙は`--quick`では省略するため、完全再現には通常実行を使う。
 
-PDFの出力先はbuild/。GitではPDFを追跡せず、GitHub mainを正本とする。旧版・ログ・aux・cache・外部文献PDFは含めない。surface bundleは三次曲面とR13比較を自己完結的に再開できる。別の三次三様体研究のソースはGitHubで保持されるが、このsurface稿の組版・検証には不要。
+`verify_pencil_discriminant.py`は臨界値と8個のnodeの具体例、`verify_quantum_casimir_obstruction.py`は量子中心値の相違の有限証明を再現する。いずれもambientのAS正則性の全次数、標識忘却の降下、全境界の比較を有限計算だけで証明するものではない。
 
-検証コードは有限線型代数を証明し、本文の全次数AS性、Artinの圏比較、標識の降下を計算だけで証明するものではない。後者の通常証明と一次資料の適用条件は本文にある。global weak=Weyl quotient、全認識定理、七係数atlasの一般次数、コンパクト化境界は未解決。
+PDFは`build/`へ出力し、Gitはソースと小さな証明書だけを追跡する。論文・参照・コードが欠落していないことを`scripts/verify_surface_bundle.py`で点検する。現行の実行状態は`research/surface_validation.json`を読む。

@@ -1,62 +1,48 @@
-# 研究方針：非可換三次曲面の標識忘却とPicard作用
+# 研究方針：非可換三次曲面のambient射とR(1,3)成分
 
-2026-11-17 / surface-v7 / 研究再開時に最初に読む。次に `papers/nc-cubic-ambient-moduli.tex` と `papers/sections/marking_forgetful.tex`、補足ノート `research/cubic_surface_comparison.md`、検証情報 `research/surface_validation.json` を読む。GitHub mainをTeX研究の正本とする。
+2026-11-17 / ambient-v1。研究再開時は本ファイルを最初に読み、`papers/nc-cubic-ambient.tex` と入力節 `papers/sections/surface_stack_comparison.tex`、`research/cubic_surface_comparison.md` を参照する。GitHub mainをこの研究の正本とする。
 
-## I. 恒常的研究原則と保存許可
+## I. 恒常的な研究原則と保存許可
 
-数学的重要性、新規性、理解の深化、応用可能性、正確性、実現可能性を総合し研究全体の価値を最大化する。目標と方法は現時点の証明状況に応じて柔軟に変更し、変更履歴を蓄積しない。証明済み・追加仮定付き・未証明・予想・計算観察を区別する。既存文献と本稿の成果を区別し、一次資料の仮定と適用範囲を確認する。新規性と書誌の未確認点は明記する。論文は日本語LuaLaTeXとし、有効な成果・証明を残し、研究ノートは有用な現在の知識だけにする。再生成に必要な計算コード・証明書は保持し、旧版、ログ、キャッシュ、PDF、ZIPはGit管理から除く。PDFはローカルで再生成する。
+数学的重要性、新規性、理解の深化、応用可能性、正確性、実現可能性を総合して、現在の研究価値を最大化する。重要な方針変更は有効な現行方針として書き直し、時系列の更新履歴を蓄積しない。証明済み・追加仮定付き・未証明・予想・有限計算の観察を分離し、仮定・依存文献・証明の所在・未解決点を示す。先行研究は一次資料の正確な仮定を確認し、未確認の書誌や優先権を推測しない。論文は日本語LuaLaTeXとし、公表価値のある有効な成果と必要な証明を残す。研究ノートは今後必要な情報だけを保持し、旧版やバックアップ、ZIP、PDF、中間生成物、重複をGitに入れない。
 
-研究区切りにユーザーの追加承諾なく、研究方針・研究ノート・現行論文・再現資産からなる軽量bundleをLibraryへ保存する一般許可がある。GitHub mainへのpush、計算・組版検証、Library保存は独立の状態として正確に報告する。Libraryの既存版を明示指示なく削除しない。
+研究区切りには追加承諾なく、現行研究方針・研究ノート・原稿・必要な検証資産を含む軽量継続bundleをLibraryに保存してよい。GitHubへのpush、Library保存、組版・計算の検証は別々に確認して報告する。Libraryにある旧ファイルの削除は、明示的な指示なしに行わない。
 
-## II. 今の最優先目標と達成基準
+## II. 今の研究目標
 
-**最優先：二段階の標識忘却**。
-```
-AOU型標準九対象helixの許容部分
-  -> 弱標識付き (A,O)
-  -> 無標識 A
-```
-全段階でobject・同型・2射、相対heart、幾何学的fiber、慣性、base changeを揃える。weakの公理はnoetherian Hom有限smooth proper、H=S^{-1}[2]のt-exact性、AZ豊富性、三次曲面Hilbert値に加えて**Gabriel–Krull rank-one torsion-free性とexceptionality**を要求する。ambientのquadratic AS4性や一次生成を定義に入れない。
+本研究は**ambientが与えられた非可換三次曲面のモジュライ比較**を扱う。四次元quadratic Koszul AS正則代数の正規三次商、四周期Z代数の関係式stack、符号付き四次superpotentialの同値関係、R(1,3)の成分、Poisson延長、固定ambientの正規三次ファイバー、AOUの反標準orbit環からの有理射を明確化する。
 
-達成基準は (1) AOU relation GIT、rigidified relation stack、幾何的標識の比較を同型まで明確化、(2) 弱標識付き／無標識の許容構造対象とexact自己同値群oidの実際のファイバーを計算、(3) Picard/root/affine-Weylの作用と固定NC変形の安定化条件を決定、(4) 少なくとも自然な開部分で大域的な群oid商・エタール降下を証明すること。
+**保留：** 内在的弱標識付き非可換三次曲面の全対象でambientのAS正則性が自動的に従うか（反例も未発見）。本稿の定義は内在的な許容構造対象を簡潔に再掲するが、ambient射は超曲面認識部分に限定する。
 
-**保留事項**：内在的全対象に一次生成およびquadratic AS正則ambientが自動的に存在するか（一般反例も未確認）。ambientの既存結果を削除せず現行論文の後半に保持するが、方針の主軸にはしない。
+標識付き・弱標識付き・無標識の二段階の忘却は独立論文 `uedakazushi/nc-cubic-unmark/papers/nc-cubic-unmark.tex` が正本。本研究では標識忘却の形式Weyl商を重複して主結果にしない。
 
-## III. 主要到達点と証明の所在
+## III. 主結果と状態
 
-- **定義・群oid（証明済み／形式的）**：主論文 `marking_forgetful.tex` の定義・forgetful-fibres。固定圏内の選択群oidとexact自己同値2-groupによるhomotopy quotientを区別。相対族の代数性は未証明。
-- **可換基準（証明済み）**：滑らかな三次曲面の許容構造対象は線束に一致。rank-one torsion-free `L\otimes I_Z` の `chi(E,E)=1-2 length Z` とexceptionalityから `Z=empty`。弱い指定を忘れると通常のPicard作用群oid、自然同型で割ったexact自己同値群はPic(X)⋊Aut(X)。
-- **AOU relation不変性（証明済み）**：helixの全項の共通線束捩れは有限End代数を変えない。raw GIT商をさらにPicで機械的に割らない。
-- **形式比較（追加した相対条件の下）**：可換点の各線束と標準helixはArtin flat変形へ一意に持ち上がる。通常の標識付き近傍は `W(E6)`-torsor。global weak=AOU/W(E6)は未証明。
-- **一次標識変更障害（証明済み、規約で符号差あり）**：`delta_pi(L)=H^1(pi^sharp)c1(L)`。零因子Cが滑らかなときcomplex線型階数は3または4で、明示的な滑らかな三次曲面・反標準楕円曲線上で4。反標準方向 `-K_X` は障害の核、root lattice `Q(E6)` への制限も階数4となる非空開がある。**整数格子核も決定した**：滑らかな標識付き三次曲面の既約moduli上のW(E6)作用の既約性を用い、非常に一般の(X,π)ではker(Pic(X)→H¹(T_X))=ZK_X（thm:very-general-picard-kernel）。許容相対一次Abel変形でAut(X)=1なら、固定NC圏のexact自己同値のPicへの特殊化像は反SerreのZ[-K_X]だけであり、許容構造対象の同型類商はPic(X)/ZK_X≅Q(E6)^∨≅Z^6（cor:first-order-pointings）。この結論は非常に一般の一次変形・相対heart条件付きであり、全大域moduliの結果ではない。
-- **格子（証明済み・整数検算）**：Pic rank7、Q(E6) rank6、`Pic/(Q+Z K)=Z/3`、`Pic/Z K≅Q^vee`。根72、直線27をコードで照合。
-- **保持するambient結果（既存の仮定範囲）**：R13四頂点成分67次元・rigidified7次元atlas、Poisson延長、中心三次ペンシルと8点、一般幾何点AOU反標準orbit環復元、仮定付きAOU支配性。証明と検算は主論文後半、詳細はノート。global AS locus/全弱対象の認識は未解決。
+- 【証明・正確な計算証明書】R(1,3)四頂点quartic superpotentialの二flattening全方向の接空間、67次元既約成分の一般正則性、rigidified7次元DM商のエタールatlas（`thm:r13-open`）。
+- 【証明】任意に指定した四周期付き関係式stackと非捩れpotentialが同一でない具体的反例（`prop:period-counterexample`）。二因子stabilizerが有限な一般点での形式一致（`prop:period-formal-rigidity`）。
+- 【証明】可換三次曲面のPoisson構造の一意ambient延長、中心三次ペンシル、八次臨界値多項式、8個の通常二重点と中心一次拡大の8個のpoint moduleへの対応（`thm:extension`, `thm:pencil-critical`, `prop:critical-point-modules`）。八点の既知LBS結果と新しい具体的対応を区別。
+- 【証明・追加仮定】固定ambientの中心三次正規ファイバーのP1と形式一変数（`prop:center`, `prop:normal`）。
+- 【既存文献入力のもとで証明】AOU一般幾何点でinverse Serre orbit環がVdBのF=P/(G)に一致（`prop:aou-orbit-generic`）。【追加仮定付き】相対底変更と八方向微分を仮定してambientのR(1,3)成分への支配性・一般一次元ファイバー（`thm:aou-dominance`）。
+- 【計算的な障害】量子中心三次の8個の値と古典臨界値が単純なアフィン変換で対応しない例。中心性と数値を有限関係式から検算し、一般定理としない。
 
-## IV. 高優先度の次の課題
+## IV. 優先課題
 
-1. **AOU側のファイバー／慣性**：九対象threadのスカラーtorus、relation GIT、相対heart、数値標識から実際の標準標識への写像を、同型と家族について比較。可換点での有限Weyl商を、真の許容非可換開部分へ延長できる条件を求める。
-2. **固定NC圏の構造対象**：非常に一般の一次変形の整数ker=ZKは決定した。次は具体的なR13等の特殊fiberの整数kernelと自己同値像を明示し、高次Artin障害とinvertible bimodule、有限型の相対Aut群oidを点検する。共通tensorと標識変更の区別を最重要視する。
-3. **群oid商の代数性**：許容構造対象のopen/flat条件、Autの相対表現性、fpqc/étale降下、境界での例外列の純粋性を検討する。
-4. **既存ambient比較との接続**：標識忘却に必要な場合に限り相対Serre・base changeを調べる。ambient認識問題を主目標に戻さない。
+1. AOU有限代数の相対inverse Serre・heart・base changeを一次資料と照合し、支配性定理の仮定のどこを無条件化できるか決定する。
+2. R(1,3)の実際の幾何学的ファイバー・慣性・Zhang同型を7係数・Affine3群の商として解析し、数値atlasだけでなく一般同一視を得る。
+3. 既知中心三次商の境界、正規性・H3適合性・homological singularityと量子中心値の関係を調べる。
+4. 四周期raw GL商、rigidified PGL商、twisted/untwisted potentialの群oid差を明確化する。標識忘却の一般認識は本研究の達成条件にしない。
 
-## V. 再現と検証
+## V. 再現
 
 ```sh
 python3 -m pip install -r requirements-surface.txt
-python3 computations/verify_marking_lattice.py
+python3 computations/verify_r13_potential.py
+python3 computations/verify_surface_incidence.py
+python3 computations/verify_pencil_discriminant.py
+python3 computations/verify_quantum_casimir_obstruction.py
+python3 computations/verify_directed_p3_syzygy.py
 python3 scripts/verify_surface_bundle.py
-latexmk -lualatex papers/nc-cubic-ambient-moduli.tex
+latexmk -lualatex papers/nc-cubic-ambient.tex
 ```
 
-既存の重いR13・Poisson証明書は `research/cubic_surface_reproduce.md` を参照。検証記録は `research/surface_validation.json` を参照。有限計算のPASSは圏論的な降下の証明ではない。新規性の網羅的確認と外部査読は未完。
-
-## VI. 公表構成と用語
-
-日本語では標識（marking）、標識付き（marked）、弱標識付き（weakly marked）、無標識（unmarked）、標識忘却、標識変更を用いる。英語の書誌タイトル・原文の固有名・既存ファイル名・TeXの識別子はそのまま保持する。
-
-**公表時は二論文に分割する方針が望ましい（現段階では編集方針であり、分割操作は未実施）。**
-
-- 論文A「非可換三次曲面の標識忘却とPicard作用」：内在的な定義、AOU標識付きから弱標識付きへの忘却、弱標識付きから無標識への忘却、形式W(E6)商、Picard整数核と一次変形上の構造対象軌道。ambient正則性を仮定しない。
-- 論文B「非可換三次曲面のambient射とR(1,3)成分」：四頂点superpotential、67次元成分と7次元商、Poisson延長、中心三次ペンシル、AOUからの有理ambient射（現状は追加仮定付き）。ambient認識の一般的な自動性は保留する。
-
-独立の読者層・証明の依存関係・査読上のリスク分離を分割の理由とする。各原稿を独立に読める構成に整理し、既存証明と数値証明書を削らず、共通基礎結果を重複引用以上に再掲しない。全大域Weyl商とAOU支配性の無条件化を完成済みとして扱わない。現行TeXは分割後の正本が揃うまでは両内容を保持する。
+証明書のrankと通常のAS正則性証明を混同しない。大域同型・全境界・網羅的な優先権調査は未完了。

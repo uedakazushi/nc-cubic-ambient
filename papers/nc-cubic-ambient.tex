@@ -19,73 +19,81 @@
 \newcommand{\Pic}{\operatorname{Pic}}\newcommand{\Aut}{\operatorname{Aut}}
 \newcommand{\End}{\operatorname{End}}\newcommand{\RHom}{\operatorname{RHom}}
 \newcommand{\Cw}{\mathfrak C^{\rm w}}\newcommand{\Cu}{\mathfrak C^{\rm u}}
-\title{非可換三次曲面の標識忘却とPicard作用\\\large 構造対象・形式Weyl商・ambient比較}
+\title{非可換三次曲面のambient射と$R(1,3)$成分\\\large 四周期superpotential・Poisson構造・三次超曲面のファイバー}
 \author{植田一石}
-\date{2026年11月17日 / surface-v7}
+\date{2026年11月17日 / ambient-v1}
 \begin{document}\maketitle
 \begin{abstract}
-非可換三次曲面を、反標準Serre作用、Artin--Zhang豊富性と三次曲面のHilbert値を持つ
-Abel圏と、rank-one torsion-free exceptionalな構造対象の組として定義する。
-AOUの標準九対象helixから構造対象へ、さらに基礎Abel圏へ至る
-二段階の忘却を、固定圏上の選択群oidと自己同値2-groupの作用によって記述する。
-滑らかな可換三次曲面上の許容構造対象は線束に限られること、
-共通線束捩れが例外列のrelation表示に新しい点を与えないことを示す。
-相対Serre作用とbase-changeの条件を明示したArtin形式近傍において、
-構造対象・標準helixの持上げと有限$W(E_6)$商を比較する。
-一次非可換変形でのPicard群による標識変更の障害を
-$H^1(\pi^\sharp)c_1(L)$として計算し、滑らかな反標準楕円曲線のもとで
-その階数が3または4、一般には4であることを示す。
-反標準方向は一次障害の核に入り、非常に一般の組$(X,\pi)$では
-Picard整数格子上の核はちょうど$\mathbb ZK_X$となる。
-相対反Serre自己同値を併用して、許容一次非可換変形の固定圏上で
-構造対象のexact自己同値類が$\Pic(X)/\mathbb ZK_X\simeq\mathbb Z^6$
-で分類されることを証明する。これにより構造対象の持上げと、
-同一変形の自己同値の持上げを区別する。
-四頂点potentialの$R(1,3)$成分、Poisson延長、中心三次ペンシルと八点の
-point moduleに関する結果も保持する。
-全対象のambient認識、大域Weyl商、全非可換圏での構造対象の軌道分類は未解決とする。
+標準二次Koszul AS正則な非可換射影三空間と、
+その正規三次超曲面による非可換三次曲面のモジュライ比較を研究する。
+任意に指定した四周期二次関係表示が非捩れ四次superpotentialの表示と
+無条件には一致しないことを例示する。
+Pymの$R(1,3)$成分に対し四頂点potentialの全方向の接空間を有理数上で計算し、
+67次元の既約成分の一般正則性と、7次元の滑らかなDeligne--Mumford商の
+エタールatlasを構成する。
+可換三次曲面上のPoisson構造は射影三空間へ一意に延長し、
+固定ambientの中心三次超曲面は一般に一次元のペンシルをなす。
+その特異値は八次のJacobian臨界値多項式で検出され、
+一般には8個のnodalな曲面が、ambientの8個のpoint moduleと対応する。
+一般のAOU点における反標準orbit環の復元と、
+相対比較仮定の下でのambientへの支配性も述べる。
+内在的三次曲面の全対象に対するAS正則ambientの自動認識、
+AOUからの射の全境界への延長と大域的な標識忘却の商は未証明とする。
 \end{abstract}
 {\small\tableofcontents}
 \clearpage
 
+\section{はじめに}
+非可換三次曲面の一つの具体的表示は、
+Hilbert級数$(1-t^3)/(1-t)^4$を持つ反標準環を
+四次元quadratic Koszul AS正則代数の正規三次商として表すものである。
+この表示が内在的条件から全ての対象について存在するかは未解決であり、
+本稿では**ambientを持つ認識部分**の幾何とそのモジュライに対象を限定する。
 
-\section{目的・先行研究・結果の適用範囲}
-本稿の中心問題は、AOUの標識付き九対象helixから許容構造対象だけを残し、
-さらに構造対象を忘れて基礎Abel圏へ移る二段階のモジュライ比較である。
-内在的定義にはrank-one torsion-free性とexceptionalityを独立に要求し、
-ambientのquadratic AS-regularityは仮定しない。
-定理\ref{thm:forgetful-fibres}は忘却の2-fiberと自己同値作用の一般的記述、
-定理\ref{thm:commutative-structure}は可換fiberのPicard基準、
-命題\ref{prop:common-tensor}はAOU関係式の共通捩れ不変性を与える。
-定理\ref{thm:formal-weyl}は可換点の許容相対Artin変形に限った
-$W(E_6)$商である。
-命題\ref{prop:picard-first-order}、定理\ref{thm:picard-obstruction-rank}、
-命題\ref{prop:canonical-kernel}は非可換一次変形におけるPicard作用の障害を記述する。
-さらに定理\ref{thm:very-general-picard-kernel}は整数Picard群上での障害の核を、
-系\ref{cor:first-order-pointings}は固定された許容非可換一次変形における
-構造対象のexact自己同値軌道を決定する。
+Van den Bergh\cite[Chapter 12]{VdB}の反標準模型とblow-up自体を区別する。
+Pym\cite[\S3.4]{Pym}の$R(1,3)$中心一次拡大、Le Bruyn--Smith--Van den Bergh
+\cite{LBS}のAS正則性・中心の計算、Mori--Smith\cite{MS}と
+Etingof--Ginzburg\cite{EG}のPBW理論、
+Bocklandt--Schedler--Wemyss\cite{BSW}の符号付きhigher superpotentialを使う。
+AOU\cite{AOU}およびOkawa--Ueda\cite{OU2025}の標識付き三次曲面から
+ambientを復元する問題では、導来同値・heart・底変更を区別する。
 
-Abdelgadir--Okawa--Ueda\cite{AOU}は九頂点18矢の関係式モジュライを構成した。
-Okawa--Ueda\cite{OU2025}は標識付き AS surfaceをhelixで定義する。
-低次数の変形の比較にはDe Deken--Lowen\cite{DDL}とLowen\cite{Lowen}を用いる。
-可換圏の自己同値の分類にはBondal--Orlov\cite{BO}、
-Poisson方向を含むAbel変形の一次比較にはToda\cite{Toda}を参照する。
-affine Weyl作用による大域分類は\cite{OWR}で予想とされており、これを定理として使用しない。
+主結果は命題\ref{prop:period-counterexample}の四周期反例、
+定理\ref{thm:r13-open}の67次元成分と7次元商、
+定理\ref{thm:extension}のPoisson延長、
+定理\ref{thm:pencil-critical}と命題\ref{prop:critical-point-modules}の
+八つの臨界値とpoint module、
+命題\ref{prop:center}および命題\ref{prop:normal}の中心三次ファイバー、
+命題\ref{prop:aou-orbit-generic}および条件付き定理
+\ref{thm:aou-dominance}のAOU比較である。
+有限計算による証明書と全次数のAS性を文献から導く議論は区別する。
 
-\paragraph{ambient比較の位置付け.}
-quadratic AS-regular ambientの存在は内在的公理からはまだ導出されていない。
-その認識問題は本稿では保留する。
-一方、与えられたAS4 ambient上の四周期関係式・potential・三次正規商の
-従来の定理と証明は、以下の独立した比較節に保持する。
-Van den Bergh\cite[Chapter 12]{VdB}の反標準モデルとblow-upを区別し、
-Pym\cite[\S3.4]{Pym}の$R(1,3)$成分、LBS\cite{LBS}の中心拡大、
-Etingof--Ginzburg\cite{EG}のPBW構成を使う。
-定理\ref{thm:aou-dominance}は相対比較仮定の下での一般支配性であり、
-標識忘却の大域商を証明するものではない。
+内在的な標識忘却自体は独立論文
+\href{https://github.com/uedakazushi/nc-cubic-unmark/blob/main/papers/nc-cubic-unmark.tex}
+{「非可換三次曲面の標識忘却とPicard作用」}
+（\texttt{nc-cubic-unmark.tex}）にまとめる。
+本論文のambient射は弱標識付き対象の一部に定義される射であり、
+全大域的な$W(E_6)$商を前提にしない。
 
-\input{papers/sections/marking_forgetful.tex}
+\begin{definition}[ambient射の定義域となる内在的対象]\label{def:weak-cubic}
+$\kk$線型noetherian Abel圏$\mathcal A$と対象$\OO$を取り、
+$D^b(\mathcal A)$にHom有限なsmooth proper dg enhancementとSerre関手
+$\mathsf S$が存在し、$H=\mathsf S^{-1}[2]$がheartを保つとする。
+Gabriel--Krull商$\mathcal A/\mathcal A_1$において
+$q\OO$は非零単純で、$\Hom(T,\OO)=0$ ($T\in\mathcal A_1$)とする。
+さらに$\End(\OO)=\kk$、$\Ext^{i>0}(\OO,\OO)=0$、
+$(\OO,H)$はArtin--Zhang ampleであり、
+\[
+ \sum_{m\ge0}\dim\Hom(\OO,H^m\OO)t^m
+ =\frac{1-t^3}{(1-t)^4},\qquad
+ \Hom(\OO,H^m\OO)=0\quad(m<0)
+\]
+を要求する。これを本稿の弱標識付き非可換三次曲面と呼ぶ。
+一層精密な相対族・2群oidの定義は標識忘却論文に置く。
+本稿のambient射はさらに超曲面認識部分へ制限して定める。
+\end{definition}
+
 \input{papers/sections/surface_stack_comparison.tex}
-
 \section{三次曲面のPoisson構造の一意延長}
 $S=\kk[x,y,z,t]$、$X=V_+(F)\subset\PP^3$を滑らかな三次曲面とし、
 $\Omega=dx\wedge dy\wedge dz\wedge dt$を固定する。
@@ -373,79 +381,48 @@ $Z(B\otimes_\kk T)_3=Z(B)_3\otimes_\kk T$となる。
 従って$\PP^1$の一点での完備化である。
 \end{proof}
 
-\section{反標準偏極による内在性と局所変形}
-三次曲面の場合、三次三様体と異なり$-K_X=\OO_X(1)$である。
-非可換側でも、smooth proper性とsaturationを持つ中心CY型三次商について
-Serre関手が$\mathsf S_A=(-1)[2]$なら
+
+\section{反標準偏極と既知の復元範囲}
+三次曲面では$-K_X=\OO_X(1)$であり、
+非可換側でSerre関手が$\mathsf S_A=(-1)[2]$となる
+所定の中心Calabi--Yau型三次商については
 \[
  H=\mathsf S_A^{-1}[2]=(1),\qquad
  A_n=\Hom(\OO_A,H^n\OO_A)
 \]
-と復元できる。従って$(D^b\qgr A,\OO_A)$から$A$と$B=Q(A)$を復元でき、
-偏極の平方根を選ぶ問題はない。上記Serre公式はAOU\cite[Lemma 9.2]{AOU}でも
-所定のblow-up表示について確認されている。
-任意の正規商では中山自己同型の捩れがあり得るため、上の公式を無条件には使わない。
-構造対象自体を忘れた導来圏からの復元もここでは主張しない。
+と復元する。AOU\cite[Lemma 9.2]{AOU}の適用範囲では
+このSerre公式が確認されている。
+任意の正規三次商についてはNakayama自己同型の捩れがあり得るため、
+上の復元を無条件には主張しない。
+反標準環とその二次包絡の存在を混同せず、
+内在的な全対象へのambient認識は別問題とする。
 
-\begin{proposition}\label{prop:hh}
-滑らかな可換三次曲面$X$について
-\[
- \HH^1(X)=0,\qquad \dim\HH^2(X)=4+4=8,\qquad \HH^3(X)=0.
-\]
-従ってHochschild複体で制御される通常の標識付き形式変形は無障害で、
-そのminiversalな底は8次元形式円板である。
-\end{proposition}
-\begin{proof}
-HKRにより$\HH^2=H^1(T_X)\oplus H^0(-K_X)\oplus H^2(\OO_X)$。
-$H^2(\OO_X)=0$、$h^0(-K_X)=4$である。
-接束の正常完全列とEuler完全列から$H^0(T_X)=0$および
-$h^1(T_X)=h^0(\OO_X(3))-15=19-15=4$を得る。
-前者の消滅は、$F$の偏導関数が二次正則列であり、一次係数のsyzygyがないことにもよる。
-$H^2(T_X)=0$は正常完全列の高次コホモロジー、
-$H^1(-K_X)=0$は$X$の直線束の中間コホモロジー消滅から従う。
-$\wedge^3T_X=0$なので$\HH^3=0$。
-同様に$\HH^1=H^0(T_X)\oplus H^1(\OO_X)=0$。
-通常のHochschild変形理論では障害は$\HH^3$に入るため無障害性が従う。
-この計算は反標準環の全域AS性や量子化の代数化を証明するものではない。
-\end{proof}
+\section{二種類の箙と未解決の比較}
+AOUの標識付き曲面模型は9頂点18矢・9本の二次関係を持ち、
+3-CY completionには9頂点27矢の三次potentialが現れる。
+一方、非可換$\PP^3$の標準四周期模型は4頂点16矢と
+四次superpotentialの二階微分を使う。
+前者は曲面の例外列・helixに付随し、後者はAS4 ambientに付随する。
+同じ箙の部分potentialとして同一視してはならない。
 
-\section{二種類の箙と、未完の大域比較}
-AOUの標識付き曲面模型では9頂点18矢の箙に9本の二次関係があり、
-3-CY completionは9頂点27矢の三次potentialを持つ。
-非可換$\PP^3$の標準4周期模型では4頂点16矢、四次superpotentialの二階微分を使う。
-前者は曲面の例外列・helixに付随し、後者は4次元AS正則ambientに付随する。
-CY次元も3と4で異なり、同じ箙の単純な部分potentialではない。
-曲面の反標準環自体はAS Gorenstein次元3・index1であり、
-9頂点のAS正則代数ともambientのAS正則代数とも区別する。
+定理\ref{thm:r13-open}は与えられた四頂点potentialの一般開部分について
+全テンソル方向の成分性・正則性と7次元atlasを与える。
+命題\ref{prop:period-formal-rigidity}による形式的一致と、
+命題\ref{prop:period-counterexample}による周期表示の大域的な不一致を区別する。
+定理\ref{thm:aou-dominance}はAOUの所定の一般位置で相対Serre・底変更と
+変形8方向の比較を仮定した結果である。
+全境界のAS正則性、7係数atlasの有限同一視の次数、
+全weakly marked対象の超曲面認識、コンパクト化全体での正則なambient射は未解決である。
 
-比較の具体的手順は、AOUの有限代数$\Lambda$と指定頂点対象$P_0$から
-\[
- A_m=\Hom_{D^b(\Lambda)}
-       (P_0,(\mathsf S_\Lambda^{-1}[2])^m P_0)
-\]
-を作り、低次数での積を計算して$Q(A)$を得ることである。
-これは構造対象とSerre関手が同定された良い範囲でのレシピである。
-全体で射にするには、相対Homの底変更、豊富性、二次包絡のAS性、正規三次核、
-heartと標識の同値関係を証明する必要がある。
-
-\paragraph{現在の結論と限界.}
-定理\ref{thm:r13-open}は四頂点potentialの全方向で成分の一般正則性と7次元atlasを与える。
-命題\ref{prop:period-formal-rigidity}はこの一般点で任意の選択周期の追加方向を排除するが、
-命題\ref{prop:period-counterexample}が示す大域的な相違は残る。
-定理\ref{thm:formal-weyl}は可換点の形式Weyl商であり、
-大域商のためには命題\ref{prop:global-weyl-criterion}の標識認識を証明する必要がある。
-定理\ref{thm:aou-dominance}では一般AOUからの有理ambient射と余次元0を得たが、
-全弱標識付き対象が超曲面認識部分に入ること、コンパクト化全体で射が正則であること、
-全境界でのsmooth proper性は未証明である。
-全potential境界の明示分類、7係数atlasの有限同一視の次数、Weyl商の大域的な一般次数も未決定である。
-
-\paragraph{検証と再現.}
-\texttt{verify\_r13\_potential.py}は19独立係数を保つ微分恒等式、
-四flatteningのrank、全接空間、群作用、7係数横断性を有理数上で検証する。
-\texttt{verify\_surface\_incidence.py}はPoisson側の独立な接空間と二因子stabilizerを再現する。
-有限行列計算と、本文の全次数のAS性・圏の降下の証明は区別する。
-旧版に対する計算と組版の記録は\texttt{research/surface\_validation.json}にある。
-本改訂版に対する再実行・外部査読・形式検証・新規性の網羅的確認は未完了である。
+\paragraph{再現.}
+\texttt{computations/verify\_r13\_potential.py}は四flattening、群作用、
+全接空間と七係数の横断性を有理数上で検査する。
+\texttt{computations/verify\_surface\_incidence.py}は
+Poisson側の独立な接空間と二因子stabilizerを検査する。
+\texttt{computations/verify\_pencil\_discriminant.py}は
+臨界値の八点を確認する。
+論文中の通常の証明と有限行列検証の範囲は別々に扱い、
+文献の網羅的優先権調査と外部査読は未完了である。
 
 \begin{thebibliography}{99}
 \bibitem{AOU} T. Abdelgadir, S. Okawa, K. Ueda,
@@ -466,7 +443,6 @@ Math. Z. 222 (1996), 171--212; \href{https://doi.org/10.1007/PL00004532}{doi:10.
 \emph{Noncommutative del Pezzo surfaces and Calabi--Yau algebras},
 J. Eur. Math. Soc. 12 (2010), 1371--1416;
 \href{https://arxiv.org/abs/0709.3593}{arXiv:0709.3593v4}, Theorem 3.3.2, \S9.
-
 \bibitem{BSW} R. Bocklandt, T. Schedler, M. Wemyss,
 \emph{Superpotentials and higher order derivations},
 \href{https://arxiv.org/abs/0802.0162}{arXiv:0802.0162v3}, Definitions in \S1 and Theorems 6.2, 6.8.
@@ -476,36 +452,9 @@ J. Eur. Math. Soc. 12 (2010), 1371--1416;
 \bibitem{AZ} M. Artin, J. J. Zhang,
 \emph{Noncommutative projective schemes}, Adv. Math. 109 (1994), 228--287,
 \href{https://doi.org/10.1006/aima.1994.1087}{doi:10.1006/aima.1994.1087}.
-\bibitem{Lowen} W. Lowen,
-\emph{Obstruction theory for objects in abelian and derived categories},
-Comm. Algebra 33 (2005), 3195--3223,
-\href{https://arxiv.org/abs/math/0407019}{arXiv:math/0407019}, Theorem A.
-\bibitem{DDL} O. De Deken, W. Lowen,
-\emph{Abelian and derived deformations in the presence of $\mathbb Z$-generating geometric helices},
-J. Noncommut. Geom. 5 (2011), 477--505,
-\href{https://doi.org/10.4171/JNCG/83}{doi:10.4171/JNCG/83},
-Theorems 4.5, 5.13, 5.15 and Definition 5.12.
 \bibitem{OU2025} S. Okawa, K. Ueda,
 \emph{Marked Artin--Schelter surfaces of del Pezzo types},
 \href{https://arxiv.org/abs/2508.04986}{arXiv:2508.04986v1} (2025),
 Definition 1.1 and Theorem 6.4.
-\bibitem{DGK} I. Dolgachev, B. van Geemen, S. Kond\=o,
-\emph{A complex ball uniformization of the moduli space of cubic surfaces
-via periods of K3 surfaces},
-J. reine angew. Math. 588 (2005), 99--148,
-\href{https://doi.org/10.1515/crll.2005.2005.588.99}{doi:10.1515/crll.2005.2005.588.99};
-\S\S 2.5--2.6.
-\bibitem{BO} A. Bondal, D. Orlov,
-\emph{Reconstruction of a variety from the derived category and groups of autoequivalences},
-Compositio Math. 125 (2001), 327--344;
-\href{https://arxiv.org/abs/alg-geom/9712029}{arXiv:alg-geom/9712029}.
-\bibitem{Toda} Y. Toda, \emph{Deformations and Fourier--Mukai transforms},
-J. Differential Geom. 81 (2009), 197--224;
-\href{https://arxiv.org/abs/math/0502571}{arXiv:math/0502571}.
-\bibitem{OWR} K. Ueda (joint work with S. Okawa),
-\emph{Affine Weyl group actions on moduli spaces of marked noncommutative del Pezzo surfaces},
-Oberwolfach Reports 44/2024, pp. 2557--2558,
-\href{https://doi.org/10.4171/OWR/2024/44}{doi:10.4171/OWR/2024/44}, Conjectures 1--3.
-
 \end{thebibliography}
 \end{document}

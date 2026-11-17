@@ -1,6 +1,6 @@
 # R(1,3) の一般モジュライ：アフィン三次函数、Hessian群、八点配置
 
-2026-11-15 / r13-v1。研究再開時には \`00_research_plan.md\` を先に読む。本ノートは一般商・八点配置に関する研究主張と証明の骨格を保存する。主論文は \`papers/nc-cubic-ambient-moduli.tex\`、四頂点potentialの証明は \`papers/sections/surface_stack_comparison.tex\`、現行の有限線型代数証明書は \`computations/verify_r13_potential.py\` を参照。以下の追加の商同定は主論文には未収録で、現行の独立証明書が欠けるため未検証の研究主張として扱う。
+2026-11-15 / r13-v1。研究再開時には \`00_research_plan.md\` を先に読む。本ノートは一般商・八点配置に関する研究主張と証明の骨格を保存する。主論文は \`papers/nc-cubic-ambient.tex\`、四頂点potentialの証明は \`papers/sections/surface_stack_comparison.tex\`、現行の有限線型代数証明書は \`computations/verify_r13_potential.py\` を参照。以下の追加の商同定は主論文には未収録で、現行の独立証明書が欠けるため未検証の研究主張として扱う。
 
 ## 対象と既知の入力
 
