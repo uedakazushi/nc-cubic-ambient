@@ -392,16 +392,50 @@ $V^{\otimes2}\to H^0K_2$の全射性もこの点で成り立つので開に制�
 積はSerre orbitの合成から定まり、基底変更に両立する。従って所望の商への射がある。
 \end{proof}
 
+
+\begin{proposition}[一般幾何学的点でのinverse Serre orbit環]\label{prop:aou-orbit-generic}
+AOU\cite[\S9, Theorem 9.4]{AOU}の一般位置条件
+（滑らかな楕円曲線、無限位数のtranslation、十分一般の六点）を満たす
+楕円nonupleに付随する九頂点有限代数を$\Lambda$、
+頂点$(0,0)$の例外対象を$P_0$とし、
+$H=\mathsf S^{-1}[2]$とする。積を保つ次数付き環同型
+\[
+ \bigoplus_{m\ge0}\Hom_{D^b(\Lambda)}(P_0,H^mP_0)
+ \ \simeq\ F
+\]
+が存在する。ここで$F=P/(G)$はVan den Bergh\cite[Chapter 12]{VdB}の
+反標準環であり、$P$は中心一次元$t$を持つ四次元AS正則Koszul代数、
+$G$は正則正規三次元である。
+この主張は幾何学的点での導来圏内の同型であって、
+アーベルheartの一致や相対底変更を含まない。
+\end{proposition}
+\begin{proof}
+AOU (9.44)--(9.45)の例外列の先頭は構造対象$\OO$であり、
+(9.55)--(9.57)の導来同値は対応する$P_0$を
+$\pi F\in\qgr F$へ送る。同論文Lemma 9.2により
+$D^b\qgr F$のSerre関手は$(-1)[2]$なので、
+$H$は次数shift$(1)$に対応する。
+したがって左辺は
+$\bigoplus_{m\ge0}\Hom_{\qgr F}(\pi F,\pi F(m))$
+と積を保って同型になる。
+$P$が四次元AS正則で$G$が正則三次元であることから、
+$0\to P(-3)\xrightarrow{\cdot G}P\to F\to0$によって
+$F$のgraded depthは少なくとも3である。
+従って$H^0_{\mathfrak m}(F)=H^1_{\mathfrak m}(F)=0$であり、
+Artin--Zhangのsection環の完全列\cite{AZ}を用いれば
+$\Hom_{\qgr F}(\pi F,\pi F(m))\simeq F_m$が$m\ge0$で成立する。
+\end{proof}
+
 \paragraph{generic pointに用いる既知の入力.}
 AOU\cite[Theorem 1.1, \S9, Theorem 9.4]{AOU}と
 Okawa--Ueda\cite[Theorem 6.4]{OU2025}は、一般のmarkedデータを楕円曲線と六点blow-upで記述する。
-AOU (9.44)--(9.57)の同値は頂点$(0,0)$を$\OO$へ送る。
-同論文Lemma 9.2でinverse shifted Serreは次数1shiftとなるので、
-式\eqref{eq:finite-serre}の全次数のorbit環はVan den Berghの反標準環$F$に一致する。
+命題\ref{prop:aou-orbit-generic}によりAOUの導来同値とSerre関手から、
+一般幾何学的点でのinverse Serre orbit環は$F$に一致する。
 同論文 (9.6)--(9.10) とVan den Bergh\cite[Chapter 12]{VdB}によれば
 $F=P/(G)$で、$P$は中心一次拡大AS4、$G$は正則正規三次元。
-これは\emph{特定の一般位置}で用いる比較入力であり、上の定理ではその内容を
-(i)--(iii)として明示した。全marked成分やコンパクト化全体には拡張しない。
+幾何学的点での同型は命題\ref{prop:aou-orbit-generic}で証明したが、
+相対底変更・形式変形への比較は残っている。
+全marked成分やコンパクト化全体には拡張しない。
 
 一般のSklyanin頂部では三次中心が一次元である。
 正規化自己同型を$Gx=\sigma(x)G$と書くと、中心正則一次元$t$から$\sigma(t)=t$。
@@ -414,21 +448,18 @@ $\sum_i c_i\partial_i\partial_j f_3=0$であり、滑らかな$f_3$から$c_i=0$
 一般の中心拡大の型がPymの$R(1,3)$であることは\cite[\S3.4]{Pym},\cite{LBS}の入力である。
 
 \begin{theorem}[一般AOU点からのambientの像]\label{thm:aou-dominance}
-AOUの一般位置の点について次を仮定する。
-(i) 頂点$P_0$は反標準偏極の構造対象に対応し、
-相対inverse Serreによるorbit環はVan den Berghの反標準環と一致する。
-(ii) このorbit環は$P/(G)$と表示され、$P$は$R(1,3)$型の
-中心一次拡大AS4代数、$G$は正則正規三次元である。
-(iii) この比較は滑らかな可換marked点からの形式変形と両立し、
-その8方向をAOUの関係式表示がすべて実現する。
-これらの仮定が成立する一般開部分では、命題\ref{prop:aou-candidate}は
+命題\ref{prop:aou-orbit-generic}の一般位置に制限する。
+さらに(i)この幾何学的点での復元が相対inverse Serre orbit環の底変更と両立し、
+(ii)可換marked点からの形式変形の8方向をAOUの関係式表示がすべて実現し、
+低次数写像の微分比較が適用できる、と仮定する。
+この比較が成立する一般開部分では命題\ref{prop:aou-candidate}は
 AS4 ambientへの有理射を与え、$R(1,3)$の7次元成分を支配する。
 対応する中心三次対への有理像は8次元であり、その一般ファイバーは有限である。
 従ってambientへの有理射の一般ファイバーは1次元である。
 その有限次数を$|W(E_6)|$と同定したわけではない。
 \end{theorem}
 \begin{proof}
-既知入力から幾何学的一般点のorbit環は$P/(G)$であるから、二次包絡は$P$に一致する。
+命題\ref{prop:aou-orbit-generic}により一般幾何学的点のorbit環は$P/(G)$であるから、二次包絡は$P$に一致する。
 従って候補射の一般値は$R(1,3)$に属し、三次核もrank1となる。
 これらは有限な式とrank条件なので、低次数の有理射として定義される。
 支配性を以下で示した後、定理\ref{thm:r13-open}のatlasの逆像へ制限する。
