@@ -30,6 +30,8 @@ K=(R0⊗V2)∩(V0⊗R1)⊂V0⊗V1⊗V2
 
 最高三次f3が滑らかなときJacobian環J_f=k[x,y,z]/(f_x,f_y,f_z)は長さ8の完全交差。臨界値多項式Δ_f(λ)=det(λI+m_f)はモニック8次で、X_λ=V_+(F+λt³)が特異であることとΔ_f(λ)=0は同値。一般には8根が相異なり、それぞれ1個のA1特異点を持つ。独立計算例はf=x³-3x+y³-12y+z³-48zで臨界値が±110,±114,±142,±146。検算コードcomputations/verify_pencil_discriminant.pyを収録する。無限遠点は三重平面で、量子中心三次商の特異値同定は未解決。
 
+中心一次拡大B_fのt≠0のpoint moduleは、t m_n=m_{n+1}と基底を選ぶと、x,y,zが次数によらないスカラーa,b,cで作用する。二次関係の可換化は∂f=0と等価だから、parameter schemeはSpec J_f。一般の8点は可換ペンシルの8個のnodalな特異メンバーと一対一対応する（主論文prop:critical-point-modules）。LBS Math. Z. 222 (1996), Propositions 4.3.7, 4.3.9 は一般の中心一次拡大に8個の追加point moduleが存在することを既に証明している。本稿の追加はその臨界点表示とnodalメンバーへの対応であり、新規性の網羅的確認は未完。
+
 ## 明示族と計算
 
 F=a(x³+y³+z³)+bxyz+t(x²+c2y²+c3z²)+t²(d1x+d2y+d3z)。w=Alt(txyz)-3(1-c+c²-c³)(t sym F)。全二階微分で[t,x]=[t,y]=[t,z]=0、[y,z]=sym F_x等を得る。t³はwに寄与しない。

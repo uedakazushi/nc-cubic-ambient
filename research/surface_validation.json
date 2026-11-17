@@ -69,13 +69,15 @@
   },
   "current_source_checks": {
     "date": "2026-11-17",
-    "method": "Connector in-memory static checks (no TeX engine and no Python execution)",
-    "braces_balanced": true,
-    "tex_environments_balanced": true,
-    "references_and_bibliography_resolved": true,
-    "certificate_metadata_shapes_consistent": true,
-    "calculation_reexecuted": false,
-    "typography_compiled": false
+    "method": "GitHub connector in-memory source verification",
+    "tex_sources": 2,
+    "unique_labels": 34,
+    "duplicate_labels": 0,
+    "unresolved_references": 0,
+    "unresolved_citations": 0,
+    "balanced_braces": true,
+    "balanced_environments": true,
+    "notes": "Recompute label count on final head; no latexmk rerun reported."
   },
   "current_computations": [
     {
