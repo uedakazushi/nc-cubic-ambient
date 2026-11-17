@@ -38,3 +38,18 @@ assert V.shape==(19,12) and V.rank()==12
 print('PASS affine action, eight critical points, and discriminant covariance (QQ)')
 print('PASS affine-orbit tangent rank=12 and finite stabilizer witness')
 print('det(A)=',D,'f(b)=',fb,'critical values=',sorted(values))
+
+# Generic reconstruction of the gradient from its 8-point Jacobian scheme:
+# an integrable 3x3 recombination of the three quadratic gradients is scalar.
+fw=3*(x**3+y**3+z**3)+5*x*y*z+x**2+2*y**2+3*z**2+x+2*y+4*z
+Q=S.Matrix([S.diff(fw,v) for v in U])
+N=S.Matrix(3,3,lambda i,j:S.Symbol('n%d%d'%(i,j)))
+Pvec=N*Q
+closed=[]
+for i,j in ((0,1),(0,2),(1,2)):
+    eq=S.Poly(S.expand(S.diff(Pvec[j],U[i])-S.diff(Pvec[i],U[j])),x,y,z)
+    closed.extend(eq.coeff_monomial(v) for v in (1,x,y,z))
+C=S.linear_eq_to_matrix(closed,list(N))[0]
+assert C.shape==(12,9) and C.rank()==8
+assert C.nullspace()==[S.Matrix([1,0,0,0,1,0,0,0,1])]
+print('PASS gradient integrability rank=8, scalar kernel')

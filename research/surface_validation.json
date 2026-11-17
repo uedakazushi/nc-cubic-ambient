@@ -15,7 +15,8 @@
     "all_AS_boundary": "NOT PROVED",
     "quantum_casimir_mismatch": "Exact finite example, not general theorem",
     "R13_graded_affine_quotient": "Proof in thm:r13-affine: exact graded isomorphisms, not arbitrary periodic Z-algebra/Zhang isomorphisms; 19-dimensional cubic coefficient space modulo Aff3; smooth 7-dim DM open.",
-    "critical_value_covariance": "Proof in prop:critical-discriminant-covariance, including nonreduced Jacobian algebras."
+    "critical_value_covariance": "Proof in prop:critical-discriminant-covariance, including nonreduced Jacobian algebras.",
+    "eight_point_reconstruction": "Proof in thm:r13-eight-reconstruction: I(Z_f)∩S_≤2 equals gradient quadrics, and generic integrability kernel scalar. Generic fiber of critical scheme map is G_m; image dimension 18; affine configuration quotient dimension 6. Does not identify the full periodic Z-algebra quotient."
   },
   "checks": {
     "static_source": "In-memory TeX consistency preflight of both modified sources: 33 unique labels, 50 internal references resolved, 9 bib entries, 29 citations resolved, braces and theorem environments balanced.",
@@ -27,14 +28,15 @@
     "affine_witness": "PASS exact SymPy source in container on 2026-11-17: affine gradient covariance, eight rational critical points, degree-eight critical-value polynomial covariance, 19x12 Lie orbit rank 12.",
     "latexmk_current_version_run": false,
     "bibliography_primary": "Pym 2015 Adv Math §3.4 PDF and LBS 1996 Math Z §§3,4.3 PDF inspected including screenshots",
-    "affine_script_source": "computations/verify_r13_affine_quotient.py; exact script source executed locally, will verify repository blob after push",
+    "affine_script_source": "computations/verify_r13_affine_quotient.py: exact current source checked locally including integrability matrix rank8; post-push blob readback pending",
     "primary_sources": [
       "Pym Adv. Math. 281 (2015), §3.4 (arXiv PDF checked and screenshot inspected)",
       "Le Bruyn–Smith–Van den Bergh Math. Z. 222 (1996), §§3, 4.3, especially Props. 4.3.7/4.3.9 (primary PDF checked and screenshot inspected)"
-    ]
+    ],
+    "integrability_witness": "PASS exact QQ: f*=3 sum(u_i^3)+5u1u2u3+u1^2+2u2^2+3u3^2+u1+2u2+4u3, 12x9 closedness matrix rank8 with kernel scalar identity."
   },
   "persistence": {
-    "github_main": "Not yet committed",
+    "github_main": "Pending commit",
     "library_saved": false
   }
 }

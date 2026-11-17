@@ -4,7 +4,7 @@
 
 ## 対象と既知の入力
 
-標準14641型quadratic Koszul AS正則Z代数のpointed/頂点スカラーを除いたモジュライ。四頂点16矢の符号付きquartic superpotential（長さ2の経路微分）と、directed四頂点12矢の二つのrank6関係空間による同値は別節で証明済み。Pym, *Quantum deformations of projective three-space* (Adv. Math. 281 (2015), §3.4, arXiv:1403.6444) の R(1,3) は中心一次拡大、Le Bruyn–Smith–Van den Bergh, *Central extensions of three-dimensional Artin–Schelter regular algebras* (Math. Z. 222 (1996), Introduction/Thm3.2.6/Prop4.3.9) が一般中心拡大の7次元族・楕円曲線+8点を与える。以下はこの既存の7次元という数だけから商同値を推論するのではなく、余分なZhang同型を排除する証明を追加したもの。新規性の最終確認・外部査読は未完了。
+標準14641型quadratic Koszul AS正則Z代数のpointed/頂点スカラーを除いたモジュライ。四頂点16矢の符号付きquartic superpotential（長さ2の経路微分）と、directed四頂点12矢の二つのrank6関係空間による同値は別節で証明済み。Pym, *Quantum deformations of projective three-space* (Adv. Math. 281 (2015), §3.4, arXiv:1403.6444) の R(1,3) は中心一次拡大、Le Bruyn–Smith–Van den Bergh, *Central extensions of three-dimensional Artin–Schelter regular algebras* (Math. Z. 222 (1996), Introduction/Thm3.2.6/Prop4.3.9) が一般中心拡大の7次元族・楕円曲線+8点を与える。既存の7次元という数から商同型を推測するのではなく、次数付き代数のアフィン商については現行原稿で同型を証明した。一方、四周期Z代数の余分なZhang同型の排除は以下の未検証課題として残る。新規性の最終確認・外部査読は未完了。
 
 ## 確立した次数付き商と未解決のZhang剛性
 
@@ -53,7 +53,7 @@ Hesse pencilのflex 9点を保つprojective群は \(G_{216}=(\mathbb Z/3)^2\rtim
 \]
 七係数写像の一般次数216。計算ではQ(ω)上の3×3行列をprojectiveに216個全列挙し、数値(a,b)=(3,5)のHesse係数軌道24点・安定化群9を確認。有限群の不変関数体の最小生成元・関係式は未計算。
 
-## 研究主張 C（追加検証が必要）：特殊な8点配置による代数幾何学的同定
+## 既に証明した一般8点復元と未解決のHilbert scheme大域商
 
 一般のfについて \(Z_f=V(f_x,f_y,f_z)\subset\mathbb A^3\)。f3が滑らかなので三つの最高次数二次式には無限遠で共通零点がなく、Z_fは長さ8の(2,2,2) complete intersection、一般には8個の異なる点。これらはB_fのt≠0のpoint modules（t中心なので点のshiftは定常、t=1で交換子を零にすることは∂f=0）。
 
@@ -67,7 +67,7 @@ Hilb^8(A3)の「8個の異なる点が三つの二次式でscheme論的に切り
 \]
 （対応する同じ非空開に制限）。これは「楕円曲線＋8点」よりも復元操作を明示した正確な代数幾何学的モジュライであり、point schemeは楕円Eと8点Z_fを持つ。ただし(E,σ,Z_f)のみからの無条件な一意復元は主張しない。
 
-非空性のQQ証明書：f=3(x³+y³+z³)+5xyz+x²+2y²+3z²+x+2y+4z。Groebner消去の一変数多項式は8次squarefree。Sklyanin商の一次central pair条件18×6行列rank6。勾配二次式の別frameのintegrabilityは12×9行列rank8で核がスカラー恒等行列。translate offdiag=b I3、Aff determinant twistの合成は整数有理記号式でPASS。八点配置とHesse群の独立再現コードは現行リポジトリにない。対応するrank値・216元列挙は現在の証明書からは検証できない。四頂点rank188は `computations/verify_r13_potential.py` と現行証明書を参照。
+非空性のQQ証明書：f=3(x³+y³+z³)+5xyz+x²+2y²+3z²+x+2y+4z。Groebner消去の一変数多項式は8次squarefree。Sklyanin商の一次central pair条件18×6行列rank6。勾配二次式の別frameのintegrabilityは12×9行列rank8で核がスカラー恒等行列。translate offdiag=b I3、Aff determinant twistの合成は整数有理記号式でPASS。8点からの一般復元の核となるintegrability rank8は、現行原稿の証明と `computations/verify_r13_affine_quotient.py` のQQ計算で確認済み。Hesse216の全列挙、八点Hilbert scheme上の提案した線束同型の全域性・境界およびZhang商の同定は未検証のまま残す。四頂点rank188は `computations/verify_r13_potential.py` と現行証明書を参照。
 
 ## 全既約成分の境界で未解決の問題
 

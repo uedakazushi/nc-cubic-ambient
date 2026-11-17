@@ -312,6 +312,115 @@ $(m_f-f(b)\,\mathrm{id})/\det A$に移る。
 定理\ref{thm:pencil-critical}を適用する。
 \end{proof}
 
+
+\subsection{八点の臨界集合からの三次函数の復元}
+\label{sec:r13-eight-reconstruction}
+$Z_f=\operatorname{Spec}J_f\subset\mathbb A^3$を
+三つの偏微分で定まる長さ8の臨界点schemeとする。
+$B_f$の$t\ne0$のpoint moduleの集合は、このschemeと自然に対応する
+（命題\ref{prop:critical-point-modules}）。
+同じ八点からどれだけの三次函数を復元できるかを次に調べる。
+
+\begin{theorem}[八点の臨界点schemeによる一般復元]
+\label{thm:r13-eight-reconstruction}
+$f_3$が滑らかな任意の$f\in\mathcal F_{19}^{\rm sm}$について
+\begin{equation}\label{eq:critical-quadrics}
+ I(Z_f)\cap\kk[u_1,u_2,u_3]_{\le2}
+ =\langle f_{u_1},f_{u_2},f_{u_3}\rangle_\kk
+\end{equation}
+である。
+さらに非空Zariski開集合$\mathcal F_{19}^{\rm rec}
+\subset\mathcal F_{19}^{\rm sm}$が存在し、$f\in\mathcal F_{19}^{\rm rec}$
+に対して別の$f'\in\mathcal F_{19}^{\rm sm}$が
+$Z_{f'}=Z_f$をschemeとして満たせば、
+\[
+ f'=c f\quad(c\in\kk^\times)
+\]
+となる。
+$\mathcal F_{19}^{\rm rec}$は、一般に8個の臨界点が相異なる条件も
+満たすように取れる。
+従って長さ8の零次元部分schemeのHilbert schemeへの射
+\[
+ \mathcal F_{19}^{\rm rec}\longrightarrow
+       \operatorname{Hilb}^8(\mathbb A^3),\qquad
+ f\longmapsto Z_f
+\]
+の幾何学的一般ファイバーは$\mathbb G_m$であり、
+その像の次元は18である。
+この像の一般のアフィン座標同値類のモジュライ次元は6である。
+\end{theorem}
+\begin{proof}
+$F_f=f_3+t f_2+t^2f_1$とし、
+$Q_i=\partial_{u_i}F_f\in\kk[u_1,u_2,u_3,t]_2$と置く。
+$t=0$で$Q_i$が共通に零となる点は、
+$f_3$の滑らかさとEulerの公式から存在しない。
+三つの$Q_i$の射影零点schemeは長さ8の零次元完全交差なので、
+$(Q_1,Q_2,Q_3)$は高さ3の正則列イデアルである。
+その斉次商はCohen--Macaulay次元1で、
+全ての射影零点が$t\ne0$にあるため、$t$は非零因子である。
+従って$(Q_i):t^\infty=(Q_i)$となる。
+
+$p\in I(Z_f)$の次数が2以下なら、その次数2への斉次化は
+$(Q_i):t^\infty$に属し、したがって$(Q_i)$の次数2部分に属する。
+これは$Q_i$の定数係数線型結合に等しい。
+$t=1$に戻せば式\eqref{eq:critical-quadrics}が従う。
+逆包含は偏微分の定義から明らかである。
+
+$M\in\operatorname{Mat}_3(\kk)$に対し、
+三つ組$M\nabla f$が閉1形式となるための条件は
+\begin{equation}\label{eq:gradient-integrability}
+ \mathcal D_f(M)=
+ \bigl(\partial_i(M\nabla f)_j-
+       \partial_j(M\nabla f)_i\bigr)_{i<j}=0.
+\end{equation}
+各成分は次数1以下だから、$\mathcal D_f$は
+$12\times9$係数行列で与えられる。
+常に$M=\mathrm{id}$がその核にあるので$\rank\mathcal D_f\le8$である。
+非空性には
+\[
+ f_*=3(u_1^3+u_2^3+u_3^3)+5u_1u_2u_3
+       +u_1^2+2u_2^2+3u_3^2+u_1+2u_2+4u_3
+\]
+を取る。最高三次のHesse判別条件は$9^3+5^3\ne0$であり、
+式\eqref{eq:gradient-integrability}の有理係数行列を直接計算すると
+$\rank\mathcal D_{f_*}=8$、核は$\kk\,\mathrm{id}$となる。
+行列の形成と検算は
+\texttt{computations/verify\_r13\_affine\_quotient.py}に収録する。
+従って$\rank\mathcal D_f=8$は非空開条件である。
+一方、臨界点schemeが被約になることも非空開条件であり、
+定理\ref{thm:pencil-critical}の具体例により非空である。
+$\mathcal F_{19}^{\rm sm}$は既約なので両開集合は交わる。
+
+$Z_{f'}=Z_f$なら、
+式\eqref{eq:critical-quadrics}から
+$\nabla f'=M\nabla f$となる定数行列$M$がある。
+$f'$が存在するのでこの1形式は閉であり、開条件のもとでは
+$M=c\,\mathrm{id}$となる。$f'_3$の滑らかさから$c\ne0$。
+$f(0)=f'(0)=0$なので積分すれば$f'=cf$を得る。
+逆に$c\ne0$は同じJacobianイデアルを与える。
+
+上記全ての条件の共通開部分を$\mathcal F_{19}^{\rm rec}$とする。
+$Z_f$の形成は長さ8の有限平坦完全交差なのでHilbert schemeへの射を与える。
+上述の各ファイバーは$c\in\mathbb G_m$で尽くされ、
+scheme論的にも閉1形式の線型条件の核が一次元であるため同じである。
+よって像の次元は$19-1=18$である。
+各$Z_f$には一次以下の非零な消滅多項式がない
+（式\eqref{eq:critical-quadrics}による）。
+したがって被約な8点は$\mathbb A^3$をアフィンに張り、
+それらを保つアフィン変換群は有限群$\mathfrak S_8$へ単射する。
+よって一般の像の$\operatorname{Aff}_3$軌道は12次元であり、
+商の一般次元は$18-12=6$となる。
+\end{proof}
+\begin{remark}
+$Z_f$を忘れずに保つと一般に$f$のスカラー倍が一自由度だけ残り、
+次数付き中心拡大の7次元商と八点配置の6次元商との差を説明する。
+この主張は$B_f$の$t\ne0$のpoint moduleに関する一般の復元であり、
+楕円曲線上のpoint moduleも含めた四頂点Z代数の
+全point schemeや大域的モジュライの分類ではない。
+八点が現れること自体は\cite[Propositions 4.3.7, 4.3.9]{LBS}に既知である。
+ここでの追加の内容はJacobian三つ組の一般的な積分可能性の一意性である。
+\end{remark}
+
 \subsection{任意の周期を持つ関係式stackとの一般点での比較}
 \begin{proposition}\label{prop:period-formal-rigidity}
 $\check B$のFrobenius標準4周期点を取り、二次関係$R\subset B_1^{\otimes2}$の

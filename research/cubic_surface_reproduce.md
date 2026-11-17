@@ -18,7 +18,7 @@ latexmk -lualatex papers/nc-cubic-ambient.tex
 
 `verify_r13_potential.py`はR13の四flattening、全接空間、群軌道と横断方向を有理数上で検証し、`r13_potential_certificate.json` を再生成する。 `verify_surface_incidence.py` はPoisson接空間と二因子stabilizerを検査し、`surface_incidence_certificate.json` を再生成する。大量のminorの列挙は`--quick`では省略するため、完全再現には通常実行を使う。
 
-`verify_r13_affine_quotient.py`はaffine座標変換での勾配・臨界scheme・八次判別式の共変性とAff3 Lie安定化群rank12をQQで検査する。一般定理の証明は論文本体を参照。
+`verify_r13_affine_quotient.py`はaffine座標変換での勾配・臨界scheme・八次判別式の共変性、Aff3 Lie安定化群rank12、8点からの勾配の積分可能性のrank8（12×9行列）をQQで検査する。一般定理の証明は論文本体を参照。
 
 `verify_pencil_discriminant.py`は臨界値と8個のnodeの具体例、`verify_quantum_casimir_obstruction.py`は量子中心値の相違の有限証明を再現する。いずれもambientのAS正則性の全次数、標識忘却の降下、全境界の比較を有限計算だけで証明するものではない。
 

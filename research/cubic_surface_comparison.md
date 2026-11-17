@@ -12,6 +12,10 @@ f=f3+f2+f1 ∈ k[u1,u2,u3]（定数項0、最高斉次三次f3が滑らか）を
 
 Jacobian環J_f=k[u]/(∂f)は長さ8（f3が滑らか）。臨界値多項式Δ_f(λ)=det(λ+m_f|J_f)。g=(A,b)∈Aff3でf'=ρ_g fとすると臨界schemeはu↦Au+bで同型、m_f'= [m_f−f(b)]/det(A)なので Δ_f'(λ)=(det A)^−8 Δ_f((det A)λ−f(b))。これは重複した臨界点を含むfinite algebraの特性多項式の恒等式。量子中心三次元の固有値はこの可換臨界値と一般には一致しないので混同しない。Pym §3.4およびLBS §3, §4.3の既知中心拡大・八点と、新しい明示同型／変換則をIntroductionで区別。
 
+## 一般の8点配置からの逆復元（本文定理 thm:r13-eight-reconstruction）
+
+f3が滑らかならQ_i=∂_i F_fはP3上で長さ8のcomplete intersectionをなし、t=0に零点がない。よってhomogeneous ideal (Q_i)はCMでt-saturated。Jacobain ideal I(Z_f)の次数≤2の部分は3つのgradient quadrics q_i=∂_i fのk-spanに一致。別の三次函数f'が同じ臨界schemeを持てば、その勾配∇f'=M∇fを満たす一定行列Mが存在する。閉1形式条件∂_i(M∇f)_j=∂_j(M∇f)_iは12式・9未知数の線型系。恒等行列は必ず核に入る。QQ witness f*=3∑u_i³+5u1u2u3+u1²+2u2²+3u3²+u1+2u2+4u3ではrank8、kernel=kI。rank8は非空Zariski開であり、reduced Jacobian scheme条件も非空開なので一般に両条件成立。ゆえに同じZ_fを持つf'はc f (c≠0)である。一般のHilb8画像は18次元、アフィン同型商は6次元。次数付きB_fの7次元商より1小さいのはスカラーcの自由度。全境界のHilbert schemeへの正確な大域同型は未証明。証明は主論文、rank8の検算は `computations/verify_r13_affine_quotient.py` に保持する。
+
 ## 四周期表示とambientの同値関係
 
 四窓のR_i∈Gr(6,V_i⊗V_(i+1))をGL4^4で割るのは、AS Z代数に任意の4周期τを指定した問題。非捩れpotentialはFrobenius適合周期の部分。可換Cの周期にdiag(2,1,1,1)を合成するとR0=R1=R2=Λ²V、R3=(1⊗σ^-1)Λ²V。最高syzygyがΛ⁴VなのにR3が交代でないため非捩れpotentialは存在しない。twisted potentialを使うときはNakayamaとtraceの同値関係も必要。

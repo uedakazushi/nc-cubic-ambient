@@ -20,6 +20,7 @@
 
 - 【新たに証明】R(1,3)中心一次拡大$B_f$の一次中心は$kt$。次数付き同型は（全次数共通スカラーを除いて）$f\mapsto(f(Au+b)-f(b))/\det A$の$\operatorname{Aff}_3$作用と完全に一致。graded表示の群oid商$[\mathcal F_{19}^{sm}/\operatorname{Aff}_3]$は一般に滑らかなDM 7次元。素朴なZhang商への昇格は未証明（\`thm:r13-affine\`）。固定次数の計算と独立したLie安定化群の有理数上のrank12証明点を収録。
 - 【新たに証明】Jacobian臨界値八次多項式は$\Delta_{\rho_{A,b}f}(\lambda)=(\det A)^{-8}\Delta_f((\det A)\lambda-f(b))$と変換する。非被約Jacobian schemeにも成立（\`prop:critical-discriminant-covariance\`）。
+- 【新たに証明】臨界点scheme $Z_f=V(\nabla f)$の二次以下の消滅式は3個の偏微分で張られる。一般の閉1形式のintegrability行列（12×9）のrankは8（明示有理数証明点）で、同じ$Z_f$からは$f$をスカラー倍を除き一意に復元できる。Hilbert schemeへの像は18次元、8個の一般点配置をAff3で割った商は6次元。次数付き中心拡大の7次元商との差を説明（\`thm:r13-eight-reconstruction\`）。
 - 【証明・正確な計算証明書】R(1,3)四頂点quartic superpotentialの二flattening全方向の接空間、67次元既約成分の一般正則性、rigidified7次元DM商のエタールatlas（`thm:r13-open`）。
 - 【証明】任意に指定した四周期付き関係式stackと非捩れpotentialが同一でない具体的反例（`prop:period-counterexample`）。二因子stabilizerが有限な一般点での形式一致（`prop:period-formal-rigidity`）。
 - 【証明】可換三次曲面のPoisson構造の一意ambient延長、中心三次ペンシル、八次臨界値多項式、8個の通常二重点と中心一次拡大の8個のpoint moduleへの対応（`thm:extension`, `thm:pencil-critical`, `prop:critical-point-modules`）。八点の既知LBS結果と新しい具体的対応を区別。
@@ -31,7 +32,7 @@
 
 1. AOU有限代数の相対inverse Serre・heart・base changeを一次資料と照合し、支配性定理の仮定のどこを無条件化できるか決定する。
 2. R(1,3)の**次数付き**同型はAff3商として決定した。次はこれと四頂点Z代数の一般Zhang同型群oidとの差、Hesseの有限同一視の次数、境界・慣性・七係数atlasの群oidを厳密に比較する。
-3. 既知中心三次商の境界、正規性・H3適合性・homological singularityと量子中心値の関係を調べる。
+3. 新たに得た八点臨界schemeの一般復元を、Hilbert scheme上の積分可能なquadratic netの具体的な局所閉locusとその線束へ拡張する。一般の8点構造・Hesse群の有限同一視・境界での重複臨界点を追跡する。併せて既知中心三次商の正規性・H3適合性・homological singularityと量子中心値の関係を調べる。
 4. 四周期raw GL商、rigidified PGL商、twisted/untwisted potentialの群oid差を明確化する。標識忘却の一般認識は本研究の達成条件にしない。
 
 ## V. 再現
