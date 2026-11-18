@@ -16,4 +16,4 @@ python3 scripts/verify_surface_bundle.py
 latexmk -lualatex papers/nc-cubic-ambient.tex
 ```
 
-より詳しい再現は `research/cubic_surface_reproduce.md`。PDF・ZIP・中間生成物はGitで追跡しない。四次元ambientの全分類は別研究の `nc-cubic-moduli` を参照。
+より詳しい再現は `research/cubic_surface_reproduce.md`。PDF・ZIP・中間生成物はGitで追跡しない。四次元ambientの全分類は別研究の `nc-cubic-classification` を参照。
